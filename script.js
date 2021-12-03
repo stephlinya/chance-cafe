@@ -43,7 +43,6 @@ function slideshow(){
     }
 }
 
-// window.setInterval(slideshow, 2000);
 
 
 
