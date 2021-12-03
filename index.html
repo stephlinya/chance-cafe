@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://kit.fontawesome.com/9c6e7c740c.js" crossorigin="anonymous"></script>
+    <title>Chance Cafe</title>
+</head>
+<body>
+    <header>
+        <img src="./images/Chance Cafe FINALlogo.png" alt="chance cafe logo" id="logo">
+            <nav class="nav">
+                <div class="mobilenav">
+                    <i class="fas fa-search"></i> 
+                    <i class="fas fa-bars" id="mobilenav__burger"></i>
+                </div>
+                
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link">home</a></li>
+                    <li class="nav__item"><a href="#"  class="nav__link">menu</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">cats</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">reservations</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">about us</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">contact</a></li>
+                </ul>
+            </nav>
+    </header>
+    <div class="hero">
+        <div id="hero__text">
+            <h1>Plan ahead for Mother's Day</h1>
+            <button id="hero__btn">see specials</button>
+        </div>
+        <div id="hero__imgdiv"><div id="hero__img"></div>
+    </div>
+    <div class="container">
+        <main class="main">
+            <div class="main__photo-gallery">
+                <div class="slides slides__visible">
+                    <img id="guywithcat" src="images/guydrinkingcoffeewcat.jpg">
+                </div>
+                <div class="slides slides__visible">
+                    <img src="images/lemoncake.jpg">
+                </div>
+                <div class="slides slides__visible">
+                    <img src="images/catingreen.jpg">
+                </div>
+                <div class="slides slides__visible">
+                    <img src="images/coffeeandbrownie.jpg">
+                </div>
+                <div class="dots">
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle"></i>
+                </div>
+            </div>
+        
+            <div class="main__reservations">
+                <h1 class="cursivetext">Coffee and cats</h1>
+                <p>Our cafe is limited to reservation only spots. Take a look at our calendar and see which day works best for you.</p>
+                <button>reserve a spot</button>
+            </div>
+        </main>
+            
+       <section class="about">
+            <div class="about__text">
+                <h1 class="cursivetext">About us</h1>
+                <p>Our mission is to help homeless cats find their fur-ever home. Chance Cafe partners with local rescues to transform the typical adoption process.</p>
+                <p>We provide a warm, relaxing place for our cats and humans to bond over a cup of coffee, toys, and snacks.</p>
+                
+                <a href="#">learn more</a>
+            </div>
+            <div id="about__img">
+                <img src="images/hazelcat.jpeg">
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <ul>
+            <li>menu</li>
+            <li>cats</li>
+            <li>reservations</li>
+            <li>about us</li>
+            <li>contact</li>
+            <li>careers</li>
+            <li>faq</li>
+        </ul>
+
+        <ul>
+            <li>appointment only</li>
+            <li>community guidelines</li>
+        </ul>
+
+        <form>
+            <h2>Subscribe for updates</h2>
+            <label for="name">Name</label>
+            <input type="text" id="name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email">
+            <button type="submit">sign up</button>
+        </form>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+@import "./global";
+@import "./mixins";
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* typography */ 
+@font-face {
+    font-family: "Now-Regular", sans-serif;
+    src: url(/fonts/Now-Regular.otf);
+}
+
+@font-face {
+    font-family: "Now-Bold", sans-serif;
+    src: url(/fonts/Now-Bold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Buffalo", cursive;
+    src: url(/fonts/Buffalo.otf);
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+    font-size: 3.5rem;
+}
+
+.cursive,
+h2{
+    font-family: "Buffalo", cursive;
+    color: $primaryPink;
+}
+
+body {
+    font-family: "Now-Regular", sans-serif;
+}
+/* images */
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    width: 60%;
+    max-width: 400px;
+}
+
+/* navigation */
+.nav {
+    font-size: 2rem;
+
+    .nav__list{
+        @include flex(column, space-between, center);
+        display: none;
+        background-color: $accentGreen;
+        padding: 1em;
+        margin: 1em;
+        text-align: center;
+    }
+
+    .nav__item {
+        list-style: none;
+    }
+
+    .nav__link {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .nav__link:hover, .nav__link:focus {
+        border-bottom: 1px solid white;
+        font-weight: bold;
+    }
+    .fa-search, 
+    .fa-bars {
+        color: $primaryPink;
+        padding-right: 0.5em;
+        cursor: pointer;
+    }
+    
+    .mobilenav{
+        @include flex(row, flex-end, center);
+        margin-bottom: 0.75em;
+        margin-right: 0;
+    }
+}
+
+/* hero */ 
+.hero {
+
+    #hero__imgdiv{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #hero__img{
+        object-fit: cover;
+        background-image: url(/images/womenwcat_heroimg.jpg);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-position: right 50% bottom 45%;
+    }
+    
+    /*
+    #hero__img {
+        height: 100vh;
+        position: absolute;
+        filter: blur(1px);
+        object-fit: cover;
+        object-position: right;
+        overflow: hidden;
+    }
+    */
+    
+    #hero__text {
+        position: absolute; 
+        padding: 4em;
+        width: 70%;
+        z-index: 100;
+    }
+    
+    #hero__btn {
+        background-color: $primaryPink;
+        color: white;
+        border: none;
+        margin-top: 2em;
+        padding: 0.75em 1em;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+}
+
+.main__photo-gallery{
+    display: block;
+    margin-top: 2.5em;
+}
+
+
+.container {
+    padding: 3.5em 2em;
+}
+
+/*
+#guywithcat {
+    position: absolute;
+}
+*/
+
+.slides {
+    display: block;
+}
+
+.fa-circle {
+    opacity: 40%;
+}
+
+.pink {
+    color: $primaryPink;
+}
