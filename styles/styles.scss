@@ -10,18 +10,24 @@
 /* typography */ 
 @font-face {
     font-family: "Now-Regular", sans-serif;
-    src: url(/fonts/Now-Regular.otf);
+    src: url(../fonts/Now-Regular.otf);
 }
 
 @font-face {
     font-family: "Now-Bold", sans-serif;
-    src: url(/fonts/Now-Bold.otf);
+    src: url(../fonts/Now-Bold.otf);
     font-weight: bold;
 }
 
 @font-face {
-    font-family: "Buffalo", cursive;
-    src: url(/fonts/Buffalo.otf);
+    font-family: "Now-Black", sans-serif;
+    src: url(../fonts/Now-Bold.otf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Buffalo", "Dancing Script", cursive;
+    src: url(../fonts/Buffalo.otf);
 }
 
 body {
@@ -35,18 +41,18 @@ body {
     margin-top: 0;
     margin-bottom: 0.25em;
     margin-bottom: 1.2em;
-    text-shadow: -4px 4px 6px $primaryPink;
+    text-shadow: -4px 4px 2px $primaryPink;
 }
 
 .reservations__cursivetext--pink,
 .about__cursivetext--pink{
-    font-family: "Buffalo", cursive;
+    font-family: "Buffalo", "Dancing Script", cursive;
     color: $primaryPink;
     font-size: 3.5rem;
 }
 
 .newsletter__cursivetext--white{
-    font-family: "Buffalo", cursive;
+    font-family: "Buffalo", "Dancing Script", cursive;
     font-size: 2.7rem;
     letter-spacing: 2px;
     text-align: center;
@@ -68,7 +74,7 @@ body {
 
 .link:hover,
 .link:focus{
-    font-weight: bold;
+    font-weight: 900;
     text-decoration: underline;
 }
 /* images */
@@ -205,6 +211,14 @@ img {
     font-size: 1.5rem;
     cursor: pointer;
     white-space: nowrap;
+}
+
+.button--pink:hover,
+.button--pink:focus{
+    font-weight: bold;
+    border: 4px solid $primaryPink;
+    background-color: white;
+    color: $primaryPink;
 }
 
 /*footer styles */
