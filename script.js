@@ -21,17 +21,17 @@ setInterval(function(){
         imgs[slides.length-1].style.display = "none";
         imgs[slideIndex].style.display = "block";
         slideIndex++;
-    } else if (slideIndex != 0 && slideIndex < slides.length-1){
-        imgs[slideIndex].style.display = "block";
-        imgs[slideIndex - 1].style.display = "none";
-        slideIndex++;
     } else if (slideIndex === slides.length-1){
         imgs[slideIndex].style.display = "block";
         imgs[slideIndex - 1].style.display = "none";
         slideIndex = 0;
+    } else{
+        imgs[slideIndex].style.display = "block";
+        imgs[slideIndex - 1].style.display = "none";
+        slideIndex++;
     } 
     
-    if (dotIndex == 0){
+    if (dotIndex === 0){
         dot[slides.length-1].classList.remove("pink");
         dot[dotIndex].classList.add("pink");
         dotIndex++;
@@ -44,7 +44,6 @@ setInterval(function(){
         dot[dotIndex - 1].classList.remove("pink");
         dotIndex++;
     }
-
 
 }, 4000);
     

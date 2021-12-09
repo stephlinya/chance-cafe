@@ -34,6 +34,10 @@ h1 {
   margin-bottom: 0.25em;
 }
 
+.hero__title {
+  margin-bottom: 1.2em;
+}
+
 .reservations__cursivetext--pink,
 .about__cursivetext--pink {
   font-family: "Buffalo", cursive;
@@ -43,7 +47,8 @@ h1 {
 
 .newsletter__cursivetext--white {
   font-family: "Buffalo", cursive;
-  font-size: 2rem;
+  font-size: 2.7rem;
+  letter-spacing: 2px;
   text-align: center;
 }
 
@@ -183,11 +188,6 @@ img {
   text-align: center;
 }
 
-/*
-#guywithcat {
-    position: absolute;
-}
-*/
 .gallery-img-mobile {
   display: none;
 }
@@ -241,13 +241,15 @@ img {
 }
 
 .footernav__list {
-  width: 50%;
   text-align: center;
 }
 
 .footernav__item {
   list-style: none;
   margin-bottom: 1.5em;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .footernav__link {
@@ -260,6 +262,7 @@ img {
   font-weight: bold;
 }
 
+/* form */
 .newsletter {
   width: 50%;
   display: -webkit-box;
@@ -271,6 +274,13 @@ img {
           flex-direction: column;
 }
 
+.newsletter .button--pink {
+  margin: 0 auto;
+  width: 70%;
+  font-size: 1rem;
+  padding: 0.5em 0.5em;
+}
+
 label {
   display: none;
 }
@@ -279,5 +289,22 @@ input {
   margin-bottom: 1.5em;
   padding: 1em 1.5em;
   border-radius: 5px;
+  border: none;
+}
+
+::-webkit-input-placeholder {
+  color: #bb7968;
+}
+
+:-ms-input-placeholder {
+  color: #bb7968;
+}
+
+::-ms-input-placeholder {
+  color: #bb7968;
+}
+
+::placeholder {
+  color: #bb7968;
 }
 /*# sourceMappingURL=styles.css.map */
