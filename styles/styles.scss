@@ -32,6 +32,8 @@ h1 {
     font-weight: bold;
     color: white;
     font-size: 3.5rem;
+    margin-top: 0;
+    margin-bottom: 0.25em;
 }
 
 .reservations__cursivetext--pink,
@@ -47,15 +49,11 @@ h1 {
     text-align: center;
 }
 
-.reservations, 
-.about, .link{
-    text-align: center;
-}
-
 .reservations__text,
 .about__text {
     font-size: 1.5rem;
     line-height: 1.7;
+    margin-top: 0;
     margin-bottom: 1em;
 }
 
@@ -74,6 +72,7 @@ h1 {
 img {
     max-width: 100%;
     border-radius: 5px;
+    margin: 3em 0;
 }
 
 #logo {
@@ -128,12 +127,12 @@ img {
 /* hero */ 
 .hero {
 
-    #hero__imgdiv{
+    &__imgdiv{
         width: 100vw;
         height: 100vh;
     }
 
-    #hero__img{
+    &__img{
         object-fit: cover;
         background-image: url(/images/womenwcat_heroimg.jpg);
         background-repeat: no-repeat;
@@ -143,18 +142,7 @@ img {
         background-position: right 50% bottom 45%;
     }
     
-    /*
-    #hero__img {
-        height: 100vh;
-        position: absolute;
-        filter: blur(1px);
-        object-fit: cover;
-        object-position: right;
-        overflow: hidden;
-    }
-    */
-    
-    #hero__text {
+    &__text {
         position: absolute; 
         padding: 4em;
         width: 70%;
@@ -166,12 +154,13 @@ img {
 
 .main__photo-gallery{
     display: block;
-    margin-top: 2.5em;
+    margin: 3.5em 0;
 }
 
 
 .container {
     padding: 3.5em 2em;
+    text-align: center;
 }
 
 /*
@@ -199,7 +188,6 @@ img {
     background-color: transparent;
     color: $primaryPink;
     font-size: 1.5rem;
-    margin-bottom: 2em;
     padding: 0.75em 2em;
     border-radius: 5px;
     cursor: pointer;

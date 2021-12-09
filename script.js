@@ -15,37 +15,40 @@ let imgs = document.getElementsByClassName("gallery-img");
 let slideIndex = 0;
 let dotIndex = 0;
 
-// if (slideIndex <= slides.length){
-//     setInterval(function(){ 
-        
-//         if (slideIndex === 0){
-//             imgs[slides.length-1].style.display = "none";
-//             imgs[slideIndex].style.display = "block";
-//         } else if (slideIndex != 0 && slideIndex < 4){
-//             imgs[slideIndex].style.display = "block";
-//             imgs[slideIndex - 1].style.display = "none";
-//         } else if (slideIndex === slides.length-1){
-//             slideIndex = 0;
-//             console.log(slides.length-1);
-//             imgs[slideIndex].style.display = "block";
-//         } 
-        
-//         if (dotIndex == 0){
-//             dot[dotIndex].classList.add("pink");
-//         } else if (dotIndex === slides.length){
-//             dot[dotIndex].classList.remove("pink");
-//             dotIndex = 0;
-//         } else {
-//             dot[dotIndex].classList.add("pink");
-//             dot[dotIndex - 1].classList.remove("pink");
-//         }
-//         dotIndex++;
-//         slideIndex++;
-        
-
-//     }, 2000);
+setInterval(function(){ 
     
-// }
+    if (slideIndex === 0){
+        imgs[slides.length-1].style.display = "none";
+        imgs[slideIndex].style.display = "block";
+        slideIndex++;
+    } else if (slideIndex != 0 && slideIndex < slides.length-1){
+        imgs[slideIndex].style.display = "block";
+        imgs[slideIndex - 1].style.display = "none";
+        slideIndex++;
+    } else if (slideIndex === slides.length-1){
+        imgs[slideIndex].style.display = "block";
+        imgs[slideIndex - 1].style.display = "none";
+        slideIndex = 0;
+    } 
+    
+    if (dotIndex == 0){
+        dot[slides.length-1].classList.remove("pink");
+        dot[dotIndex].classList.add("pink");
+        dotIndex++;
+    } else if (dotIndex === slides.length-1){
+        dot[dotIndex].classList.add("pink");
+        dot[dotIndex - 1].classList.remove("pink");
+        dotIndex = 0;
+    } else {
+        dot[dotIndex].classList.add("pink");
+        dot[dotIndex - 1].classList.remove("pink");
+        dotIndex++;
+    }
+
+
+}, 4000);
+    
+
 
 
         
