@@ -30,7 +30,7 @@
     <div class="hero">
         <div id="hero__text">
             <h1>Plan ahead for Mother's Day</h1>
-            <button id="hero__btn">see specials</button>
+            <button class="button button--pink">see specials</button>
         </div>
         <div id="hero__imgdiv"><div id="hero__img"></div>
     </div>
@@ -57,51 +57,51 @@
                 </div>
             </div>
         
-            <div class="main__reservations">
-                <h1 class="cursivetext">Coffee and cats</h1>
-                <p>Our cafe is limited to reservation only spots. Take a look at our calendar and see which day works best for you.</p>
-                <button>reserve a spot</button>
+            <div class="reservations">
+                <h1 class="reservations__cursivetext--pink">Coffee and cats</h1>
+                <p class="reservations__text">Our cafe is limited to reservation only spots. Take a look at our calendar and see which day works best for you.</p>
+                <button class="button">reserve a spot</button>
             </div>
         </main>
             
        <section class="about">
-            <div class="about__text">
-                <h1 class="cursivetext">About us</h1>
-                <p>Our mission is to help homeless cats find their fur-ever home. Chance Cafe partners with local rescues to transform the typical adoption process.</p>
-                <p>We provide a warm, relaxing place for our cats and humans to bond over a cup of coffee, toys, and snacks.</p>
-                
-                <a href="#">learn more</a>
-            </div>
             <div id="about__img">
                 <img src="images/hazelcat.jpeg">
+            </div>
+            <div class="about__textblock">
+                <h1 class="about__cursivetext--pink">About us</h1>
+                <p class="about__text">Our mission is to help homeless cats find their fur-ever home. Chance Cafe partners with local rescues to transform the typical adoption process.</p>
+                <p class="about__text">We provide a warm, relaxing place for our cats and humans to bond over a cup of coffee, toys, and snacks.</p>
+                
+                <a class="link" href="#">learn more</a>
             </div>
         </section>
     </div>
     
-    <footer>
-        <ul>
-            <li>menu</li>
-            <li>cats</li>
-            <li>reservations</li>
-            <li>about us</li>
-            <li>contact</li>
-            <li>careers</li>
-            <li>faq</li>
+    <footer class="footernav">
+        <ul class="footernav__list">
+            <li class="footernav__item"><a href="#"  class="footernav__link">menu</a></li>
+            <li class="footernav__item"><a href="#" class="footernav__link">cats</a></li>
+            <li class="footernav__item"><a href="#" class="footernav__link">reservations</a></li>
+            <li class="footernav__item"><a href="#" class="footernav__link">about us</a></li>
+            <li class="footernav__item"><a href="#" class="footernav__link">contact</a></li>
+            <li class="footernav__item"><a href="#" class="footernav__link">careers</a></li>
+            <li class="footernav__item"><a href="#" class="footernav__link">faq</a></li>
         </ul>
 
-        <ul>
+        <!-- <ul>
             <li>appointment only</li>
             <li>community guidelines</li>
-        </ul>
+        </ul> -->
 
-        <form>
-            <h2>Subscribe for updates</h2>
+        <form class="newsletter">
+            <h2 class="newsletter__cursivetext--white">Subscribe</h2>
             <label for="name">Name</label>
-            <input type="text" id="name">
+            <input type="text" id="name" placeholder="name">
 
             <label for="email">Email</label>
-            <input type="email" id="email">
-            <button type="submit">sign up</button>
+            <input type="email" id="email" placeholder="email">
+            <button type="submit" class="button--pink">sign up</button>
         </form>
     </footer>
     <script src="script.js"></script>

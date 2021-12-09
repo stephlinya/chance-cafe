@@ -24,20 +24,51 @@
     src: url(/fonts/Buffalo.otf);
 }
 
+body {
+    font-family: "Now-Regular", sans-serif;
+}
+
 h1 {
     font-weight: bold;
     color: white;
     font-size: 3.5rem;
 }
 
-.cursive,
-h2{
+.reservations__cursivetext--pink,
+.about__cursivetext--pink{
     font-family: "Buffalo", cursive;
     color: $primaryPink;
+    font-size: 3.5rem;
 }
 
-body {
-    font-family: "Now-Regular", sans-serif;
+.newsletter__cursivetext--white{
+    font-family: "Buffalo", cursive;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.reservations, 
+.about, .link{
+    text-align: center;
+}
+
+.reservations__text,
+.about__text {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+.link{
+    font-size: 1.5rem;
+    color: $primaryPink;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus{
+    font-weight: bold;
+    text-decoration: underline;
 }
 /* images */
 img {
@@ -129,18 +160,9 @@ img {
         width: 70%;
         z-index: 100;
     }
-    
-    #hero__btn {
-        background-color: $primaryPink;
-        color: white;
-        border: none;
-        margin-top: 2em;
-        padding: 0.75em 1em;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        cursor: pointer;
-    }
 }
+
+/* reservations and photo gallery */
 
 .main__photo-gallery{
     display: block;
@@ -168,4 +190,79 @@ img {
 
 .pink {
     color: $primaryPink;
+}
+
+/* button styles */
+
+.button {
+    border: 4px solid $primaryPink;
+    background-color: transparent;
+    color: $primaryPink;
+    font-size: 1.5rem;
+    margin-bottom: 2em;
+    padding: 0.75em 2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover, 
+.button:focus{
+    background-color: $primaryPink;
+    color: white;
+}
+
+.button--pink {
+    background-color: $primaryPink;
+    color: white;
+    border: none;
+    padding: 0.75em 1em;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/*footer styles */
+
+.footernav{
+    background-color: $accentGreen;
+    color: white;
+    padding: 3.5em 2em;
+    display: flex;
+    justify-content: space-between;
+
+    &__list{
+        width: 50%;
+        text-align: center;
+    }
+
+    &__item{
+        list-style: none;
+        margin-bottom: 1.5em;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: white;
+    }
+
+    &__link:hover, &__link:focus{
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
+
+.newsletter{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    display: none;
+}
+
+input{
+    margin-bottom: 1.5em;
+    padding: 1em 1.5em;
+    border-radius: 5px;
 }

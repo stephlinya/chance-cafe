@@ -22,20 +22,51 @@
   src: url(/fonts/Buffalo.otf);
 }
 
+body {
+  font-family: "Now-Regular", sans-serif;
+}
+
 h1 {
   font-weight: bold;
   color: white;
   font-size: 3.5rem;
 }
 
-.cursive,
-h2 {
+.reservations__cursivetext--pink,
+.about__cursivetext--pink {
   font-family: "Buffalo", cursive;
   color: #bb7968;
+  font-size: 3.5rem;
 }
 
-body {
-  font-family: "Now-Regular", sans-serif;
+.newsletter__cursivetext--white {
+  font-family: "Buffalo", cursive;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.reservations,
+.about, .link {
+  text-align: center;
+}
+
+.reservations__text,
+.about__text {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  margin-bottom: 1em;
+}
+
+.link {
+  font-size: 1.5rem;
+  color: #bb7968;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* images */
@@ -155,17 +186,7 @@ img {
   z-index: 100;
 }
 
-.hero #hero__btn {
-  background-color: #bb7968;
-  color: white;
-  border: none;
-  margin-top: 2em;
-  padding: 0.75em 1em;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
+/* reservations and photo gallery */
 .main__photo-gallery {
   display: block;
   margin-top: 2.5em;
@@ -190,5 +211,87 @@ img {
 
 .pink {
   color: #bb7968;
+}
+
+/* button styles */
+.button {
+  border: 4px solid #bb7968;
+  background-color: transparent;
+  color: #bb7968;
+  font-size: 1.5rem;
+  margin-bottom: 2em;
+  padding: 0.75em 2em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #bb7968;
+  color: white;
+}
+
+.button--pink {
+  background-color: #bb7968;
+  color: white;
+  border: none;
+  padding: 0.75em 1em;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/*footer styles */
+.footernav {
+  background-color: rgba(126, 153, 54, 0.6);
+  color: white;
+  padding: 3.5em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footernav__list {
+  width: 50%;
+  text-align: center;
+}
+
+.footernav__item {
+  list-style: none;
+  margin-bottom: 1.5em;
+}
+
+.footernav__link {
+  text-decoration: none;
+  color: white;
+}
+
+.footernav__link:hover, .footernav__link:focus {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.newsletter {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+label {
+  display: none;
+}
+
+input {
+  margin-bottom: 1.5em;
+  padding: 1em 1.5em;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=styles.css.map */
