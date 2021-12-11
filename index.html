@@ -8,18 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9c6e7c740c.js" crossorigin="anonymous"></script>
     <title>Chance Cafe</title>
 </head>
 <body>
     <header>
-        <img src="./images/Chance Cafe FINALlogo.png" alt="chance cafe logo" id="logo">
+        <img src="./images/Chance Cafe FINALlogo.png" alt="chance cafe logo" id="desktop-logo">
             <nav class="nav">
-                <div class="mobilenav">
-                    <i class="fas fa-search"></i> 
-                    <i class="fas fa-bars" id="mobilenav__burger"></i>
+                <div class="nav__placeholder">
+                    <div class="mobilenav flex sticky">
+                        <div class="mobile-logo">
+                            <img src="images/Chan.png" alt="logo" class="mobile-logo__img">
+                            <p class="mobile-logo__text">Chance Cafe</p>
+                        </div>
+                        <div class="mobilenav__icons">
+                            <i class="fas fa-bars" id="mobilenav__burger"></i>
+                        </div>
+                    </div>
                 </div>
                 
+
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#" class="nav__link">home</a></li>
                     <li class="nav__item"><a href="#"  class="nav__link">menu</a></li>

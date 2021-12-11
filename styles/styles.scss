@@ -26,36 +26,27 @@
 }
 
 @font-face {
-    font-family: "Buffalo", "Dancing Script", cursive;
-    src: url(../chance-cafe/fonts/Buffalo.otf);
+    font-family: "AstralSisters", "Dancing Script", cursive;
+    src: url(../chance-cafe/fonts/AstralSisters.ttf);
 }
 
 body {
-    font-family: "Now-Regular", sans-serif;
-}
-
-.hero__title {
-    font-weight: bold;
-    color: white;
-    font-size: 3.5rem;
-    margin-top: 0;
-    margin-bottom: 0.25em;
-    margin-bottom: 1.2em;
-    text-shadow: -4px 4px 2px $primaryPink;
+    font-family: "Now-Regular", "Poppins", sans-serif;
 }
 
 .reservations__cursivetext--pink,
 .about__cursivetext--pink{
-    font-family: "Buffalo", "Dancing Script", cursive;
+    font-family: "AstralSisters", "Dancing Script", cursive;
     color: $primaryPink;
     font-size: 3.5rem;
 }
 
 .newsletter__cursivetext--white{
-    font-family: "Buffalo", "Dancing Script", cursive;
+    font-family: "AstralSisters", "Dancing Script", cursive;
     font-size: 2.7rem;
     letter-spacing: 2px;
     text-align: center;
+    margin-bottom: 0.2em;
 }
 
 .reservations__text,
@@ -84,26 +75,42 @@ img {
     margin: 3em 0;
 }
 
-#logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
-    width: 60%;
-    max-width: 400px;
-}
+// #logo {
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     margin-bottom: 1em;
+//     width: 60%;
+//     max-width: 400px;
+// }
 
 /* navigation */
 .nav {
     font-size: 2rem;
+    margin-top: 0.5em;
 
     .nav__list{
-        @include flex(column, space-between, center);
+        @include flex(column, space-around, center);
         display: none;
         background-color: $accentGreen;
-        padding: 1em;
-        margin: 1em;
+        padding: 0.25em 0;
+        height: 100vh;
         text-align: center;
+    }
+
+    .nav__list--animate{
+        animation-duration: 700ms;
+        animation-name: slidein;
+    }
+
+    @keyframes slidein{
+        from {
+            margin-left: 100%;
+          }
+        
+          to {
+            margin-left: 0%;
+          }
     }
 
     .nav__item {
@@ -119,18 +126,64 @@ img {
         border-bottom: 1px solid white;
         font-weight: bold;
     }
-    .fa-search, 
-    .fa-bars {
+
+    &__placeholder{
+        height: 65px;
+    }
+}
+
+.flex{
+    @include flex(row, space-between, center);
+    padding: 5px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+#desktop-logo {
+    display: none;
+}
+
+.mobile-logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__img{
+        width: 25%;
+        margin: 0;
+        transform: rotate(25deg);
+        display: inline-block;
+        margin: 5px;
+    }
+
+    &__text{
+        font-size: 2rem;
+        font-family: "AstralSisters", "Dancing Script", cursive;
         color: $primaryPink;
-        padding-right: 0.5em;
-        cursor: pointer;
+        display: inline-block;
     }
+}
+
+.mobilenav{
+    background-color: white;
+    z-index: 100;
+}
+
+.fa-search, 
+.fa-bars {
+    color: $primaryPink;
+    padding-right: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+}
     
-    .mobilenav{
-        @include flex(row, flex-end, center);
-        margin-bottom: 0.75em;
-        margin-right: 0;
-    }
+.mobilenav__icons{
+    @include flex(row, flex-start, center);
+    margin: 5px;
 }
 
 /* hero */ 
@@ -148,16 +201,28 @@ img {
         width: 100%;
         height: 100%;
         background-size: cover;
-        background-position: right 25% bottom 35%;
+        background-position: right 25% bottom 0%;
     }
     
     &__text {
         position: absolute; 
-        padding: 4em;
+        padding-top: 6em;
+        padding-left: 2em;
         width: 70%;
-        z-index: 100;
+        z-index: 2;
+    }
+
+    &__title{
+        font-weight: bold;
+        color: white;
+        font-size: 3.5rem;
+        margin-top: 0;
+        margin-bottom: 0.25em;
+        margin-bottom: 1.2em;
+        text-shadow: -4px 4px 4px $primaryPink;
     }
 }
+
 
 /* reservations and photo gallery */
 
@@ -180,8 +245,8 @@ img {
     opacity: 40%;
 }
 
-.pink {
-    color: $primaryPink;
+.green {
+    color: $accentGreen;
 }
 
 /* button styles */
@@ -257,12 +322,12 @@ img {
 
 .newsletter{
     width: 50%;
-    display: flex;
-    flex-direction: column;
+    @include flex(column, center, center);
 
     .button--pink {
         margin: 0 auto;
         width: 70%;
+        max-width: 150px;
         font-size: 1rem;
         padding: 0.5em 0.5em;
     }
@@ -283,3 +348,24 @@ input{
     color: $primaryPink;
 }
 
+/*desktop styles*/
+@media(min-width: 600px){
+    .mobilenav__icons{
+        display: none;
+    }
+
+    #desktop-logo{
+        display: block;
+        width: 30%;
+    }
+
+    .logo{
+        @include flex(column, space-around, center);
+    }
+
+    .nav__list{
+        display: block;
+        color: $primaryPink;
+        z-index: 101;
+    }
+}
