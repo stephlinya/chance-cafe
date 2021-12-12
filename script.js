@@ -1,4 +1,4 @@
-const mobileNav = document.getElementById("mobilenav__burger");
+const mobileNav = document.getElementById("mobilenav__icons--burger");
 const navList = document.querySelector(".nav__list");
 
 mobileNav.addEventListener("click", function (){

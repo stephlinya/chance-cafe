@@ -10,24 +10,24 @@
 /* typography */ 
 @font-face {
     font-family: "Now-Regular", sans-serif;
-    src: url(../chance-cafe/fonts/Now-Regular.otf);
+    src: url(../fonts/Now-Regular.otf);
 }
 
 @font-face {
     font-family: "Now-Bold", sans-serif;
-    src: url(../chance-cafe/fonts/Now-Bold.otf);
+    src: url("../fonts/Now-Bold.otf");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Now-Black", sans-serif;
-    src: url(../chance-cafe/fonts/Now-Bold.otf);
+    src: url("../fonts/Now-Bold.otf");
     font-weight: 900;
 }
 
 @font-face {
-    font-family: "AstralSisters", "Dancing Script", cursive;
-    src: url(../chance-cafe/fonts/AstralSisters.ttf);
+    font-family: "Astral-Sisters" cursive;
+    src: url("../fonts/Astral-Sisters.ttf")
 }
 
 body {
@@ -36,13 +36,13 @@ body {
 
 .reservations__cursivetext--pink,
 .about__cursivetext--pink{
-    font-family: "AstralSisters", "Dancing Script", cursive;
+    font-family: "Astral-Sisters", "Dancing Script", cursive;
     color: $primaryPink;
     font-size: 3.5rem;
 }
 
 .newsletter__cursivetext--white{
-    font-family: "AstralSisters", "Dancing Script", cursive;
+    font-family: "Astral-Sisters", "Dancing Script", cursive;
     font-size: 2.7rem;
     letter-spacing: 2px;
     text-align: center;
@@ -87,7 +87,6 @@ img {
 /* navigation */
 .nav {
     font-size: 2rem;
-    margin-top: 0.5em;
 
     .nav__list{
         @include flex(column, space-around, center);
@@ -128,7 +127,8 @@ img {
     }
 
     &__placeholder{
-        height: 65px;
+        height: 90px;
+        border: 1px solid red;
     }
 }
 
@@ -139,51 +139,64 @@ img {
 
 .sticky {
     position: fixed;
+    align-self: flex-send;
     top: 0;
-    width: 100vw;
+    left: 0;
 }
 
 #desktop-logo {
     display: none;
 }
 
-.mobile-logo{
+.mobilenav__logo{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
-    &__img{
-        width: 25%;
-        margin: 0;
-        transform: rotate(25deg);
-        display: inline-block;
-        margin: 5px;
-    }
-
-    &__text{
-        font-size: 2rem;
-        font-family: "AstralSisters", "Dancing Script", cursive;
-        color: $primaryPink;
-        display: inline-block;
-    }
 }
+
+.mobilenav__logo--img{
+    width: 25%;
+    margin: 0;
+    transform: rotate(25deg);
+    display: inline-block;
+    margin: 5px;
+}
+
+.mobilenav__logo--text{
+    font-size: 2rem;
+    font-family: "Astral-Sisters", "Dancing Script", cursive;
+    color: $primaryPink;
+    display: inline-block;
+}
+
 
 .mobilenav{
     background-color: white;
     z-index: 100;
 }
-
-.fa-search, 
-.fa-bars {
-    color: $primaryPink;
-    padding-right: 0.5em;
-    cursor: pointer;
-    display: inline-block;
-}
     
 .mobilenav__icons{
-    @include flex(row, flex-start, center);
+    width: 0;
+}
+
+#mobilenav__icons--burger{
+    color: $primaryPink;
+    padding-right: 0.5em;
+    margin-right: 0.5em;
+    cursor: pointer;
+    display: inline;
+    position: relative;
+}
+
+#mobilenav__icons--burger::before {
+    color: $primaryPink;
+    padding-right: 0.5em;
     margin: 5px;
+    cursor: pointer;
+    display: inline;
+    position: absolute;
+    top: -5px;
+    right: 0;
 }
 
 /* hero */ 
@@ -253,6 +266,7 @@ img {
 
 .button {
     border: 4px solid $primaryPink;
+    font-family: "Now", "Poppins", sans-serif;
     background-color: transparent;
     color: $primaryPink;
     font-size: 1.5rem;
@@ -269,6 +283,7 @@ img {
 
 .button--pink {
     background-color: $primaryPink;
+    font-family: "Now", "Poppins", sans-serif;
     color: white;
     border: none;
     padding: 0.75em 1em;
@@ -351,6 +366,9 @@ input{
 /*desktop styles*/
 @media(min-width: 600px){
     .mobilenav__icons{
+        display: none;
+    }
+    .mobilenav__logo{
         display: none;
     }
 
