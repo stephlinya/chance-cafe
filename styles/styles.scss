@@ -90,14 +90,14 @@ img {
 
     .nav__list{
         @include flex(column, space-around, center);
-        display: none;
         background-color: $accentGreen;
         padding: 0.25em 0;
         height: 100vh;
         text-align: center;
+        display: none;
     }
 
-    .nav__list--animate{
+    .nav__list--animatein{
         animation-duration: 700ms;
         animation-name: slidein;
     }
@@ -128,7 +128,6 @@ img {
 
     &__placeholder{
         height: 90px;
-        border: 1px solid red;
     }
 }
 

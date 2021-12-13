@@ -92,14 +92,14 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
   background-color: rgba(126, 153, 54, 0.6);
   padding: 0.25em 0;
   height: 100vh;
   text-align: center;
+  display: none;
 }
 
-.nav .nav__list--animate {
+.nav .nav__list--animatein {
   -webkit-animation-duration: 700ms;
           animation-duration: 700ms;
   -webkit-animation-name: slidein;
@@ -140,7 +140,6 @@ img {
 
 .nav__placeholder {
   height: 90px;
-  border: 1px solid red;
 }
 
 .flex {

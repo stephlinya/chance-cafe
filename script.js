@@ -6,7 +6,7 @@ mobileNav.addEventListener("click", function (){
         navList.style.display ="none";
     } else {
         navList.style.display="flex";
-        navList.classList.add("nav__list--animate")
+        navList.classList.add("nav__list--animatein");
     }
 })
 
@@ -19,7 +19,6 @@ window.onscroll = function() {
 } 
 
 const sticky = mobileNav.offsetTop;
-
 
 
 let dot = document.getElementsByClassName("fa-circle");
@@ -61,6 +60,10 @@ setInterval(function(){
 }, 4000);
     
 
+dot[0].addEventListener("click", function(){
+    imgs[0].style.display = "block";
+    imgs[slideIndex].style.display = "none";
+})
 
 
         
