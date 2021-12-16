@@ -1,5 +1,11 @@
 const mobileNav = document.getElementById("mobilenav__icons--burger");
 const navList = document.querySelector(".nav__list");
+const sticky = mobileNav.offsetTop;
+let dot = document.getElementsByClassName("fa-circle");
+let slides = document.getElementsByClassName("slides");
+let imgs = document.getElementsByClassName("gallery-img");
+let slideIndex = 0;
+let dotIndex = 0;
 
 if($(window).width() <= 600){
     mobileNav.addEventListener("click", function (){
@@ -18,15 +24,6 @@ if($(window).width() <= 600){
             mobileNav.classList.remove("sticky");
         }
     } 
-    
-    const sticky = mobileNav.offsetTop;
-    
-    
-    let dot = document.getElementsByClassName("fa-circle");
-    let slides = document.getElementsByClassName("slides");
-    let imgs = document.getElementsByClassName("gallery-img");
-    let slideIndex = 0;
-    let dotIndex = 0;
     
     setInterval(function(){ 
         
