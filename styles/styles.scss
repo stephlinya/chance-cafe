@@ -65,8 +65,16 @@ body {
 
 .link:hover,
 .link:focus{
-    font-weight: 900;
+    font-family: "Now-Black", "Poppins", sans-serif;
+    font-weight: 700;
     text-decoration: underline;
+}
+
+@media (min-width: 600px){
+    .reservations__cursivetext--pink,
+    .about__cursivetext--pink {
+        margin-bottom: 0.7em;
+    }
 }
 /* images */
 img {
@@ -119,8 +127,9 @@ img {
     }
     
     .nav__link:hover, .nav__link:focus {
+        font-family: "Now-Black", "Poppins", sans-serif;
+        font-weight: 700;
         border-bottom: 1px solid white;
-        font-weight: bold;
     }
 
     &__placeholder{
@@ -384,12 +393,17 @@ img {
 }
 
 @media (min-width: 600px) {
+    .container {
+        padding: 4.5em 2em;
+    }
+    
     .main{
-        @include flex(row, space-between, center);
+        padding-top: 3em;
+        @include flex(row, space-around, center);
     }
     
     .reservations{
-        width: 50%;
+        width: 30%;
     }
 
     .gallery-img-mobile {
@@ -397,11 +411,11 @@ img {
     }
 
     .main__photo-gallery{
-        padding: var(--gap);
+        margin-left: 0;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        width: 50%;
+        grid-template-columns: repeat(3, 2fr);
+        gap: 0.75rem;
+        width: 60%;
     }
     
     .slides {
@@ -411,6 +425,7 @@ img {
 
     .gallery-img {
         object-fit: cover;
+        height: 100%;
     }
 
     .slides__grid--col{
@@ -423,6 +438,28 @@ img {
 
     .dots {
         display: none;
+    }
+}
+
+/* about styles */
+
+@media (min-width: 600px){
+    .about { 
+        @include flex(row-reverse, space-around, center);
+        padding-top: 6em;
+        padding-bottom: 3em;
+        margin: 0 auto;
+        z-index: auto;
+        width: 70%;
+
+        &__img {
+            width: 40%;
+        }
+
+        &__textblock {
+            width: 40%;
+            text-align: left;
+        }
     }
 }
 
@@ -479,6 +516,17 @@ img {
         background-color: $primaryPink;
         color: white;
     }
+
+    #button--pinkfill {
+        background-color: $primaryPink;
+        color: white;
+    }
+
+    #button--pinkfill:hover,
+    #button--pinkfill:focus {
+        background-color: white;
+        color: $primaryPink;
+    }
     
 }
 
@@ -509,15 +557,27 @@ img {
     }
 
     &__link:hover, &__link:focus{
+        font-family: "Now-Black", "Poppins", sans-serif;
+        font-weight: 700;
         text-decoration: underline;
-        font-weight: bold;
+    }
+}
+
+@media (min-width: 600px){
+    .footernav{
+        padding: 2.5em 7em;
+    }
+
+    .footernav__list {
+        @include flex(row, space-around, center);
+        width: 40%;
     }
 }
 
 /* form */ 
 
 .newsletter{
-    width: 50%;
+    width: 60%;
     @include flex(column, center, center);
 
     .button--pink {
@@ -542,4 +602,10 @@ input{
 
 ::placeholder {
     color: $primaryPink;
+}
+
+@media (min-width: 600px){
+    input {
+        width: 50%;
+    }
 }

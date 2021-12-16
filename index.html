@@ -81,7 +81,7 @@
         </main>
             
        <section class="about">
-            <div id="about__img">
+            <div class="about__img">
                 <img src="images/hazelcat.jpeg">
             </div>
             <div class="about__textblock">
@@ -96,28 +96,28 @@
     
     <footer class="footernav">
         <ul class="footernav__list">
-            <li class="footernav__item"><a href="#"  class="footernav__link">menu</a></li>
-            <li class="footernav__item"><a href="#" class="footernav__link">cats</a></li>
-            <li class="footernav__item"><a href="#" class="footernav__link">reservations</a></li>
-            <li class="footernav__item"><a href="#" class="footernav__link">about us</a></li>
-            <li class="footernav__item"><a href="#" class="footernav__link">contact</a></li>
-            <li class="footernav__item"><a href="#" class="footernav__link">careers</a></li>
-            <li class="footernav__item"><a href="#" class="footernav__link">faq</a></li>
+            <div class="footernav__col1">
+                <li class="footernav__item"><a href="#"  class="footernav__link">menu</a></li>
+                <li class="footernav__item"><a href="#" class="footernav__link">cats</a></li>
+                <li class="footernav__item"><a href="#" class="footernav__link">reservations</a></li>
+                <li class="footernav__item"><a href="#" class="footernav__link">about</a></li>
+            </div>
+            
+            <div class="footernav__col2">
+                <li class="footernav__item"><a href="#" class="footernav__link">contact</a></li>
+                <li class="footernav__item"><a href="#" class="footernav__link">careers</a></li>
+                <li class="footernav__item"><a href="#" class="footernav__link">faq</a></li>
+            </div>
         </ul>
 
-        <!-- <ul>
-            <li>appointment only</li>
-            <li>community guidelines</li>
-        </ul> -->
-
-        <form class="newsletter">
+        <form class="newsletter" action="#" method="POST">
             <h2 class="newsletter__cursivetext--white">Subscribe</h2>
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="name">
 
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="email">
-            <button type="submit" class="button--pink">sign up</button>
+            <button type="submit" class="button--pink" id="button--pinkfill">sign up</button>
         </form>
     </footer>
     <script src="script.js"></script>

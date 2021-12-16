@@ -6,6 +6,7 @@ let slides = document.getElementsByClassName("slides");
 let imgs = document.getElementsByClassName("gallery-img");
 let slideIndex = 0;
 let dotIndex = 0;
+let newsletter = document.getElementsByClassName("newsletter");
 
 if($(window).width() <= 600){
     mobileNav.addEventListener("click", function (){
@@ -64,6 +65,7 @@ if($(window).width() <= 600){
     })
     
 }
+
 
 
 
