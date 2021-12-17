@@ -8,7 +8,7 @@ let slideIndex = 0;
 let dotIndex = 0;
 let newsletter = document.getElementsByClassName("newsletter");
 
-if($(window).width() <= 600){
+if($(window).width() <= 750){
     mobileNav.addEventListener("click", function (){
         if (navList.style.display ==="flex"){
             navList.style.display ="none";

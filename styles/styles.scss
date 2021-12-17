@@ -70,7 +70,7 @@ body {
     text-decoration: underline;
 }
 
-@media (min-width: 600px){
+@media (min-width: 750px){
     .reservations__cursivetext--pink,
     .about__cursivetext--pink {
         margin-bottom: 0.7em;
@@ -83,7 +83,7 @@ img {
     margin: 3em 0;
 }
 
-@media (min-width: 600px){
+@media (min-width: 750px){
     img{
         margin: 0;
     }
@@ -96,8 +96,8 @@ img {
     &__list{
         @include flex(column, space-around, center);
         background-color: $accentGreen;
-        padding: 0.25em 0;
-        height: 100vh;
+        padding: 0.5em 0;
+        height: 80vh;
         text-align: center;
         display: none;
     }
@@ -137,7 +137,7 @@ img {
     }
 }
 
-@media(min-width: 600px){
+@media(min-width: 750px){
     .nav{
         @include flex(row, space-between, center);
         margin-bottom: 1.2em;
@@ -215,6 +215,7 @@ img {
 .mobilenav{
     background-color: white;
     z-index: 100;
+    width: 100%;
 }
     
 .mobilenav__icons{
@@ -241,7 +242,7 @@ img {
     right: 0;
 }
 
-@media (min-width: 600px){
+@media (min-width: 750px){
     .logo{
         @include flex(column, space-around, center);
     }
@@ -308,7 +309,7 @@ img {
     }
 }
 
-@media (min-width: 600px){
+@media (min-width: 750px){
     .hero {
         @include flex(row, space-between, center);
         position: static;
@@ -320,7 +321,7 @@ img {
         }
 
         &__imgdiv{
-            width: 60%;
+            flex-grow: 2;
         }
 
         &__text{
@@ -338,7 +339,7 @@ img {
             position: absolute;
             height: inherit;
             width: inherit;
-            opacity: 0.5;
+            opacity: 0.3;
             top: 0;
             right: 0;
             bottom: -12em;
@@ -346,7 +347,9 @@ img {
         }
 
         &__text--container {
-            width: 40%;
+            flex-grow: 1;
+            flex-basis: 400px;
+            padding: 0 1em;
             margin: 0 auto;
         }
 
@@ -392,7 +395,7 @@ img {
     color: $accentGreen;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 750px) {
     .container {
         padding: 4.5em 2em;
     }
@@ -443,7 +446,30 @@ img {
 
 /* about styles */
 
-@media (min-width: 600px){
+.about{
+    &__textblock {
+        position: relative;
+    }
+
+    &__textblock::before{
+        content: "";
+        background-image: url(../images/pawprints-b.png);
+        background-position: bottom right;
+        background-size: 70%;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        opacity: 0.3;
+        top: 0;
+        right: 1em;
+        bottom: -5em;
+        left: 0;
+    }
+}
+
+
+@media (min-width: 750px){
     .about { 
         @include flex(row-reverse, space-around, center);
         padding-top: 6em;
@@ -458,7 +484,25 @@ img {
 
         &__textblock {
             width: 40%;
+            height: auto;
             text-align: left;
+            position: relative;
+            z-index: auto;
+        }
+
+        &__textblock::before {
+            content: "";
+            background-image: url(../images/pawprints-b.png);
+            background-position: top left;
+            background-size: 120%;
+            opacity: 0.3;
+            width: 100%;
+            background-repeat: repeat;
+            position: absolute;
+            top: -7em;
+            right: 0;
+            bottom: 5em;
+            left: -10em;
         }
     }
 }
@@ -502,7 +546,7 @@ img {
     color: $primaryPink;
 }
 
-@media (min-width: 600px){
+@media (min-width: 750px){
     .button--pink{
         border: 4px solid $primaryPink;
         background-color: transparent;
@@ -541,6 +585,7 @@ img {
 
     &__list{
         text-align: center;
+        flex-grow: 1;
     }
 
     &__item{
@@ -563,7 +608,7 @@ img {
     }
 }
 
-@media (min-width: 600px){
+@media (min-width: 750px){
     .footernav{
         padding: 2.5em 7em;
     }
@@ -577,7 +622,7 @@ img {
 /* form */ 
 
 .newsletter{
-    width: 60%;
+    flex-grow: 2;
     @include flex(column, center, center);
 
     .button--pink {
@@ -598,13 +643,14 @@ input{
     padding: 1em 1.5em;
     border-radius: 5px;
     border: none;
+    width: 65%;
 }
 
 ::placeholder {
     color: $primaryPink;
 }
 
-@media (min-width: 600px){
+@media (min-width: 750px){
     input {
         width: 50%;
     }
