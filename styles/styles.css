@@ -156,6 +156,7 @@ img {
 
 .mobilenav {
   background-color: white;
+  z-index: 110;
   width: 100%;
 }
 
