@@ -243,6 +243,9 @@ img {
     font-weight: 700;
     text-decoration: underline;
   }
+  .mobilenav__toggle {
+    display: none;
+  }
 }
 
 .flex {
