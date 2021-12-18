@@ -1,4 +1,4 @@
-const mobileNav = document.getElementById("mobilenav__icons--burger");
+const mobileNav = document.getElementsByClassName("mobilenav__toggle--burger");
 const navList = document.querySelector(".nav__list");
 const sticky = mobileNav.offsetTop;
 let dot = document.getElementsByClassName("fa-circle");
@@ -9,20 +9,24 @@ let dotIndex = 0;
 let newsletter = document.getElementsByClassName("newsletter");
 
 if($(window).width() <= 750){
-    mobileNav.addEventListener("click", function (){
-        if (navList.style.display ==="flex"){
-            navList.style.display ="none";
-        } else {
-            navList.style.display="flex";
-            navList.classList.add("nav__list--animatein");
-        }
-    })
+    // mobileNav.addEventListener("click", function (){
+    //     if (navList.style.display ==="flex"){
+    //         navList.style.display ="none";
+    //     } else {
+    //         navList.style.display="flex";
+    //         navList.classList.add("nav__list--animatein");
+    //     }
+    // })
+
+    $(".mobilenav__toggle").click(function(){
+        console.log("yay");
+        $(".nav__list").toggleClass("nav__list--open", 500);
+        $(".nav__list").toggleClass("open");
+    });
     
     window.onscroll = function() {
         if (window.pageYOffset >= sticky) {
-            mobileNav.classList.add("sticky")
-        } else {
-            mobileNav.classList.remove("sticky");
+            $(".mobilenav").toggleClass("sticky");
         }
     } 
     

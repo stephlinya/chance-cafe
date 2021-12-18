@@ -90,7 +90,7 @@ img {
 
 /* navigation */
 .nav {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .nav__list {
@@ -107,17 +107,14 @@ img {
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(126, 153, 54, 0.6);
-  padding: 0.5em 0;
-  height: 80vh;
+  margin-top: 5%;
+  height: 0;
   text-align: center;
-  display: none;
+  overflow: hidden;
 }
 
-.nav__list--animatein {
-  -webkit-animation-duration: 700ms;
-          animation-duration: 700ms;
-  -webkit-animation-name: slidein;
-          animation-name: slidein;
+.nav__list--open {
+  height: 50vh;
 }
 
 @-webkit-keyframes slidein {
@@ -154,7 +151,41 @@ img {
 }
 
 .nav__placeholder {
-  height: 90px;
+  height: 100px;
+}
+
+.mobilenav {
+  background-color: white;
+  width: 100%;
+}
+
+.mobilenav__toggle {
+  padding: 1em;
+  cursor: pointer;
+}
+
+.mobilenav__toggle--burger, .mobilenav__toggle--burger::before, .mobilenav__toggle--burger::after {
+  content: "";
+  display: block;
+  background-color: #bb7968;
+  width: 1.5em;
+  height: 4px;
+  border-radius: 3px;
+}
+
+.mobilenav__toggle--burger::before {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+.mobilenav__toggle--burger::after {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+/* begin working here for transition */
+.open .mobilenav__toggle--burger::before {
+  opacity: 0;
 }
 
 @media (min-width: 750px) {
@@ -233,8 +264,6 @@ img {
 
 .sticky {
   position: fixed;
-  -ms-flex-item-align: flex-send;
-      align-self: flex-send;
   top: 0;
   left: 0;
 }
@@ -271,36 +300,6 @@ img {
   display: inline-block;
 }
 
-.mobilenav {
-  background-color: white;
-  z-index: 100;
-  width: 100%;
-}
-
-.mobilenav__icons {
-  width: 0;
-}
-
-#mobilenav__icons--burger {
-  color: #bb7968;
-  padding-right: 0.5em;
-  margin-right: 0.5em;
-  cursor: pointer;
-  display: inline;
-  position: relative;
-}
-
-#mobilenav__icons--burger::before {
-  color: #bb7968;
-  padding-right: 0.5em;
-  margin: 5px;
-  cursor: pointer;
-  display: inline;
-  position: absolute;
-  top: -5px;
-  right: 0;
-}
-
 @media (min-width: 750px) {
   .logo {
     display: -webkit-box;
@@ -322,9 +321,6 @@ img {
   .mobilenav {
     background-color: transparent;
     z-index: auto;
-  }
-  .mobilenav__icons {
-    display: none;
   }
   .mobilenav__logo {
     -webkit-box-orient: vertical;
