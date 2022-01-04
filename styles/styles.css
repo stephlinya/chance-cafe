@@ -774,20 +774,35 @@ input {
 }
 
 /* cats page scss */
+.card-container {
+  margin: 1em auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  row-gap: 30px;
+}
+
 .card {
   background-color: #bb7968;
+  width: 50%;
   border-radius: 5px;
-  width: 30%;
   position: relative;
   background-color: #bb7968;
-  padding: 1em;
+  padding: 0 0 1em 0;
+}
+
+.card__imgdiv {
+  height: 80%;
+  border: 3px solid red;
 }
 
 .card__img {
-  width: 50%;
-  height: 200px;
+  width: 100%;
+  height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
-  position: absolute;
 }
 /*# sourceMappingURL=styles.css.map */

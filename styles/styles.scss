@@ -683,19 +683,30 @@ input{
 }
 
 /* cats page scss */
+.card-container { 
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+}
 
 .card {
     background-color: $primaryPink;
+    width: 50%;
     border-radius: 5px;
-    width: 30%;
     position:relative;
     background-color: $primaryPink;
-    padding: 1em;
-    
-    &__img {
-        width: 50%;
-        height: 200px;
+    padding: 0 0 1em 0;
+
+    &__imgdiv{
+        height: 80%;
+        border: 3px solid red;
+    }
+
+    &__img{
+        width: 100%;
+        height: inherit;
         object-fit: cover;
-        position: absolute;
     }
 }
