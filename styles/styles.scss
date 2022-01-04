@@ -327,7 +327,7 @@ img {
         margin-top: 0;
         margin-bottom: 0.25em;
         margin-bottom: 1.2em;
-        text-shadow: -4px 4px 4px $primaryPink;
+        text-shadow: 0px 0px 8px #aaaaaa;
     }
 
     .button--pink{
@@ -679,5 +679,23 @@ input{
 @media (min-width: 750px){
     input {
         width: 50%;
+    }
+}
+
+/* cats page scss */
+
+.card {
+    background-color: $primaryPink;
+    border-radius: 5px;
+    width: 30%;
+    position:relative;
+    background-color: $primaryPink;
+    padding: 1em;
+    
+    &__img {
+        width: 50%;
+        height: 200px;
+        object-fit: cover;
+        position: absolute;
     }
 }

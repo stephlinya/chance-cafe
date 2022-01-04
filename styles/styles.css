@@ -368,7 +368,7 @@ img {
   margin-top: 0;
   margin-bottom: 0.25em;
   margin-bottom: 1.2em;
-  text-shadow: -4px 4px 4px #bb7968;
+  text-shadow: 0px 0px 8px #aaaaaa;
 }
 
 .hero .button--pink {
@@ -771,5 +771,23 @@ input {
   input {
     width: 50%;
   }
+}
+
+/* cats page scss */
+.card {
+  background-color: #bb7968;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  background-color: #bb7968;
+  padding: 1em;
+}
+
+.card__img {
+  width: 50%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
 }
 /*# sourceMappingURL=styles.css.map */
