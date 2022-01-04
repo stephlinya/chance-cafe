@@ -32,8 +32,8 @@ body {
   font-family: "Now-Regular", "Poppins", sans-serif;
 }
 
-.reservations__cursivetext--pink,
-.about__cursivetext--pink {
+.cursivetext--pink,
+.cursivetext--pink {
   font-family: "Astral-Sisters", "Dancing Script", cursive;
   color: #bb7968;
   font-size: 3.5rem;
@@ -69,8 +69,8 @@ body {
 }
 
 @media (min-width: 750px) {
-  .reservations__cursivetext--pink,
-  .about__cursivetext--pink {
+  .cursivetext--pink,
+  .cursivetext--pink {
     margin-bottom: 0.7em;
   }
 }
@@ -232,6 +232,9 @@ img {
   }
   .nav__item {
     margin-right: 1em;
+  }
+  .nav__item:last-child {
+    margin-right: 1.5em;
   }
   .nav__link {
     font-family: "Now-Bold", "Poppins", sans-serif;
@@ -774,35 +777,102 @@ input {
 }
 
 /* cats page scss */
+/* cats page typography */
+.adoption__header {
+  text-align: center;
+}
+
+.adoption__title {
+  color: #bb7968;
+  font-size: 3rem;
+  margin: 0.5em 0;
+}
+
+.adoption__subtitle {
+  margin-bottom: 0.5em;
+}
+
+.adoption__info {
+  line-height: 2;
+  margin-bottom: 3.5em;
+}
+
+.wrapper {
+  width: 65%;
+  margin: 0 auto;
+}
+
 .card-container {
-  margin: 1em auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -webkit-column-gap: 30px;
-          column-gap: 30px;
-  row-gap: 30px;
+  display: block;
+  margin: 0 auto 4em auto;
+  padding: 0 3em;
 }
 
 .card {
-  background-color: #bb7968;
-  width: 50%;
+  width: 250px;
   border-radius: 5px;
   position: relative;
-  background-color: #bb7968;
+  margin: 0 auto;
   padding: 0 0 1em 0;
+  -webkit-box-shadow: 2px 2px 6px 0px #bb7968;
+          box-shadow: 2px 2px 6px 0px #bb7968;
 }
 
 .card__imgdiv {
-  height: 80%;
-  border: 3px solid red;
+  height: 60%;
+  overflow: hidden;
 }
 
 .card__img {
-  width: 100%;
-  height: inherit;
+  max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.card__info {
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.card:hover,
+.card:focus {
+  -webkit-box-shadow: 2px 2px 26px 0px #bb7968;
+          box-shadow: 2px 2px 26px 0px #bb7968;
+}
+
+@media (min-width: 650px) {
+  .card-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 2em;
+            column-gap: 2em;
+    row-gap: 3em;
+  }
+}
+
+@media (min-width: 950px) {
+  .card-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 2em;
+            column-gap: 2em;
+    row-gap: 3em;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

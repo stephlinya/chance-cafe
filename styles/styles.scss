@@ -34,8 +34,8 @@ body {
     font-family: "Now-Regular", "Poppins", sans-serif;
 }
 
-.reservations__cursivetext--pink,
-.about__cursivetext--pink{
+.cursivetext--pink,
+.cursivetext--pink{
     font-family: "Astral-Sisters", "Dancing Script", cursive;
     color: $primaryPink;
     font-size: 3.5rem;
@@ -71,8 +71,8 @@ body {
 }
 
 @media (min-width: 750px){
-    .reservations__cursivetext--pink,
-    .about__cursivetext--pink {
+    .cursivetext--pink,
+    .cursivetext--pink {
         margin-bottom: 0.7em;
     }
 }
@@ -104,7 +104,6 @@ img {
 
     &__list--open{
         height: 50vh;
-        // animation-name: slidein;
     }
 
     @keyframes slidein{
@@ -193,6 +192,11 @@ img {
         &__item {
             margin-right: 1em;
         }
+
+        &__item:last-child {
+            margin-right: 1.5em;
+        }
+        
         &__link{
             font-family: "Now-Bold", "Poppins", sans-serif;
             font-size: 1rem;
@@ -282,9 +286,6 @@ img {
         z-index: auto;
     }
 
-    // .mobilenav__icons{
-    //     display: none;
-    // }
     .mobilenav__logo{
         flex-direction: column;
         justify-content: space-around;
@@ -683,30 +684,85 @@ input{
 }
 
 /* cats page scss */
-.card-container { 
-    margin: 1em auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 30px;
-    row-gap: 30px;
+/* cats page typography */
+.adoption {
+    &__header {
+        text-align: center;
+    }
+
+    &__title {
+        color: $primaryPink;
+        font-size: 3rem;
+        margin: 0.5em 0;
+    }
+
+    &__subtitle {
+        margin-bottom: 0.5em;
+    }
+
+    &__info {
+        line-height: 2;
+        margin-bottom: 3.5em;
+    }
 }
+
+.wrapper {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.card-container {
+    display: block;
+    margin: 0 auto 4em auto;
+    padding: 0 3em;
+}
+
 
 .card {
-    background-color: $primaryPink;
-    width: 50%;
+    width: 250px;
     border-radius: 5px;
-    position:relative;
-    background-color: $primaryPink;
+    position: relative;
+    margin: 0 auto;
     padding: 0 0 1em 0;
+    box-shadow: 2px 2px 6px 0px $primaryPink;
 
-    &__imgdiv{
-        height: 80%;
-        border: 3px solid red;
+    &__imgdiv {
+        height: 60%;
+        overflow: hidden;
     }
 
-    &__img{
-        width: 100%;
-        height: inherit;
+    &__img {
+        max-width: 100%;
         object-fit: cover;
+       
+    }
+
+    &__info { 
+        padding: 2em;
+        @include flex(column, flex-start, flex-start);
     }
 }
+
+.card:hover, 
+.card:focus {
+    box-shadow: 2px 2px 26px 0px $primaryPink;
+}
+
+@media (min-width: 650px){
+    .card-container { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2em;
+        row-gap: 3em;
+    }
+}
+
+@media (min-width: 950px){
+    .card-container { 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2em;
+        row-gap: 3em;
+    }
+}
+
