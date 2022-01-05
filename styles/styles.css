@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Astral-Sisters" cursive;
-  src: url("../chance-cafe/fonts/Astral-Sisters.ttf");
+  src: url("../chance-cafe/fonts/Astral-Sisters.ttf"), url("../chance-cafe/fonts/astral-sisters-webfont.woff"), url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
 }
 
 body {
@@ -743,6 +743,10 @@ input {
   width: 65%;
 }
 
+input:focus {
+  outline-color: #cc8e7e;
+}
+
 ::-webkit-input-placeholder {
   color: #cc8e7e;
 }
@@ -889,15 +893,24 @@ input {
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 980px) {
+  .card-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 3em;
+            column-gap: 3em;
+    margin: 0 auto 3em auto;
+  }
+}
+
+@media (min-width: 1100px) {
   .card-container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-    -webkit-column-gap: 3em;
-            column-gap: 3em;
-    margin: 0 auto 3em auto;
   }
 }
 
