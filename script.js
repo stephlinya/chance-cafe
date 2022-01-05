@@ -9,15 +9,6 @@ let dotIndex = 0;
 let newsletter = document.getElementsByClassName("newsletter");
 
 if($(window).width() <= 750){
-    // mobileNav.addEventListener("click", function (){
-    //     if (navList.style.display ==="flex"){
-    //         navList.style.display ="none";
-    //     } else {
-    //         navList.style.display="flex";
-    //         navList.classList.add("nav__list--animatein");
-    //     }
-    // })
-
     $(".mobilenav__toggle").click(function(){
         console.log("yay");
         $(".nav__list").toggleClass("nav__list--open", 500);
@@ -70,7 +61,13 @@ if($(window).width() <= 750){
     
 }
 
+const adoptionChecklist = document.querySelector(".adoption__checklist");
+const checklistOverlay = document.querySelector(".overlay__checklist");
 
-
+adoptionChecklist.addEventListener("click", (e) => {
+    e.preventDefault();
+    // adoptionChecklist.classList.add("overlay__checklist");
+    // checklistOverlay.innerHTML = `<p style="z-index:3; color: white">heyyyyy</p>`
+});
 
         

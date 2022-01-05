@@ -61,6 +61,7 @@ body {
     font-size: 1.5rem;
     color: $primaryPink;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .link:hover,
@@ -196,7 +197,7 @@ img {
         &__item:last-child {
             margin-right: 1.5em;
         }
-        
+
         &__link{
             font-family: "Now-Bold", "Poppins", sans-serif;
             font-size: 1rem;
@@ -246,6 +247,7 @@ img {
 }
 
 .mobilenav__logo--text{
+    margin-top: -15px;
     font-size: 2rem;
     font-family: "Astral-Sisters", "Dancing Script", cursive;
     color: $primaryPink;
@@ -334,6 +336,7 @@ img {
     .button--pink{
         margin: 0 auto;
     }
+
 }
 
 @media (min-width: 750px){
@@ -357,21 +360,21 @@ img {
             width: 40%;
         }
 
-        &__text::before{
-            content: "";
-            background-image: url(../images/pawprints-b.png);
-            background-position: left bottom;
-            background-size: 70%;
-            background-repeat: no-repeat;
-            position: absolute;
-            height: inherit;
-            width: inherit;
-            opacity: 0.3;
-            top: 0;
-            right: 0;
-            bottom: -12em;
-            left: -5em;
-        }
+        // &__text::before{ button hover not working in hero because of this
+        //     content: "";
+        //     background-image: url(../images/pawprints-b.png);
+        //     background-position: left bottom;
+        //     background-size: 70%;
+        //     background-repeat: no-repeat;
+        //     position: absolute;
+        //     height: inherit;
+        //     width: inherit;
+        //     opacity: 0.3;
+        //     top: 0;
+        //     right: 0;
+        //     bottom: -12em;
+        //     left: -5em;
+        // }
 
         &__text--container {
             flex-grow: 1;
@@ -550,7 +553,7 @@ img {
 .button:hover, 
 .button:focus{
     background-color: $primaryPink;
-    color: white;
+    color: rgba(255, 255, 255, .7);
 }
 
 .button--pink {
@@ -569,7 +572,7 @@ img {
 .button--pink:focus{
     font-weight: bold;
     border: 4px solid $primaryPink;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .6);
     color: $primaryPink;
 }
 
@@ -595,7 +598,7 @@ img {
 
     #button--pinkfill:hover,
     #button--pinkfill:focus {
-        background-color: white;
+        background-color: rgba(255, 255, 255, .8);
         color: $primaryPink;
     }
     
@@ -605,7 +608,7 @@ img {
 
 .footernav{
     background-color: $accentGreen;
-    color: white;
+    color: rgba(255, 255, 255, 1);
     padding: 3.5em 2em;
     display: flex;
     justify-content: space-between;
@@ -625,11 +628,12 @@ img {
 
     &__link{
         text-decoration: none;
-        color: white;
+        color: rgba(255, 255, 255, .7);
     }
 
     &__link:hover, &__link:focus{
         font-family: "Now-Black", "Poppins", sans-serif;
+        color: rgba(255, 255, 255, 1);
         font-weight: 700;
         text-decoration: underline;
     }
@@ -666,6 +670,7 @@ label{
 }
 
 input{
+    background-color: rgba(255, 255, 255, .8);
     margin-bottom: 1.5em;
     padding: 1em 1.5em;
     border-radius: 5px;
@@ -688,46 +693,58 @@ input{
 .adoption {
     &__header {
         text-align: center;
+        background-image: url(../images/kittenwplant.jpg);
+        background-position: center;
+        height: 550px;
+        margin-bottom: 3em;
     }
 
     &__title {
-        color: $primaryPink;
         font-size: 3rem;
+        color: $accentGreen;
         margin: 0.5em 0;
+        padding: .6em 1.5em;
+        background-color: rgba(255, 255, 255, .5);
+        border-radius: 5px;
     }
 
     &__subtitle {
+        color: $primaryPink;
         margin-bottom: 0.5em;
     }
 
     &__info {
         line-height: 2;
+        text-align: center;
         margin-bottom: 3.5em;
     }
 }
 
 .wrapper {
     width: 65%;
+    height: 100%;
     margin: 0 auto;
+    @include flex(column, flex-end, center);
 }
 
 .card-container {
     display: block;
-    margin: 0 auto 4em auto;
-    padding: 0 3em;
+    width: 80%;
+    margin: 0 auto;
 }
 
 
 .card {
-    width: 250px;
+    width: 275px;
+    max-height: 450px;
     border-radius: 5px;
     position: relative;
-    margin: 0 auto;
+    margin: 1em auto;
     padding: 0 0 1em 0;
     box-shadow: 2px 2px 6px 0px $primaryPink;
 
     &__imgdiv {
-        height: 60%;
+        max-height: 60%;
         overflow: hidden;
     }
 
@@ -739,7 +756,16 @@ input{
 
     &__info { 
         padding: 2em;
-        @include flex(column, flex-start, flex-start);
+        font-size: 1.5rem;
+        @include flex(column, space-between, flex-start);
+    }
+
+    &__info > p {
+        margin: 0 auto 0.5em auto;
+    }
+
+    &__info > .link {
+        margin: 0 auto;
     }
 }
 
@@ -761,8 +787,18 @@ input{
     .card-container { 
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        column-gap: 2em;
-        row-gap: 3em;
+        column-gap: 3em;
+        margin-bottom: 3em;
     }
 }
+
+.overlay__checklist {
+    background-color: $accentGreen;
+    color: white;
+    width: 500px;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+}
+
 

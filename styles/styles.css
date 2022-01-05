@@ -35,7 +35,7 @@ body {
 .cursivetext--pink,
 .cursivetext--pink {
   font-family: "Astral-Sisters", "Dancing Script", cursive;
-  color: #bb7968;
+  color: #cc8e7e;
   font-size: 3.5rem;
 }
 
@@ -57,8 +57,9 @@ body {
 
 .link {
   font-size: 1.5rem;
-  color: #bb7968;
+  color: #cc8e7e;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .link:hover,
@@ -106,7 +107,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(126, 153, 54, 0.6);
+  background-color: #b0bf97;
   margin-top: 5%;
   height: 0;
   text-align: center;
@@ -168,7 +169,7 @@ img {
 .mobilenav__toggle--burger, .mobilenav__toggle--burger::before, .mobilenav__toggle--burger::after {
   content: "";
   display: block;
-  background-color: #bb7968;
+  background-color: #cc8e7e;
   width: 1.5em;
   height: 4px;
   border-radius: 3px;
@@ -225,7 +226,7 @@ img {
         -ms-flex-align: center;
             align-items: center;
     background-color: transparent;
-    color: #bb7968;
+    color: #cc8e7e;
     z-index: auto;
     height: auto;
     width: 50%;
@@ -239,7 +240,7 @@ img {
   .nav__link {
     font-family: "Now-Bold", "Poppins", sans-serif;
     font-size: 1rem;
-    color: #bb7968;
+    color: #cc8e7e;
     cursor: pointer;
   }
   .nav__link:hover, .nav__link:focus {
@@ -301,9 +302,10 @@ img {
 }
 
 .mobilenav__logo--text {
+  margin-top: -15px;
   font-size: 2rem;
   font-family: "Astral-Sisters", "Dancing Script", cursive;
-  color: #bb7968;
+  color: #cc8e7e;
   display: inline-block;
 }
 
@@ -410,21 +412,6 @@ img {
     z-index: auto;
     width: 40%;
   }
-  .hero__text::before {
-    content: "";
-    background-image: url(../images/pawprints-b.png);
-    background-position: left bottom;
-    background-size: 70%;
-    background-repeat: no-repeat;
-    position: absolute;
-    height: inherit;
-    width: inherit;
-    opacity: 0.3;
-    top: 0;
-    right: 0;
-    bottom: -12em;
-    left: -5em;
-  }
   .hero__text--container {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -439,7 +426,7 @@ img {
     margin-right: 0;
   }
   .hero__title {
-    color: #bb7968;
+    color: #cc8e7e;
     text-align: left;
     text-shadow: none;
   }
@@ -468,7 +455,7 @@ img {
 }
 
 .green {
-  color: rgba(126, 153, 54, 0.6);
+  color: #b0bf97;
 }
 
 @media (min-width: 750px) {
@@ -594,10 +581,10 @@ img {
 
 /* button styles */
 .button {
-  border: 4px solid #bb7968;
+  border: 4px solid #cc8e7e;
   font-family: "Now", "Poppins", sans-serif;
   background-color: transparent;
-  color: #bb7968;
+  color: #cc8e7e;
   font-size: 1.5rem;
   padding: 0.75em 2em;
   border-radius: 5px;
@@ -606,12 +593,12 @@ img {
 
 .button:hover,
 .button:focus {
-  background-color: #bb7968;
-  color: white;
+  background-color: #cc8e7e;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .button--pink {
-  background-color: #bb7968;
+  background-color: #cc8e7e;
   font-family: "Now", "Poppins", sans-serif;
   color: white;
   border: none;
@@ -625,38 +612,38 @@ img {
 .button--pink:hover,
 .button--pink:focus {
   font-weight: bold;
-  border: 4px solid #bb7968;
-  background-color: white;
-  color: #bb7968;
+  border: 4px solid #cc8e7e;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #cc8e7e;
 }
 
 @media (min-width: 750px) {
   .button--pink {
-    border: 4px solid #bb7968;
+    border: 4px solid #cc8e7e;
     background-color: transparent;
-    color: #bb7968;
+    color: #cc8e7e;
     text-align: center;
     float: right;
   }
   .button--pink:hover,
   .button--pink:focus {
-    background-color: #bb7968;
+    background-color: #cc8e7e;
     color: white;
   }
   #button--pinkfill {
-    background-color: #bb7968;
+    background-color: #cc8e7e;
     color: white;
   }
   #button--pinkfill:hover,
   #button--pinkfill:focus {
-    background-color: white;
-    color: #bb7968;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #cc8e7e;
   }
 }
 
 /*footer styles */
 .footernav {
-  background-color: rgba(126, 153, 54, 0.6);
+  background-color: #b0bf97;
   color: white;
   padding: 3.5em 2em;
   display: -webkit-box;
@@ -684,11 +671,12 @@ img {
 
 .footernav__link {
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .footernav__link:hover, .footernav__link:focus {
   font-family: "Now-Black", "Poppins", sans-serif;
+  color: white;
   font-weight: 700;
   text-decoration: underline;
 }
@@ -747,6 +735,7 @@ label {
 }
 
 input {
+  background-color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1.5em;
   padding: 1em 1.5em;
   border-radius: 5px;
@@ -755,19 +744,19 @@ input {
 }
 
 ::-webkit-input-placeholder {
-  color: #bb7968;
+  color: #cc8e7e;
 }
 
 :-ms-input-placeholder {
-  color: #bb7968;
+  color: #cc8e7e;
 }
 
 ::-ms-input-placeholder {
-  color: #bb7968;
+  color: #cc8e7e;
 }
 
 ::placeholder {
-  color: #bb7968;
+  color: #cc8e7e;
 }
 
 @media (min-width: 750px) {
@@ -780,46 +769,70 @@ input {
 /* cats page typography */
 .adoption__header {
   text-align: center;
+  background-image: url(../images/kittenwplant.jpg);
+  background-position: center;
+  height: 550px;
+  margin-bottom: 3em;
 }
 
 .adoption__title {
-  color: #bb7968;
   font-size: 3rem;
+  color: #b0bf97;
   margin: 0.5em 0;
+  padding: .6em 1.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
 }
 
 .adoption__subtitle {
+  color: #cc8e7e;
   margin-bottom: 0.5em;
 }
 
 .adoption__info {
   line-height: 2;
+  text-align: center;
   margin-bottom: 3.5em;
 }
 
 .wrapper {
   width: 65%;
+  height: 100%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card-container {
   display: block;
-  margin: 0 auto 4em auto;
-  padding: 0 3em;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .card {
-  width: 250px;
+  width: 275px;
+  max-height: 450px;
   border-radius: 5px;
   position: relative;
-  margin: 0 auto;
+  margin: 1em auto;
   padding: 0 0 1em 0;
-  -webkit-box-shadow: 2px 2px 6px 0px #bb7968;
-          box-shadow: 2px 2px 6px 0px #bb7968;
+  -webkit-box-shadow: 2px 2px 6px 0px #cc8e7e;
+          box-shadow: 2px 2px 6px 0px #cc8e7e;
 }
 
 .card__imgdiv {
-  height: 60%;
+  max-height: 60%;
   overflow: hidden;
 }
 
@@ -831,6 +844,7 @@ input {
 
 .card__info {
   padding: 2em;
+  font-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -838,18 +852,26 @@ input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
+.card__info > p {
+  margin: 0 auto 0.5em auto;
+}
+
+.card__info > .link {
+  margin: 0 auto;
+}
+
 .card:hover,
 .card:focus {
-  -webkit-box-shadow: 2px 2px 26px 0px #bb7968;
-          box-shadow: 2px 2px 26px 0px #bb7968;
+  -webkit-box-shadow: 2px 2px 26px 0px #cc8e7e;
+          box-shadow: 2px 2px 26px 0px #cc8e7e;
 }
 
 @media (min-width: 650px) {
@@ -870,9 +892,18 @@ input {
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-    -webkit-column-gap: 2em;
-            column-gap: 2em;
-    row-gap: 3em;
+    -webkit-column-gap: 3em;
+            column-gap: 3em;
+    margin-bottom: 3em;
   }
+}
+
+.overlay__checklist {
+  background-color: #b0bf97;
+  color: white;
+  width: 500px;
+  height: 100vh;
+  position: absolute;
+  z-index: 2;
 }
 /*# sourceMappingURL=styles.css.map */
