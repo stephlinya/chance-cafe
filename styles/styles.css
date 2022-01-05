@@ -767,6 +767,10 @@ input {
 
 /* cats page scss */
 /* cats page typography */
+.adoption {
+  max-width: 100vw;
+}
+
 .adoption__header {
   text-align: center;
   background-image: url(../images/kittenwplant.jpg);
@@ -815,7 +819,6 @@ input {
 }
 
 .card-container {
-  display: block;
   width: 80%;
   margin: 0 auto;
 }
@@ -894,7 +897,7 @@ input {
         grid-template-columns: repeat(4, 1fr);
     -webkit-column-gap: 3em;
             column-gap: 3em;
-    margin-bottom: 3em;
+    margin: 0 auto 3em auto;
   }
 }
 
