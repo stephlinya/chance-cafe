@@ -13,6 +13,8 @@ if($(window).width() <= 750){
         console.log("yay");
         $(".nav__list").toggleClass("nav__list--open", 500);
         $(".nav__list").toggleClass("open");
+        // $(".mobilenav__toggle--burger").toggleClass
+        $(".mobilenav__toggle--burger").removeClass(".mobilenav__toggle--burger")
     });
     
     window.onscroll = function() {
@@ -20,46 +22,49 @@ if($(window).width() <= 750){
             $(".mobilenav").toggleClass("sticky");
         }
     } 
-    
-    setInterval(function(){ 
-        
-        if (slideIndex === 0){
-            imgs[slides.length-1].style.display = "none";
-            imgs[slideIndex].style.display = "block";
-            slideIndex++;
-        } else if (slideIndex === slides.length-1){
-            imgs[slideIndex].style.display = "block";
-            imgs[slideIndex - 1].style.display = "none";
-            slideIndex = 0;
-        } else{
-            imgs[slideIndex].style.display = "block";
-            imgs[slideIndex - 1].style.display = "none";
-            slideIndex++;
-        } 
-        
-        if (dotIndex === 0){
-            dot[slides.length-1].classList.remove("green");
-            dot[dotIndex].classList.add("green");
-            dotIndex++;
-        } else if (dotIndex === slides.length-1){
-            dot[dotIndex].classList.add("green");
-            dot[dotIndex - 1].classList.remove("green");
-            dotIndex = 0;
-        } else {
-            dot[dotIndex].classList.add("green");
-            dot[dotIndex - 1].classList.remove("green");
-            dotIndex++;
-        }
-    
-    }, 4000);
-        
-    
-    dot[0].addEventListener("click", function(){
-        imgs[0].style.display = "block";
-        imgs[slideIndex].style.display = "none";
-    })
-    
 }
+
+$(function(){
+    if($('body').is('.landingpg')){
+        setInterval(function(){ 
+        
+            if (slideIndex === 0){
+                imgs[slides.length-1].style.display = "none";
+                imgs[slideIndex].style.display = "block";
+                slideIndex++;
+            } else if (slideIndex === slides.length-1){
+                imgs[slideIndex].style.display = "block";
+                imgs[slideIndex - 1].style.display = "none";
+                slideIndex = 0;
+            } else{
+                imgs[slideIndex].style.display = "block";
+                imgs[slideIndex - 1].style.display = "none";
+                slideIndex++;
+            } 
+            
+            if (dotIndex === 0){
+                dot[slides.length-1].classList.remove("green");
+                dot[dotIndex].classList.add("green");
+                dotIndex++;
+            } else if (dotIndex === slides.length-1){
+                dot[dotIndex].classList.add("green");
+                dot[dotIndex - 1].classList.remove("green");
+                dotIndex = 0;
+            } else {
+                dot[dotIndex].classList.add("green");
+                dot[dotIndex - 1].classList.remove("green");
+                dotIndex++;
+            }
+        
+        }, 4000);
+            
+        
+        dot[0].addEventListener("click", function(){
+            imgs[0].style.display = "block";
+            imgs[slideIndex].style.display = "none";
+        })
+    }
+  });
 
 const adoptionChecklist = document.querySelector(".adoption__checklist");
 const checklistOverlay = document.querySelector(".overlay__checklist");
