@@ -872,14 +872,13 @@ input:focus {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  border-radius: 5px 5px 0 0;
 }
 
 .card__img {
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -ms-flex-negative: 2;
-      flex-shrink: 2;
 }
 
 .card__info {
