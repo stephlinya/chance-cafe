@@ -13,8 +13,6 @@ if($(window).width() <= 750){
         console.log("yay");
         $(".nav__list").toggleClass("nav__list--open", 500);
         $(".nav__list").toggleClass("open");
-        // $(".mobilenav__toggle--burger").toggleClass
-        $(".mobilenav__toggle--burger").removeClass(".mobilenav__toggle--burger")
     });
     
     window.onscroll = function() {

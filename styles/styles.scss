@@ -168,6 +168,12 @@ img {
     }
 }
 
+.active {
+    width: 1.5em;
+    height: 4px;
+    border-radius: 3px;
+}
+
 /* begin working here for transition */
 .open .mobilenav__toggle--burger::before {
     opacity: 0;
@@ -726,12 +732,12 @@ input:focus {
     &__subtitle {
         color: $primaryPink;
         font-size: 2rem;
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
     }
 
     &__info {
         line-height: 2;
-        margin-bottom: 3.5em;
+        margin-bottom: 1.5em;
     }
 }
 
@@ -747,52 +753,49 @@ input:focus {
     width: 275px;
     max-height: 450px;
     border-radius: 5px;
-    position: relative;
-    margin: 0.5em auto;
+    margin: 1.5em auto;
     padding: 0 0 1em 0;
     box-shadow: 2px 2px 6px 0px $primaryPink;
+    @include flex(column, space-around, center);
 
     &__imgdiv {
-        height: 60%;
-        overflow: hidden;
+        @include flex(column, space-around, center);
         border: 1px solid blue;
-        margin: 0;
+        overflow: hidden;
     }
 
     &__img {
         max-width: 100%;
         object-fit: cover;
         border: 1px solid red;
-       
+        flex-shrink: 2;
     }
 
     &__info { 
-        padding: 2em;
+        padding: 2em 0;
         font-size: 1.5rem;
         @include flex(column, space-between, flex-start);
     }
 
     &__info > p {
-        margin: 0 auto 0.5em auto;
+        margin: 0 auto;
     }
 
     &__info > .link {
-        margin: 0 auto;
+        margin: 1em auto 0 auto;
     }
-}
-
-.card:last-child{
-    margin-bottom: 4em;
 }
 
 .card:hover, 
 .card:focus {
     box-shadow: 2px 2px 26px 0px $primaryPink;
+    cursor: pointer;
 }
 
 .card-container {
     width: 80%;
-    margin: 0 auto;
+    margin: 0.5em auto 2em auto;
+    @include flex(column, space-between, center);
 }
 
 @media (min-width: 650px){
@@ -804,30 +807,17 @@ input:focus {
     }
 
     .card {
+        margin: 1em auto;
+
         &__imgdiv {
-            max-height: 60%;
-            overflow: hidden;
-            margin: 0;
+        height: 60%;
+        margin: 0;
         }
     }
+
+    
     
 }
-
-// @media (min-width: 980px){
-//     .card-container { 
-//         display: grid;
-//         grid-template-columns: repeat(3, 1fr);
-//         column-gap: 3em;
-//         margin: 0 auto 3em auto;
-//     }
-// }
-
-// @media (min-width: 1100px){
-//     .card-container { 
-//         display: grid;
-//         grid-template-columns: repeat(4, 1fr);
-//     }
-// }
 
 .overlay__checklist {
     background-color: $accentGreen;

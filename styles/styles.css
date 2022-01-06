@@ -185,6 +185,12 @@ img {
           transform: translateY(4px);
 }
 
+.active {
+  width: 1.5em;
+  height: 4px;
+  border-radius: 3px;
+}
+
 /* begin working here for transition */
 .open .mobilenav__toggle--burger::before {
   opacity: 0;
@@ -802,12 +808,12 @@ input:focus {
 .adoption__subtitle {
   color: #cc8e7e;
   font-size: 2rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .adoption__info {
   line-height: 2;
-  margin-bottom: 3.5em;
+  margin-bottom: 1.5em;
 }
 
 .wrapper {
@@ -834,18 +840,39 @@ input:focus {
   width: 275px;
   max-height: 450px;
   border-radius: 5px;
-  position: relative;
-  margin: 0.5em auto;
+  margin: 1.5em auto;
   padding: 0 0 1em 0;
   -webkit-box-shadow: 2px 2px 6px 0px #cc8e7e;
           box-shadow: 2px 2px 6px 0px #cc8e7e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card__imgdiv {
-  height: 60%;
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 1px solid blue;
-  margin: 0;
+  overflow: hidden;
 }
 
 .card__img {
@@ -853,10 +880,12 @@ input:focus {
   -o-object-fit: cover;
      object-fit: cover;
   border: 1px solid red;
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
 }
 
 .card__info {
-  padding: 2em;
+  padding: 2em 0;
   font-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -874,26 +903,36 @@ input:focus {
 }
 
 .card__info > p {
-  margin: 0 auto 0.5em auto;
-}
-
-.card__info > .link {
   margin: 0 auto;
 }
 
-.card:last-child {
-  margin-bottom: 4em;
+.card__info > .link {
+  margin: 1em auto 0 auto;
 }
 
 .card:hover,
 .card:focus {
   -webkit-box-shadow: 2px 2px 26px 0px #cc8e7e;
           box-shadow: 2px 2px 26px 0px #cc8e7e;
+  cursor: pointer;
 }
 
 .card-container {
   width: 80%;
-  margin: 0 auto;
+  margin: 0.5em auto 2em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (min-width: 650px) {
@@ -907,9 +946,11 @@ input:focus {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .card {
+    margin: 1em auto;
+  }
   .card__imgdiv {
-    max-height: 60%;
-    overflow: hidden;
+    height: 60%;
     margin: 0;
   }
 }
