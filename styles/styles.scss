@@ -760,14 +760,12 @@ input:focus {
 
     &__imgdiv {
         @include flex(column, space-around, center);
-        border: 1px solid blue;
         overflow: hidden;
     }
 
     &__img {
         max-width: 100%;
         object-fit: cover;
-        border: 1px solid red;
         flex-shrink: 2;
     }
 

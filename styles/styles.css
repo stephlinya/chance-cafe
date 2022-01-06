@@ -871,7 +871,6 @@ input:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid blue;
   overflow: hidden;
 }
 
@@ -879,7 +878,6 @@ input:focus {
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 1px solid red;
   -ms-flex-negative: 2;
       flex-shrink: 2;
 }
