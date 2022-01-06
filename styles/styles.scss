@@ -721,10 +721,10 @@ input:focus {
     }
 
     &__title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: $accentGreen;
         margin: 0.5em 0;
-        padding: .6em 1.5em;
+        padding: .6em .6em;
         background-color: rgba(255, 255, 255, .5);
         border-radius: 5px;
     }
@@ -799,6 +799,11 @@ input:focus {
 }
 
 @media (min-width: 650px){
+    .adoption__title {
+        font-size: 3.2rem;
+        padding: .5em 1.4em;
+    }
+
     .card-container { 
         display: grid;
         grid-template-columns: repeat(auto-fit, 275px);
@@ -821,11 +826,31 @@ input:focus {
 
 .overlay__checklist {
     background-color: $accentGreen;
+    padding: 0 2em;
     color: white;
-    width: 500px;
-    height: 100vh;
+    width: 50%;
+    height: 100%;
     position: absolute;
     z-index: 2;
+    border-radius: 5px;
+}
+
+#requirement-list {
+    list-style-type: none;
+    font-weight: normal;
+}
+
+#close-requirements {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, .7);
+}
+
+#close-requirements:hover,
+#close-requirements:focus {
+    color: rgba(255, 255, 255, 1);
 }
 
 
