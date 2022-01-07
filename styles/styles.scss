@@ -784,6 +784,10 @@ input:focus {
     }
 }
 
+#small-link {
+    font-size: 1.2rem;
+}
+
 .card:hover, 
 .card:focus {
     box-shadow: 2px 2px 26px 0px $primaryPink;
@@ -906,4 +910,11 @@ input:focus {
     color: white;
 }
 
+
+body .modal-open {
+    overflow: visible;
+    position: fixed;
+    width: 100%;
+    height:100%;
+}
 

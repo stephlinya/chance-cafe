@@ -10,12 +10,12 @@ let newsletter = document.getElementsByClassName("newsletter");
 const aboutSection = document.querySelector(".about");
 const aboutLink = document.querySelector(".about-link");
 
-if (aboutLink){
-    aboutLink.addEventListener("click", (e) => {
-        aboutSection.scrollIntoView(alignToTop);
-        console.log("about");
-    });
-}
+// if (aboutLink){
+//     aboutLink.addEventListener("click", (e) => {
+//         aboutSection.scrollIntoView(alignToTop);
+//         console.log("about");
+//     });
+// }
 
 
 if($(window).width() <= 750){
@@ -82,8 +82,8 @@ const closeRequirements = document.getElementById("close-requirements");
 if (adoptionRequirements) {
     adoptionRequirements.addEventListener("click", (e) => {
         e.preventDefault();
+        const scrollPosition = window.pageYOffset;
         document.body.classList.add("modal-open");
-        const scrollPosition = window.scrollY;
         overlay.style.display = "block";
         checklistOverlay.style.display = "block";
         checklistOverlay.innerHTML = `
@@ -108,32 +108,54 @@ if (adoptionRequirements) {
         </div>
         `;
     
-        // const scrollY = document.body.style.top;
-    
-        // if (overlay.style.display === "block"){
-        //     document.body.style.position = "fixed";
-        //     document.body.style.top = `-${window.scrollY}px`;
-        // } else {
-        //     document.body.style.position = "";
-        //     document.body.style.top ="";
-        //     
-        // }
-    
         closeRequirements.addEventListener("click", (e) => {
             overlay.style.display = "none";
             checklistOverlay.style.display = "none";
             document.body.classList.remove("modal-open");
+            window.scroll(0, scrollPosition);
         })
     
         overlay.addEventListener("click", (e) => {
             overlay.style.display = "none";
             checklistOverlay.style.display = "none";
             document.body.classList.remove("modal-open");
-            window.scrollTo(0, scrollPosition);
+            window.scroll(0, scrollPosition);
         })
     
-        window.scrollTo(0, scrollPosition);
+        
     });
 }
 
 
+const adoptionInterest = document.querySelector(".adoption__interest");
+
+if (adoptionInterest) {
+    adoptionInterest.addEventListener("click", (e) => {
+        e.preventDefault();
+        const scrollPosition = window.pageYOffset;
+        document.body.classList.add("modal-open");
+        overlay.style.display = "block";
+        checklistOverlay.style.display = "block";
+        checklistOverlay.innerHTML = `
+        <div class="list-wrapper">
+            <h1>Adoption Interest<h1>
+            
+        `;
+    
+        closeRequirements.addEventListener("click", (e) => {
+            overlay.style.display = "none";
+            checklistOverlay.style.display = "none";
+            document.body.classList.remove("modal-open");
+            window.scroll(0, scrollPosition);
+        })
+    
+        overlay.addEventListener("click", (e) => {
+            overlay.style.display = "none";
+            checklistOverlay.style.display = "none";
+            document.body.classList.remove("modal-open");
+            window.scroll(0, scrollPosition);
+        })
+    
+        
+    });
+}
