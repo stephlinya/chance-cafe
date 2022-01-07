@@ -75,9 +75,9 @@ $(function(){
 });
 
 const adoptionRequirements = document.querySelector(".adoption__requirements");
-const checklistOverlay = document.querySelector(".overlay__checklist");
+const modal = document.querySelector(".overlay__modal");
 const overlay = document.querySelector(".overlay");
-const closeRequirements = document.getElementById("close-requirements");
+const closeModal = document.getElementById("close-modal");
 
 if (adoptionRequirements) {
     adoptionRequirements.addEventListener("click", (e) => {
@@ -85,10 +85,10 @@ if (adoptionRequirements) {
         const scrollPosition = window.pageYOffset;
         document.body.classList.add("modal-open");
         overlay.style.display = "block";
-        checklistOverlay.style.display = "block";
-        checklistOverlay.innerHTML = `
-        <div class="list-wrapper">
-            <h1>Adoption Requirements<h1>
+        modal.style.display = "block";
+        modal.innerHTML = `
+        <div class="modal-wrapper">
+            <h1 class="form-title">Adoption Requirements</h1>
             <ul id="requirement-list">
                 <li>Completed adoption interest form.</li>
                 <li>Completed adoption intereview.</li>
@@ -96,7 +96,7 @@ if (adoptionRequirements) {
                 <li>Once an adoption date is set, prepare all your kitty's necessities.</li>
             </ul>
     
-            <h1>Adoption process</h1>
+            <h1 class="form-title">Adoption process</h1>
             <ol id="process-list">
                 <li>Fill out an adoption interest form. Our adoption coordinator will reach out within 2-3 business days.</li>
                 <li>Complete an adoption intereview to determine best match. The interview will be roughly 30min - 45min.</li>
@@ -108,16 +108,16 @@ if (adoptionRequirements) {
         </div>
         `;
     
-        closeRequirements.addEventListener("click", (e) => {
+        closeModal.addEventListener("click", (e) => {
             overlay.style.display = "none";
-            checklistOverlay.style.display = "none";
+            modal.style.display = "none";
             document.body.classList.remove("modal-open");
             window.scroll(0, scrollPosition);
         })
     
         overlay.addEventListener("click", (e) => {
             overlay.style.display = "none";
-            checklistOverlay.style.display = "none";
+            modal.style.display = "none";
             document.body.classList.remove("modal-open");
             window.scroll(0, scrollPosition);
         })
@@ -135,23 +135,31 @@ if (adoptionInterest) {
         const scrollPosition = window.pageYOffset;
         document.body.classList.add("modal-open");
         overlay.style.display = "block";
-        checklistOverlay.style.display = "block";
-        checklistOverlay.innerHTML = `
-        <div class="list-wrapper">
-            <h1>Adoption Interest<h1>
-            
+        modal.style.display = "block";
+        modal.innerHTML = `
+            <div class="modal-wrapper>
+            <h1 class="form-title">Adoption Interest Form</h1>
+            <form class="adoption-interest" action="#" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="name">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email">
+                <button type="button" class="button--pink" id="button--pinkfill">sign up</button>
+            </form>
+            </div>
+
         `;
     
-        closeRequirements.addEventListener("click", (e) => {
+        closeModal.addEventListener("click", (e) => {
             overlay.style.display = "none";
-            checklistOverlay.style.display = "none";
+            modal.style.display = "none";
             document.body.classList.remove("modal-open");
             window.scroll(0, scrollPosition);
         })
     
         overlay.addEventListener("click", (e) => {
             overlay.style.display = "none";
-            checklistOverlay.style.display = "none";
+            modal.style.display = "none";
             document.body.classList.remove("modal-open");
             window.scroll(0, scrollPosition);
         })

@@ -838,8 +838,8 @@ input:focus {
     top: 0;
     left: 0;
 
-    &__checklist {
-        margin: 4.5rem 0;
+    &__modal {
+        margin: 4.5rem auto;
         background-color: white;
         padding: 2em;
         width: 80vw;
@@ -855,30 +855,29 @@ input:focus {
 }
 
 @media (min-width: 650px) {
-    .overlay__checklist {
+    .modal {
         margin: 0;
     }
 }
 
-.list-wrapper {
+.modal-wrapper {
     width: 90%;
     margin: 0 auto;
 }
 
-.list-wrapper > h1 {
+.form-title {
     color: $accentGreen;
     text-align: center;
 }
 
 @media (min-width: 650px) {
-    .list-wrapper {
+    .modal-wrapper {
         width: 70%;
     }
 }
 
 .modal-open {
     position: fixed;
-    overflow: hidden;
 }
 
 #requirement-list > li {
@@ -895,7 +894,7 @@ input:focus {
 
 /* button on adoption modal*/
 
-#close-requirements {
+#close-modal {
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -905,16 +904,36 @@ input:focus {
     right: 1rem;
 }
 
-#close-requirements:hover,
-#close-requirements:focus {
+#close-modal:hover,
+#close-modal:focus {
     color: white;
 }
 
 
 body .modal-open {
-    overflow: visible;
-    position: fixed;
+    position: absolute;
     width: 100%;
-    height:100%;
+    height: auto;
 }
 
+/* adoption interest form */
+.adoption-interst {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.adoption-interest > input{
+    // background-color: rgba(255, 255, 255, .8);
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+    border: 1px solid $primaryPink;
+    width: 65%;
+    text-align: center;
+}
+
+
+@media (min-width: 750px){
+    input {
+        width: 50%;
+    }
+}
