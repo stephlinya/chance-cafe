@@ -7,6 +7,16 @@ let imgs = document.getElementsByClassName("gallery-img");
 let slideIndex = 0;
 let dotIndex = 0;
 let newsletter = document.getElementsByClassName("newsletter");
+const aboutSection = document.querySelector(".about");
+const aboutLink = document.querySelector(".about-link");
+
+if (aboutLink){
+    aboutLink.addEventListener("click", (e) => {
+        aboutSection.scrollIntoView(alignToTop);
+        console.log("about");
+    });
+}
+
 
 if($(window).width() <= 750){
     $(".mobilenav__toggle").click(function(){
@@ -66,35 +76,64 @@ $(function(){
 
 const adoptionRequirements = document.querySelector(".adoption__requirements");
 const checklistOverlay = document.querySelector(".overlay__checklist");
+const overlay = document.querySelector(".overlay");
 const closeRequirements = document.getElementById("close-requirements");
 
-adoptionRequirements.addEventListener("click", (e) => {
-    e.preventDefault();
-    adoptionRequirements.classList.add("overlay__checklist");
-    adoptionRequirements.classList.remove("link");
-    adoptionRequirements.innerHTML = `
-    <button id="close-requirements">x</button>
-    <h1>Adoption Requirements<h2>
-    <ul id="requirement-list">
-        <li>1. Fill out an adoption interest form.</li>
-        <li>2. Complete an adoption intereview.</li>
-        <li>3. If you're approved, set an adoption day.</li>
-        <li>4. Get your house prepared for your new buddy.</li>
-        <li>5. Bring your kitty home on adoption day!</li>
-    </ul>
+if (adoptionRequirements) {
+    adoptionRequirements.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.body.classList.add("modal-open");
+        const scrollPosition = window.scrollY;
+        overlay.style.display = "block";
+        checklistOverlay.style.display = "block";
+        checklistOverlay.innerHTML = `
+        <div class="list-wrapper">
+            <h1>Adoption Requirements<h1>
+            <ul id="requirement-list">
+                <li>Completed adoption interest form.</li>
+                <li>Completed adoption intereview.</li>
+                <li>A good match between interested adopter and kitty. This includes time and personality match as well as a financial match (some kitties may have special needs).</li>
+                <li>Once an adoption date is set, prepare all your kitty's necessities.</li>
+            </ul>
+    
+            <h1>Adoption process</h1>
+            <ol id="process-list">
+                <li>Fill out an adoption interest form. Our adoption coordinator will reach out within 2-3 business days.</li>
+                <li>Complete an adoption intereview to determine best match. The interview will be roughly 30min - 45min.</li>
+                <li>Once all interviews for that particular kitty is completed (this time varies based on interest). You will receive a notification on your application status. If you're approved, our coordinator will set an adoption day with you. They will also answer any additional questions and review the necessities for adoption day.</li>
+                <li>Get your house prepared for your new buddy. This includes food, water, bowls, litter box, litter, bed, toys, hard carrier, brush, nail clippers.</li>
+                <li>Come in on adoption day with the final paperwork, a carrier, and adoption fee.</li>
+                <li>Bring your kitty home on adoption day!</li>
+            </ol>
+        </div>
+        `;
+    
+        // const scrollY = document.body.style.top;
+    
+        // if (overlay.style.display === "block"){
+        //     document.body.style.position = "fixed";
+        //     document.body.style.top = `-${window.scrollY}px`;
+        // } else {
+        //     document.body.style.position = "";
+        //     document.body.style.top ="";
+        //     
+        // }
+    
+        closeRequirements.addEventListener("click", (e) => {
+            overlay.style.display = "none";
+            checklistOverlay.style.display = "none";
+            document.body.classList.remove("modal-open");
+        })
+    
+        overlay.addEventListener("click", (e) => {
+            overlay.style.display = "none";
+            checklistOverlay.style.display = "none";
+            document.body.classList.remove("modal-open");
+            window.scrollTo(0, scrollPosition);
+        })
+    
+        window.scrollTo(0, scrollPosition);
+    });
+}
 
-    <h2>Adoption process</h2>
-    `
 
-    closeRequirements.addEventListener("click", (e) => {
-        adoptionRequirements.classList.remove("overlay__checklist");
-        adoptionRequirements.classList.add("link");
-        console.log("closed");
-    })
-});
-
-
-
-
-
-        
