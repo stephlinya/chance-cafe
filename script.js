@@ -30,10 +30,8 @@ if($(window).width() <= 750){
             $(".mobilenav").toggleClass("sticky");
         }
     } 
-}
 
-$(function(){
-    if($('body').is('.landingpg')){
+    $(function(){
         setInterval(function(){ 
         
             if (slideIndex === 0){
@@ -71,8 +69,10 @@ $(function(){
             imgs[0].style.display = "block";
             imgs[slideIndex].style.display = "none";
         })
-    }
-});
+    });
+    
+}
+
 
 const adoptionRequirements = document.querySelector(".adoption__requirements");
 const modal = document.querySelector(".overlay__modal");
@@ -84,8 +84,8 @@ if (adoptionRequirements) {
         e.preventDefault();
         const scrollPosition = window.pageYOffset;
         document.body.classList.add("modal-open");
-        overlay.style.display = "block";
-        modal.style.display = "block";
+        overlay.style.display = "inline-block";
+        modal.style.display = "inline-block";
         modal.innerHTML = `
         <div class="modal-wrapper">
             <h1 class="form-title">Adoption Requirements</h1>
@@ -134,20 +134,19 @@ if (adoptionInterest) {
         e.preventDefault();
         const scrollPosition = window.pageYOffset;
         document.body.classList.add("modal-open");
-        overlay.style.display = "block";
-        modal.style.display = "block";
+        overlay.style.display = "inline-block";
+        modal.style.display = "inline-block";
         modal.innerHTML = `
-            <div class="modal-wrapper>
-            <h1 class="form-title">Adoption Interest Form</h1>
-            <form class="adoption-interest" action="#" method="POST">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="name">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="email">
-                <button type="button" class="button--pink" id="button--pinkfill">sign up</button>
-            </form>
-            </div>
-
+        <div class="modal-wrapper">
+        <h1 class="form-title">Adoption Interest Form </h1>
+        <form class="adoption-interest" action="#" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="name">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="email">
+            <button type="button" class="button--pink" id="button--pinkfill">sign up</button>
+        </form>
+        </div>
         `;
     
         closeModal.addEventListener("click", (e) => {
@@ -167,3 +166,12 @@ if (adoptionInterest) {
         
     });
 }
+
+// <h1 class="form-title">Adoption Interest Form
+            // <form class="adoption-interest" action="#" method="POST">
+            //     <label for="name">Name</label>
+            //     <input type="text" id="name" placeholder="name">
+            //     <label for="email">Email</label>
+            //     <input type="email" id="email" placeholder="email">
+            //     <button type="button" class="button--pink" id="button--pinkfill">sign up</button>
+            // </form>
