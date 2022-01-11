@@ -115,13 +115,16 @@ if (adoptionRequirements) {
             window.scroll(0, scrollPosition);
         })
     
-        overlay.addEventListener("click", (e) => {
-            overlay.style.display = "none";
-            modal.style.display = "none";
-            document.body.classList.remove("modal-open");
-            window.scroll(0, scrollPosition);
+
+        document.addEventListener("click", (e) => {
+            if (e.target.closest(".overlay__modal")){
+                overlay.style.display = "none";
+                modal.style.display = "none";
+                document.body.classList.remove("modal-open");
+                window.scroll(0, scrollPosition);
+                console.log("hey");
+            }
         })
-    
         
     });
 }
@@ -138,14 +141,29 @@ if (adoptionInterest) {
         modal.style.display = "inline-block";
         modal.innerHTML = `
         <div class="modal-wrapper">
-        <h1 class="form-title">Adoption Interest Form </h1>
-        <form class="adoption-interest" action="#" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="name">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="email">
-            <button type="button" class="button--pink" id="button--pinkfill">sign up</button>
-        </form>
+            <h1 class="form-title">Adoption Interest Form </h1>
+            <p class="adoption-interest__text">Please fill out this adoption interest form. Our adoption coordinator will reach out within 2-3 business days. Note: An interest form does not guarantee you will be approved for adoption.</p>
+            <form class="adoption-interest" action="#" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email" required>
+                <label for="phone-number">Phone Number</label>
+                <input type="number" id="phone-number" placeholder="phone number" required>
+                <label for="type-of">What type of kitty are you looking for? Age? Personality? Energy?</label>
+                <textarea id="why-adopt" name="why-adopt" rows="4" placeholder="Tell us about qualities that would make a kitty a good fit for you and your family..." required></textarea>
+                <label for="interested-cats">Interested Cat(s)</label>
+                <input type="text" id="interest-cats" placeholder="interested cats" required>
+                <label for="why-adopt">Why is this the kitty for you?</label>
+                <textarea id="why-adopt" name="why-adopt" rows="4" placeholder="Tell us why this kitty stands out to you..." required></textarea>
+                <label for="food">What are you planning to feed your kitty? Why?</label>
+                <textarea id="food" name="food" rows="4" placeholder="Tell us your plans..." required></textarea>
+                <label for="experience">Do you have experience taking care of a pet?</label>
+                <textarea id="experience" name="experience" rows="4" placeholder="Tell us about your experience caring for animals..." required></textarea>
+                <label for="current-pets">Do you currently have pets? How many? What is their age and personality?</label>
+                <textarea id="current-pets" name="current-pets" rows="4" placeholder="Tell us about any pets you currently have..." required></textarea>
+                <button type="button" id="button--pinkfill">submit</button>
+            </form>
         </div>
         `;
     
@@ -166,12 +184,3 @@ if (adoptionInterest) {
         
     });
 }
-
-// <h1 class="form-title">Adoption Interest Form
-            // <form class="adoption-interest" action="#" method="POST">
-            //     <label for="name">Name</label>
-            //     <input type="text" id="name" placeholder="name">
-            //     <label for="email">Email</label>
-            //     <input type="email" id="email" placeholder="email">
-            //     <button type="button" class="button--pink" id="button--pinkfill">sign up</button>
-            // </form>

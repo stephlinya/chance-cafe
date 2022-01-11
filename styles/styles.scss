@@ -805,6 +805,7 @@ input:focus {
     top: 0;
     left: 0;
     overflow: auto;
+    scrollbar-color: $primaryPink;
 
     &__modal {
         background-color: white;
@@ -818,6 +819,7 @@ input:focus {
         z-index: 9;
         border-radius: 5px;
         overflow: auto;
+        scrollbar-color: $primaryPink;
     }
 }
 
@@ -887,9 +889,14 @@ body .modal-open {
 }
 
 /* adoption interest form */
-.adoption-interst {
+.adoption-interest {
     width: 70%;
     margin: 0 auto;
+}
+
+.adoption-interest__text {
+    text-align: center;
+    margin: 1em 0;
 }
 
 .adoption-interest > label {
@@ -900,25 +907,44 @@ body .modal-open {
 
 
 .adoption-interest > input{
-    // background-color: rgba(255, 255, 255, .8);
     margin-bottom: 1.5em;
     border-radius: 5px;
     border: 1px solid #c4c4c4;
-    width: 65%;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+}
+
+.adoption-interest > input:hover, input:focus, textarea:focus, textarea:hover{
+    border: 1px solid $primaryPink;
 }
 
 .adoption-interest >input::placeholder {
     color: #c4c4c4;
 }
 
-// .adoption-interest > #button--pinkfill {
-//     display: block;
-// }
+.adoption-interest > button {
+    border: none;
+    border-radius: 5px;
+    padding: 0.75em 1em;
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+}
 
+.adoption-interest > button:hover, button:focus {
+    border: 4px solid $primaryPink;
+    background-color:rgba(255, 255, 255, .5);
+    color: $primaryPink;
+}
 
-@media (min-width: 750px){
-    input {
-        width: 50%;
-    }
+textarea {
+    width: 100%;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 1em 1.5em;
+    margin-bottom: 1.5em;
+}
+
+textarea::placeholder {
+    color: #c4c4c4;
 }
