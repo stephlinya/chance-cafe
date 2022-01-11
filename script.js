@@ -86,7 +86,7 @@ if (adoptionRequirements) {
         document.body.classList.add("modal-open");
         overlay.style.display = "inline-block";
         modal.style.display = "inline-block";
-        modal.innerHTML = `
+        modal.innerHTML += `
         <div class="modal-wrapper">
             <h1 class="form-title">Adoption Requirements</h1>
             <ul id="requirement-list">
@@ -96,7 +96,7 @@ if (adoptionRequirements) {
                 <li>Once an adoption date is set, prepare all your kitty's necessities.</li>
             </ul>
     
-            <h1 class="form-title">Adoption process</h1>
+            <h1 class="form-title">Adoption Process</h1>
             <ol id="process-list">
                 <li>Fill out an adoption interest form. Our adoption coordinator will reach out within 2-3 business days.</li>
                 <li>Complete an adoption intereview to determine best match. The interview will be roughly 30min - 45min.</li>
@@ -113,16 +113,16 @@ if (adoptionRequirements) {
             modal.style.display = "none";
             document.body.classList.remove("modal-open");
             window.scroll(0, scrollPosition);
+            console.log("hello");
         })
     
 
-        document.addEventListener("click", (e) => {
-            if (e.target.closest(".overlay__modal")){
+        window.addEventListener("click", (e) => {
+            if(e.target == overlay){
                 overlay.style.display = "none";
                 modal.style.display = "none";
                 document.body.classList.remove("modal-open");
                 window.scroll(0, scrollPosition);
-                console.log("hey");
             }
         })
         
@@ -139,7 +139,7 @@ if (adoptionInterest) {
         document.body.classList.add("modal-open");
         overlay.style.display = "inline-block";
         modal.style.display = "inline-block";
-        modal.innerHTML = `
+        modal.innerHTML += `
         <div class="modal-wrapper">
             <h1 class="form-title">Adoption Interest Form </h1>
             <p class="adoption-interest__text">Please fill out this adoption interest form. Our adoption coordinator will reach out within 2-3 business days. Note: An interest form does not guarantee you will be approved for adoption.</p>
@@ -174,11 +174,13 @@ if (adoptionInterest) {
             window.scroll(0, scrollPosition);
         })
     
-        overlay.addEventListener("click", (e) => {
-            overlay.style.display = "none";
-            modal.style.display = "none";
-            document.body.classList.remove("modal-open");
-            window.scroll(0, scrollPosition);
+        window.addEventListener("click", (e) => {
+            if(e.target == overlay){
+                overlay.style.display = "none";
+                modal.style.display = "none";
+                document.body.classList.remove("modal-open");
+                window.scroll(0, scrollPosition);
+            }
         })
     
         

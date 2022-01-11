@@ -1016,14 +1016,15 @@ input:focus {
   background-color: transparent;
   border: none;
   font-size: 2rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(176, 191, 151, 0.4);
   position: absolute;
+  top: 0;
   right: 1rem;
 }
 
 #close-modal:hover,
 #close-modal:focus {
-  color: white;
+  color: #b0bf97;
 }
 
 body .modal-open {

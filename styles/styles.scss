@@ -871,14 +871,15 @@ input:focus {
     background-color: transparent;
     border: none;
     font-size: 2rem;
-    color: rgba(255, 255, 255, .6);
+    color: rgba(176, 191, 151, 0.4);
     position: absolute;
+    top: 0;
     right: 1rem;
 }
 
 #close-modal:hover,
 #close-modal:focus {
-    color: white;
+    color: $accentGreen;
 }
 
 
@@ -904,7 +905,6 @@ body .modal-open {
     color: $primaryPink;
     font-weight: 700;
 }
-
 
 .adoption-interest > input{
     margin-bottom: 1.5em;
