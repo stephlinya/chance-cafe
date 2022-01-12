@@ -1,0 +1,66 @@
+/* menu page */
+@import "./global";
+@import "./mixins";
+
+.menu {
+    @include flex(row, flex-start, center);
+    gap: 3rem; 
+    &__imgdiv{
+        height: 90vh;
+    }
+    &__img {
+        width: 150px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__text {
+        text-align: left;
+        width: 60%;
+    }
+}
+
+.wrapper {
+    width: 50%;
+    max-width: 550px;
+    margin: 2rem auto;
+    padding: 2rem 0;
+    background-color: #fbfbfb;
+}
+
+.cursive-text {
+    font-family: "Astral-Sisters", "Dancing Script", cursive;
+    font-size: 6rem;
+    margin-bottom: 0.2em;
+}
+
+.sans-serif-heading {
+    font-family: "Now-Regular", "Poppins", sans-serif;
+    font-size: 1.5rem;
+}
+
+.pink-sansserif-heading{
+    color: $primaryPink;
+}
+
+.border {
+    border: 3px solid $secondaryPink;
+    border-radius: 5px;
+    padding: .75rem 1rem;
+}
+
+.specials {
+    width: 100%;
+}
+
+.left-align {
+    float: left;
+}
+
+.right-align {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}

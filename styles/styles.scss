@@ -26,7 +26,7 @@
 }
 
 @font-face {
-    font-family: "Astral-Sisters" cursive;
+    font-family: "Astral-Sisters", cursive;
     src: url("../chance-cafe/fonts/Astral-Sisters.ttf"),
          url("../chance-cafe/fonts/astral-sisters-webfont.woff"),
          url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
@@ -34,6 +34,7 @@
 
 body {
     font-family: "Now-Regular", "Poppins", sans-serif;
+    color: #494949;
 }
 
 .cursivetext--pink,

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Chance Cafe</title>
 </head>
-<body class="landingpg">
+<body>
     <header>
             <nav class="nav">
                 <div class="nav__placeholder">
@@ -40,59 +41,112 @@
                 </ul>
             </nav>
     </header>
-    <div class="hero">
-        <div class="hero__text">
-            <div class="hero__text--container"><h1 class="hero__title">Plan ahead for Mother's Day</h1></div>
-            <button class="button button--pink">see specials</button>
-        </div>
-        <div class="hero__imgdiv">
-            <div class="hero__img"></div>
-        </div>
-    </div>
 
-    <div class="container">
-        <main class="main">
-            <div class="main__photo-gallery">
-                <div class="slides slides__grid--col slides__grid--row">
-                    <img class="gallery-img gallery-img-mobile" id="guywithcat" src="images/guydrinkingcoffeewcat.jpg">
-                </div>
-                <div class="slides">
-                    <img class="gallery-img gallery-img-mobile" src="images/lemoncake.jpg">
-                </div>
-                <div class="slides">
-                    <img class="gallery-img gallery-img-mobile" src="images/catingreen.jpg">
-                </div>
-                <div class="slides">
-                    <img class="gallery-img gallery-img-mobile" src="images/coffeeandbrownie.jpg">
-                </div>
-                <div class="dots">
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                </div>
-            </div>
-        
-            <div class="reservations">
-                <h1 class="cursivetext--pink">Coffee and cats</h1>
-                <p class="reservations__text">Our cafe is limited to reservation only spots. Take a look at our calendar and see which day works best for you.</p>
-                <button class="button">reserve a spot</button>
-            </div>
-        </main>
+    <main class="menu-pg">
+        <div class="menu wrapper">
             
-       <section class="about">
-            <div class="about__img">
-                <img src="images/hazelcat.jpeg">
-            </div>
-            <div class="about__textblock">
-                <h1 class="cursivetext--pink">About us</h1>
-                <p class="about__text">Our mission is to help homeless cats find their fur-ever home. Chance Cafe partners with local rescues to transform the typical adoption process.</p>
-                <p class="about__text">We provide a warm, relaxing place for our cats and humans to bond over a cup of coffee, toys, and snacks.</p>
+            <div class="menu__imgdiv"><img class="menu__img" src="./images/roses.jpg"></div>
+            
+            <div class="menu__text">
+                <div class="menu__items">
+                    <h1 class="cursive-text">Menu</h1>
+                <h2 class="sans-serif-heading">Drinks</h2>
+                <div class="textbox">
+                    <p class="left-align">Latte</p>
+                    <p class="right-align">5</p>
+                </div>
+                <div class="clear"></div>
+
+                <div class="textbox">
+                    <p class="left-align">Americano</p>
+                    <p class="right-align">4</p>
+                </div>
+                <div class="clear"></div>
+
+                <div class="textbox">
+                    <p class="left-align">Pour Over</p>
+                    <p class="right-align">5.5</p>
+                </div>
+                <div class="clear"></div>
+
+                <div class="textbox">
+                    <p class="left-align">Cold Brew</p>
+                    <p class="right-align">5.5</p>
+                </div>
+                <div class="clear"></div>
+
+                <div class="textbox">
+                    <p class="left-align">Capuccino</p>
+                    <p class="right-align">4.5</p>
+                </div>
+                <div class="clear"></div>
+                <br>
+                <div class="textbox">
+                    <p class="left-align">Jasmine Green Tea</p>
+                    <p class="right-align">4</p>
+                </div>
+                <div class="clear"></div>
+
+                <div class="textbox">
+                    <p class="left-align">Earl Grey</p>
+                    <p class="right-align">4</p>
+                </div>
+                <div class="clear"></div>
+
+                <div class="textbox">
+                    <p class="left-align">Milk and Honey Oolong</p>
+                    <p class="right-align">5</p>
+                </div>
+                <div class="clear"></div>
+
+                <div class="textbox">
+                    <p class="left-align">Sencha</p>
+                    <p class="right-align">4.5</p>
+                </div>
+                <div class="clear"></div>
+
+                <div class="textbox">
+                    <p class="left-align">Matcha</p>
+                    <p class="right-align">5</p>
+                </div>
+                <div class="clear"></div>
+                <br>
+
+                <div class="specials border">
+                    <h2 class="sans-serif-heading"><span class="pink-sansserif-heading">Mother's Day Specials</span></h2>
+                    <div class="textbox">
+                        <p class="left-align">Cream-topped Jasmine Tea</p>
+                        <p class="right-align">5.5</p>
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="textbox">
+                        <p class="left-align">Wildflower Honey Swiss Roll</p>
+                        <p class="right-align">7</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <br>
+
+                <h2 class="sans-serif-heading">Desserts</h2>
+                    <div class="textbox">
+                        <p class="left-align">Matcha Pound Cake</p>
+                        <p class="right-align">7</p>
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="textbox">
+                        <p class="left-align">Chocolate Banana Muffin</p>
+                        <p class="right-align">6</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
                 
-                <a class="link" href="#">learn more</a>
             </div>
-        </section>
-    </div>
+        </div>
+
+
+    </main>
     
     <footer class="footernav">
         <ul class="footernav__list">
@@ -114,12 +168,11 @@
             <h2 class="newsletter__cursivetext--white">Subscribe</h2>
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="name">
-
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="email">
             <button type="button" class="button--pink" id="button--pinkfill">sign up</button>
         </form>
     </footer>
-    <script src="script.js"></script>
 </body>
+<script src="script.js"></script>
 </html>
