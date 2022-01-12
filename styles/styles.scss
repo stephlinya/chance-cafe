@@ -799,17 +799,27 @@ input:focus {
     width: 100%;
     height: 100%;
     display: none;
-    background-color:rgba(176, 191, 151, .95);
+    background-color:rgba(0, 0, 0, .5);
     z-index: 8;
     position: fixed;
     top: 0;
     left: 0;
     overflow: auto;
     scrollbar-color: $primaryPink;
+    animation-name: fadein;
+        animation-duration: 1s;
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.9;
+            }
+        }
 
     &__modal {
         background-color: white;
-        padding: 2em;
         width: 80%;
         max-height: 90%;
         position: absolute;
@@ -820,6 +830,18 @@ input:focus {
         border-radius: 5px;
         overflow: auto;
         scrollbar-color: $primaryPink;
+        animation-name: fadein;
+        animation-duration: 1s;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+
+        @keyframes fadein {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -837,9 +859,19 @@ input:focus {
     margin: 0 auto;
 }
 
-.form-title {
-    color: $accentGreen;
+.modal-header {
+    background-color: $accentGreen;
+    padding: 1em;
+}
+
+.modal-header__title {
+    color: white;
     text-align: center;
+
+    &--green {
+        color: $accentGreen;
+        text-align: center;
+    }
 }
 
 @media (min-width: 650px) {
@@ -871,15 +903,16 @@ input:focus {
     background-color: transparent;
     border: none;
     font-size: 2rem;
-    color: rgba(176, 191, 151, 0.4);
+    color: rgba(255, 255, 255, 0.4);
     position: absolute;
     top: 0;
     right: 1rem;
+    z-index: 10;
 }
 
 #close-modal:hover,
 #close-modal:focus {
-    color: $accentGreen;
+    color: rgba(255, 255, 255, 1);
 }
 
 
@@ -914,8 +947,12 @@ body .modal-open {
     text-align: left;
 }
 
-.adoption-interest > input:hover, input:focus, textarea:focus, textarea:hover{
+.adoption-interest > input:hover, input:focus, textarea:hover{
     border: 1px solid $primaryPink;
+}
+
+textarea:focus {
+    outline: 1px solid $primaryPink;
 }
 
 .adoption-interest >input::placeholder {

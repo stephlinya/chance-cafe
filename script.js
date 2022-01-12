@@ -78,17 +78,22 @@ const adoptionRequirements = document.querySelector(".adoption__requirements");
 const modal = document.querySelector(".overlay__modal");
 const overlay = document.querySelector(".overlay");
 const closeModal = document.getElementById("close-modal");
+let scrollPosition = window.pageYOffset;
 
 if (adoptionRequirements) {
     adoptionRequirements.addEventListener("click", (e) => {
+        console.log(closeModal);
+        modal.innerHTML = `<button id="close-modal">x</button>`;
         e.preventDefault();
-        const scrollPosition = window.pageYOffset;
+        scrollPosition = window.pageYOffset;
         document.body.classList.add("modal-open");
         overlay.style.display = "inline-block";
         modal.style.display = "inline-block";
         modal.innerHTML += `
+        <div class="modal-header">
+            <h1 class="modal-header__title">Adoption Requirements</h1>
+        </div>
         <div class="modal-wrapper">
-            <h1 class="form-title">Adoption Requirements</h1>
             <ul id="requirement-list">
                 <li>Completed adoption interest form.</li>
                 <li>Completed adoption intereview.</li>
@@ -96,7 +101,7 @@ if (adoptionRequirements) {
                 <li>Once an adoption date is set, prepare all your kitty's necessities.</li>
             </ul>
     
-            <h1 class="form-title">Adoption Process</h1>
+            <h1 class="modal-header__title--green">Adoption Process</h1>
             <ol id="process-list">
                 <li>Fill out an adoption interest form. Our adoption coordinator will reach out within 2-3 business days.</li>
                 <li>Complete an adoption intereview to determine best match. The interview will be roughly 30min - 45min.</li>
@@ -107,7 +112,7 @@ if (adoptionRequirements) {
             </ol>
         </div>
         `;
-    
+
         closeModal.addEventListener("click", (e) => {
             overlay.style.display = "none";
             modal.style.display = "none";
@@ -115,10 +120,9 @@ if (adoptionRequirements) {
             window.scroll(0, scrollPosition);
             console.log("hello");
         })
-    
 
         window.addEventListener("click", (e) => {
-            if(e.target == overlay){
+            if(e.target == overlay || e.target == closeModal){
                 overlay.style.display = "none";
                 modal.style.display = "none";
                 document.body.classList.remove("modal-open");
@@ -129,19 +133,22 @@ if (adoptionRequirements) {
     });
 }
 
-
 const adoptionInterest = document.querySelector(".adoption__interest");
 
 if (adoptionInterest) {
     adoptionInterest.addEventListener("click", (e) => {
+        modal.innerHTML = `<button id="close-modal">x</button>`;
         e.preventDefault();
-        const scrollPosition = window.pageYOffset;
+        scrollPosition = window.pageYOffset;
         document.body.classList.add("modal-open");
         overlay.style.display = "inline-block";
         modal.style.display = "inline-block";
         modal.innerHTML += `
+        <div class="modal-header">
+            <h1 class="modal-header__title">Adoption Interest Form </h1>
+        </div>
         <div class="modal-wrapper">
-            <h1 class="form-title">Adoption Interest Form </h1>
+        <button id="close-modal">x</button>
             <p class="adoption-interest__text">Please fill out this adoption interest form. Our adoption coordinator will reach out within 2-3 business days. Note: An interest form does not guarantee you will be approved for adoption.</p>
             <form class="adoption-interest" action="#" method="POST">
                 <label for="name">Name</label>
@@ -167,7 +174,7 @@ if (adoptionInterest) {
         </div>
         `;
     
-        closeModal.addEventListener("click", (e) => {
+        closeModal.addEventListener("click", () => {
             overlay.style.display = "none";
             modal.style.display = "none";
             document.body.classList.remove("modal-open");

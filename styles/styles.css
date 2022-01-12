@@ -35,7 +35,7 @@ body {
 .cursivetext--pink,
 .cursivetext--pink {
   font-family: "Astral-Sisters", "Dancing Script", cursive;
-  color: #cc8e7e;
+  color: #e89c89;
   font-size: 3.5rem;
 }
 
@@ -57,7 +57,7 @@ body {
 
 .link {
   font-size: 1.5rem;
-  color: #cc8e7e;
+  color: #e89c89;
   text-decoration: none;
   cursor: pointer;
 }
@@ -170,7 +170,7 @@ img {
 .mobilenav__toggle--burger, .mobilenav__toggle--burger::before, .mobilenav__toggle--burger::after {
   content: "";
   display: block;
-  background-color: #cc8e7e;
+  background-color: #e89c89;
   width: 1.5em;
   height: 4px;
   border-radius: 3px;
@@ -232,7 +232,7 @@ img {
         -ms-flex-align: start;
             align-items: flex-start;
     background-color: transparent;
-    color: #cc8e7e;
+    color: #e89c89;
     z-index: auto;
     height: auto;
     width: 50%;
@@ -248,7 +248,7 @@ img {
   .nav__link {
     font-family: "Now-Bold", "Poppins", sans-serif;
     font-size: 1rem;
-    color: #cc8e7e;
+    color: #e89c89;
     cursor: pointer;
   }
   .nav__link:hover, .nav__link:focus {
@@ -312,7 +312,7 @@ img {
   margin-top: -15px;
   font-size: 2rem;
   font-family: "Astral-Sisters", "Dancing Script", cursive;
-  color: #cc8e7e;
+  color: #e89c89;
   display: inline-block;
 }
 
@@ -412,7 +412,7 @@ img {
     margin-right: 0;
   }
   .hero__title {
-    color: #cc8e7e;
+    color: #e89c89;
     text-align: left;
     text-shadow: none;
   }
@@ -572,10 +572,10 @@ img {
 
 /* button styles */
 .button {
-  border: 4px solid #cc8e7e;
+  border: 4px solid #e89c89;
   font-family: "Now", "Poppins", sans-serif;
   background-color: transparent;
-  color: #cc8e7e;
+  color: #e89c89;
   font-size: 1.5rem;
   padding: 0.75em 2em;
   border-radius: 5px;
@@ -584,12 +584,12 @@ img {
 
 .button:hover,
 .button:focus {
-  background-color: #cc8e7e;
+  background-color: #e89c89;
   color: rgba(255, 255, 255, 0.7);
 }
 
 .button--pink {
-  background-color: #cc8e7e;
+  background-color: #e89c89;
   font-family: "Now", "Poppins", sans-serif;
   color: white;
   border: none;
@@ -603,32 +603,32 @@ img {
 .button--pink:hover,
 .button--pink:focus {
   font-weight: bold;
-  border: 4px solid #cc8e7e;
+  border: 4px solid #e89c89;
   background-color: rgba(255, 255, 255, 0.6);
-  color: #cc8e7e;
+  color: #e89c89;
 }
 
 @media (min-width: 750px) {
   .button--pink {
-    border: 4px solid #cc8e7e;
+    border: 4px solid #e89c89;
     background-color: transparent;
-    color: #cc8e7e;
+    color: #e89c89;
     text-align: center;
     float: right;
   }
   .button--pink:hover,
   .button--pink:focus {
-    background-color: #cc8e7e;
+    background-color: #e89c89;
     color: white;
   }
   #button--pinkfill {
-    background-color: #cc8e7e;
+    background-color: #e89c89;
     color: white;
   }
   #button--pinkfill:hover,
   #button--pinkfill:focus {
     background-color: rgba(255, 255, 255, 0.8);
-    color: #cc8e7e;
+    color: #e89c89;
   }
 }
 
@@ -735,23 +735,23 @@ input {
 }
 
 input:focus {
-  outline-color: #cc8e7e;
+  outline-color: #e89c89;
 }
 
 ::-webkit-input-placeholder {
-  color: #cc8e7e;
+  color: #e89c89;
 }
 
 :-ms-input-placeholder {
-  color: #cc8e7e;
+  color: #e89c89;
 }
 
 ::-ms-input-placeholder {
-  color: #cc8e7e;
+  color: #e89c89;
 }
 
 ::placeholder {
-  color: #cc8e7e;
+  color: #e89c89;
 }
 
 @media (min-width: 750px) {
@@ -785,7 +785,7 @@ input:focus {
 }
 
 .adoption__subtitle {
-  color: #cc8e7e;
+  color: #e89c89;
   font-size: 2rem;
   margin-bottom: 1em;
 }
@@ -821,8 +821,8 @@ input:focus {
   border-radius: 5px;
   margin: 1.5em auto;
   padding: 0 0 1em 0;
-  -webkit-box-shadow: 2px 2px 6px 0px #cc8e7e;
-          box-shadow: 2px 2px 6px 0px #cc8e7e;
+  -webkit-box-shadow: 2px 2px 6px 0px #e89c89;
+          box-shadow: 2px 2px 6px 0px #e89c89;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -892,8 +892,8 @@ input:focus {
 
 .card:hover,
 .card:focus {
-  -webkit-box-shadow: 2px 2px 26px 0px #cc8e7e;
-          box-shadow: 2px 2px 26px 0px #cc8e7e;
+  -webkit-box-shadow: 2px 2px 26px 0px #e89c89;
+          box-shadow: 2px 2px 26px 0px #e89c89;
   cursor: pointer;
 }
 
@@ -944,18 +944,39 @@ input:focus {
   width: 100%;
   height: 100%;
   display: none;
-  background-color: rgba(176, 191, 151, 0.95);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 8;
   position: fixed;
   top: 0;
   left: 0;
   overflow: auto;
-  scrollbar-color: #cc8e7e;
+  scrollbar-color: #e89c89;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
 
 .overlay__modal {
   background-color: white;
-  padding: 2em;
   width: 80%;
   max-height: 90%;
   position: absolute;
@@ -966,7 +987,22 @@ input:focus {
   z-index: 9;
   border-radius: 5px;
   overflow: auto;
-  scrollbar-color: #cc8e7e;
+  scrollbar-color: #e89c89;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 650px) {
@@ -983,7 +1019,17 @@ input:focus {
   margin: 0 auto;
 }
 
-.form-title {
+.modal-header {
+  background-color: #b0bf97;
+  padding: 1em;
+}
+
+.modal-header__title {
+  color: white;
+  text-align: center;
+}
+
+.modal-header__title--green {
   color: #b0bf97;
   text-align: center;
 }
@@ -1016,15 +1062,16 @@ input:focus {
   background-color: transparent;
   border: none;
   font-size: 2rem;
-  color: rgba(176, 191, 151, 0.4);
+  color: rgba(255, 255, 255, 0.4);
   position: absolute;
   top: 0;
   right: 1rem;
+  z-index: 10;
 }
 
 #close-modal:hover,
 #close-modal:focus {
-  color: #b0bf97;
+  color: white;
 }
 
 body .modal-open {
@@ -1046,7 +1093,7 @@ body .modal-open {
 
 .adoption-interest > label {
   display: block;
-  color: #cc8e7e;
+  color: #e89c89;
   font-weight: 700;
 }
 
@@ -1058,8 +1105,12 @@ body .modal-open {
   text-align: left;
 }
 
-.adoption-interest > input:hover, input:focus, textarea:focus, textarea:hover {
-  border: 1px solid #cc8e7e;
+.adoption-interest > input:hover, input:focus, textarea:hover {
+  border: 1px solid #e89c89;
+}
+
+textarea:focus {
+  outline: 1px solid #e89c89;
 }
 
 .adoption-interest > input::-webkit-input-placeholder {
@@ -1088,9 +1139,9 @@ body .modal-open {
 }
 
 .adoption-interest > button:hover, button:focus {
-  border: 4px solid #cc8e7e;
+  border: 4px solid #e89c89;
   background-color: rgba(255, 255, 255, 0.5);
-  color: #cc8e7e;
+  color: #e89c89;
 }
 
 textarea {
