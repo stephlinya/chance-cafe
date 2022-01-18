@@ -7,15 +7,6 @@ let imgs = document.getElementsByClassName("gallery-img");
 let slideIndex = 0;
 let dotIndex = 0;
 let newsletter = document.getElementsByClassName("newsletter");
-const aboutSection = document.querySelector(".about");
-const aboutLink = document.querySelector(".about-link");
-
-// if (aboutLink){
-//     aboutLink.addEventListener("click", (e) => {
-//         aboutSection.scrollIntoView(alignToTop);
-//         console.log("about");
-//     });
-// }
 
 
 if($(window).width() <= 750){
@@ -193,3 +184,60 @@ if (adoptionInterest) {
         
     });
 }
+
+let catName = document.getElementById("cat-name");
+let catBreed = document.getElementById("cat-breed");
+let catImg = document.querySelector(".card__img");
+let catsWithPhotos = [];
+let animals = "";
+
+function API() {
+fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
+    headers: {
+        "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqcDhPT3hFZnBRSERjaDFRZ0I0VmlvMWc3Q1VXYjBpbGVnOXJzdmdTalBjSnZnU2tDWCIsImp0aSI6IjJkODRkYjM2YjI5ZThiMDI3MWU0Njg3ZWM3OTcxZjhmMTg1NzBhN2VkYjdlNjQ2NzFlZDllNDhlZTMxNjQzOGRmNTYwNDBhOWQ1ODRiYTBiIiwiaWF0IjoxNjQyNTQ1NTUyLCJuYmYiOjE2NDI1NDU1NTIsImV4cCI6MTY0MjU0OTE1Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.sUxnoyyFsWiYY00MyIz1cio7B_5ei6F1_JiWGmGvavIBYsPN3tpcP4g8LEf9mS7wqB6C8rnIQAQ-rSOY95nUq9S6AxEHNyDbh229vy23U51o_3QLD27v3nufNRwZqSy0X_q30lHhImKFYLQ4gh-myzVcanVSgP5MuKDcSufTp_cmpCCiX5FIBvef24e-58n9k_Ga-o-1ycRDurKD5BtPSJsxvNL-NGpTcnQ0Ddk4HXWD-5p2xqFfbbZaoxQBC7Tg7iWp8rQnVYNvDvmIdMYjvAmBWeQNBak9SmZMq0OMVzoWMF56RqIkO0szxRwvWrkMN6hkx5e81G4vbkcd_NNejw`,
+        "Content-Type": "application/json"
+    }
+})
+    .then(res => res.json())
+    .then(data => {
+        animals = data.animals;
+        for (let i = 0; i < animals.length; i++){
+            if (animals[i].photos != ""){
+                catsWithPhotos.push(animals[i]);
+            }
+            
+        }
+        createCards();
+       
+        console.log(data.animals);
+    });
+};
+
+const cardContainer = document.querySelector(".card-container");
+console.log(typeof catsWithPhotos);
+function createCards(){
+    for(let i = 0; i < catsWithPhotos.length; i++){
+        console.log(catsWithPhotos);
+        cardContainer.innerHTML += `
+        <div class="card">
+            <div class="card__imgdiv">
+                <div class="card__img"></div>
+            </div>
+            <div class="card__info">
+                <p id="cat-name"></p>
+                <p id="cat-breed"></p>
+                <a class="link" href="#">learn more</a>
+            </div>
+        </div>`;
+        catName.textContent = catsWithPhotos[i].name;
+        catBreed.textContent = catsWithPhotos[i].breeds.primary;
+        catImg.innerHTML = `<img src="${catsWithPhotos[i].photos[0]}>`;
+    }
+}
+
+
+(async() => {
+
+await API();
+
+})();
