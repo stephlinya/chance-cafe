@@ -194,7 +194,7 @@ let animals = "";
 function API() {
 fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
     headers: {
-        "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqcDhPT3hFZnBRSERjaDFRZ0I0VmlvMWc3Q1VXYjBpbGVnOXJzdmdTalBjSnZnU2tDWCIsImp0aSI6IjJkODRkYjM2YjI5ZThiMDI3MWU0Njg3ZWM3OTcxZjhmMTg1NzBhN2VkYjdlNjQ2NzFlZDllNDhlZTMxNjQzOGRmNTYwNDBhOWQ1ODRiYTBiIiwiaWF0IjoxNjQyNTQ1NTUyLCJuYmYiOjE2NDI1NDU1NTIsImV4cCI6MTY0MjU0OTE1Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.sUxnoyyFsWiYY00MyIz1cio7B_5ei6F1_JiWGmGvavIBYsPN3tpcP4g8LEf9mS7wqB6C8rnIQAQ-rSOY95nUq9S6AxEHNyDbh229vy23U51o_3QLD27v3nufNRwZqSy0X_q30lHhImKFYLQ4gh-myzVcanVSgP5MuKDcSufTp_cmpCCiX5FIBvef24e-58n9k_Ga-o-1ycRDurKD5BtPSJsxvNL-NGpTcnQ0Ddk4HXWD-5p2xqFfbbZaoxQBC7Tg7iWp8rQnVYNvDvmIdMYjvAmBWeQNBak9SmZMq0OMVzoWMF56RqIkO0szxRwvWrkMN6hkx5e81G4vbkcd_NNejw`,
+        "Authorization": `Bearer `,
         "Content-Type": "application/json"
     }
 })
