@@ -191,26 +191,47 @@ let catImg = document.querySelector(".card__img");
 let catsWithPhotos = [];
 let animals = "";
 
-function API() {
-fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
-    headers: {
-        "Authorization": `Bearer `,
-        "Content-Type": "application/json"
-    }
-})
-    .then(res => res.json())
-    .then(data => {
-        animals = data.animals;
-        for (let i = 0; i < animals.length; i++){
-            if (animals[i].photos != ""){
-                catsWithPhotos.push(animals[i]);
-            }
+// function callAPI() {
+// fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
+//     headers: {
+//         "Authorization": `Bearer `,
+//         "Content-Type": "application/json"
+//     }
+// })
+//     .then(res => res.json())
+//     .then(data => {
+//         animals = data.animals;
+//         for (let i = 0; i < animals.length; i++){
+//             if (animals[i].photos != ""){
+//                 catsWithPhotos.push(animals[i]);
+//             }
             
-        }
-        createCards();
+//         }
+//         createCards();
        
-        console.log(data.animals);
-    });
+//         console.log(data.animals);
+//     });
+// };
+
+async function callAPI() {
+    const res = await fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
+        headers: {
+            "Authorization": `Bearer `,
+            "Content-Type": "application/json"
+        }
+    })
+    catsWithPhotos = await res.json();
+    animals = data.animals;
+    for (let i = 0; i < animals.length; i++){
+        if (animals[i].photos != ""){
+            catsWithPhotos.push(animals[i]);
+        }
+        
+    }
+    createCards();
+    catName.textContent = catsWithPhotos[i].name;
+    catBreed.textContent = catsWithPhotos[i].breeds.primary;
+    catImg.innerHTML = `<img src="${catsWithPhotos[i].photos[0]}>`;
 };
 
 const cardContainer = document.querySelector(".card-container");
@@ -229,15 +250,18 @@ function createCards(){
                 <a class="link" href="#">learn more</a>
             </div>
         </div>`;
-        catName.textContent = catsWithPhotos[i].name;
-        catBreed.textContent = catsWithPhotos[i].breeds.primary;
-        catImg.innerHTML = `<img src="${catsWithPhotos[i].photos[0]}>`;
+        
     }
 }
 
 
-(async() => {
 
-await API();
+//make this function run only when it is on the cats.html page 
+// (async() => {
 
-})();
+// await API();
+
+// })();
+
+
+

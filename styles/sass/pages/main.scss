@@ -1,0 +1,676 @@
+@use "../abstracts/" as *;
+
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* typography */ 
+@font-face {
+    font-family: "Now-Regular", sans-serif;
+    src: url("../chance-cafe/fonts/Now-Regular.otf");
+}
+
+@font-face {
+    font-family: "Now-Bold", sans-serif;
+    src: url("../chance-cafe/fonts/Now-Bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Now-Black", sans-serif;
+    src: url("../chance-cafe/fonts/Now-Bold.otf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Astral-Sisters", cursive;
+    src: url("../chance-cafe/fonts/Astral-Sisters.ttf"),
+         url("../chance-cafe/fonts/astral-sisters-webfont.woff"),
+         url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
+}
+
+body {
+    font-family: "Now-Regular", "Poppins", sans-serif;
+    color: #494949;
+}
+
+.cursivetext--pink,
+.cursivetext--pink{
+    font-family: "Astral-Sisters", "Dancing Script", cursive;
+    color: $primaryPink;
+    font-size: 3.5rem;
+}
+
+.newsletter__cursivetext--white{
+    font-family: "Astral-Sisters", "Dancing Script", cursive;
+    font-size: 2.7rem;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 0.2em;
+}
+
+.reservations__text,
+.about__text {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.link{
+    font-size: 1.5rem;
+    color: $primaryPink;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link:hover,
+.link:focus{
+    font-family: "Now-Black", "Poppins", sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+@media (min-width: 750px){
+    .cursivetext--pink,
+    .cursivetext--pink {
+        margin-bottom: 0.7em;
+    }
+}
+/* images */
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+@media (min-width: 750px){
+    img{
+        margin: 0;
+    }
+}
+
+/* navigation */
+.nav {
+    font-size: 1.2rem;
+
+    &__list{
+        @include flex(column, space-around, center);
+        background-color: $accentGreen;
+        margin-top: 5%;
+        height: 0;
+        text-align: center;
+        visibility: hidden;
+    }
+
+    &__list--open{
+        height: 50vh;
+        visibility: visible;
+    }
+
+    @keyframes slidein{
+        from {
+            margin-left: 100%;
+          }
+        
+          to {
+            margin-left: 0%;
+          }
+    }
+
+    &__item {
+        list-style: none;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .nav__link:hover, .nav__link:focus {
+        font-family: "Now-Black", "Poppins", sans-serif;
+        font-weight: 700;
+        border-bottom: 1px solid white;
+    }
+
+    &__placeholder{
+        height: 100px;
+    }
+}
+
+.mobilenav {
+    background-color: white;
+    z-index: 5;
+    width: 100%;
+    padding: 1.2em 0;
+
+    &__toggle {
+        padding: 1em;
+        cursor: pointer;
+    } 
+
+    &__toggle--burger, &__toggle--burger::before, 
+    &__toggle--burger::after {
+        content: "";
+        display: block;
+        background-color: $primaryPink;
+        width: 1.5em;
+        height: 4px;
+        border-radius: 3px;
+    }
+
+    &__toggle--burger::before {
+        transform: translateY(-8px);
+    }
+
+    &__toggle--burger::after {
+        transform: translateY(4px);
+    }
+}
+
+.active {
+    width: 1.5em;
+    height: 4px;
+    border-radius: 3px;
+}
+
+/* begin working here for transition */
+.open .mobilenav__toggle--burger::before {
+    opacity: 0;
+}
+
+@media(min-width: 750px){
+    .nav{
+        @include flex(row, space-between, center);
+
+        &__placeholder {
+            height: auto;
+            width: 30%;
+        }
+
+        &__list{
+            @include flex(row, flex-end, flex-start);
+            background-color: transparent;
+            color: $primaryPink;
+            z-index: auto;
+            height: auto;
+            width: 50%;
+            visibility: visible;
+            margin: 0;
+        }
+
+        &__item {
+            margin-right: 1em;
+        }
+
+        &__item:last-child {
+            margin-right: 1.5em;
+        }
+
+        &__link{
+            font-family: "Now-Bold", "Poppins", sans-serif;
+            font-size: 1rem;
+            color: $primaryPink;
+            cursor: pointer;
+        }
+
+        &__link:hover, &__link:focus{
+            font-family: "Now-Black", "Poppins", sans-serif;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+
+    .mobilenav__toggle {
+        display: none;
+    }
+}
+
+.flex{
+    @include flex(row, space-between, center);
+    padding: 5px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.mobilenav__logo{
+    @include flex(row, flex-start, center);
+}
+
+.mobilenav__logo--img{
+    width: 25%;
+    transform: rotate(25deg);
+    display: inline-block;
+    margin: 5px;
+}
+
+.mobilenav__logo--text{
+    margin-top: -15px;
+    font-size: 2rem;
+    font-family: "Astral-Sisters", "Dancing Script", cursive;
+    color: $primaryPink;
+    display: inline-block;
+}
+
+
+@media (min-width: 750px){
+    .sticky{
+        position: static;
+    }
+
+    .mobilenav {
+        background-color: transparent;
+
+        &__logo--img {
+            width: 30%;
+        }
+    }
+}
+
+
+/* hero */ 
+.hero {
+
+    &__imgdiv{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &__img{
+        background-image: url(/images/womenwcat_heroimg.jpg);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: right 25% bottom 0%;
+    }
+    
+    &__text {
+        position: absolute; 
+        padding-top: 6em;
+        padding-left: 2em;
+        width: 70%;
+        z-index: 2;
+    }
+
+    &__title{
+        font-weight: bold;
+        color: white;
+        font-size: 3.5rem;
+        margin-top: 0;
+        margin-bottom: 0.25em;
+        margin-bottom: 1.2em;
+        text-shadow: 0px 0px 8px #aaaaaa;
+    }
+
+    .button--pink{
+        margin: 0 auto;
+    }
+
+}
+
+@media (min-width: 750px){
+    .hero {
+        @include flex(row, space-between, center);
+        position: static;
+        width: 100%;
+
+        &__img{
+            display: block;
+            background-position: center;
+        }
+
+        &__imgdiv{
+            flex-grow: 2;
+        }
+
+        &__text{
+            position: static;
+            z-index: auto;
+            width: 40%;
+        }
+
+        // &__text::before{ button hover not working in hero because of this
+        //     content: "";
+        //     background-image: url(../images/pawprints-b.png);
+        //     background-position: left bottom;
+        //     background-size: 70%;
+        //     background-repeat: no-repeat;
+        //     position: absolute;
+        //     height: inherit;
+        //     width: inherit;
+        //     opacity: 0.3;
+        //     top: 0;
+        //     right: 0;
+        //     bottom: -12em;
+        //     left: -5em;
+        // }
+
+        &__text--container {
+            flex-grow: 1;
+            flex-basis: 400px;
+            padding: 0 1em;
+            margin: 0 auto;
+        }
+
+        &__text--btncontainer{
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &__title {
+            color: $primaryPink;
+            text-align: left;
+            text-shadow: none;
+        }
+
+        .button--pink {
+            margin-right: 2em;
+        }
+    }
+}
+
+/* reservations and photo gallery */
+
+.main__photo-gallery{
+    display: block;
+    margin: 3.5em 0;
+}
+
+
+.container {
+    padding: 3.5em 2em;
+    text-align: center;
+}
+
+.gallery-img-mobile{
+    display: none;
+}
+
+.fa-circle {
+    opacity: 40%;
+    margin-top: 3em;
+}
+
+.green {
+    color: $accentGreen;
+}
+
+@media (min-width: 750px) {
+    .container {
+        padding: 4.5em 2em;
+    }
+    
+    .main{
+        padding-top: 3em;
+        @include flex(row, space-around, center);
+    }
+    
+    .reservations{
+        width: 30%;
+    }
+
+    .gallery-img-mobile {
+        display: inline-block;
+    }
+
+    .main__photo-gallery{
+        margin-left: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 2fr);
+        gap: 0.75rem;
+        width: 60%;
+    }
+    
+    .slides {
+        width: 100%;
+        height: 100%;
+    }
+
+    .gallery-img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .slides__grid--col{
+        grid-column: span 2;
+    }
+
+    .slides__grid--row{
+        grid-row: span 3;
+    }
+
+    .dots {
+        display: none;
+    }
+}
+
+/* about styles */
+
+.about{
+    &__textblock {
+        position: relative;
+    }
+
+    &__textblock::before{
+        content: "";
+        background-image: url(../images/pawprints-b.png);
+        background-position: bottom right;
+        background-size: 70%;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        opacity: 0.3;
+        top: 0;
+        right: 1em;
+        bottom: -5em;
+        left: 0;
+    }
+
+    &__img {
+        margin: 3em 0;
+    }
+}
+
+
+@media (min-width: 750px){
+    .about { 
+        @include flex(row-reverse, space-around, center);
+        padding-top: 6em;
+        padding-bottom: 3em;
+        margin: 0 auto;
+        z-index: auto;
+        width: 70%;
+
+        &__img {
+            width: 40%;
+        }
+
+        &__textblock {
+            width: 40%;
+            height: auto;
+            text-align: left;
+            position: relative;
+            z-index: auto;
+        }
+
+        &__textblock::before {
+            content: "";
+            background-image: url(../images/pawprints-b.png);
+            background-position: top left;
+            background-size: 120%;
+            opacity: 0.3;
+            width: 100%;
+            background-repeat: repeat;
+            position: absolute;
+            top: -7em;
+            right: 0;
+            bottom: 5em;
+            left: -10em;
+        }
+    }
+}
+
+/* button styles */
+
+.button {
+    border: 4px solid $primaryPink;
+    font-family: "Now", "Poppins", sans-serif;
+    background-color: transparent;
+    color: $primaryPink;
+    font-size: 1.5rem;
+    padding: 0.75em 2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover, 
+.button:focus{
+    background-color: $primaryPink;
+    color: rgba(255, 255, 255, .7);
+}
+
+.button--pink {
+    background-color: $primaryPink;
+    font-family: "Now", "Poppins", sans-serif;
+    color: white;
+    border: none;
+    padding: 0.75em 1em;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.button--pink:hover,
+.button--pink:focus{
+    font-weight: bold;
+    border: 4px solid $primaryPink;
+    background-color: rgba(255, 255, 255, .6);
+    color: $primaryPink;
+}
+
+@media (min-width: 750px){
+    .button--pink{
+        border: 4px solid $primaryPink;
+        background-color: transparent;
+        color: $primaryPink;
+        text-align: center;
+        float: right;
+    }
+
+    .button--pink:hover, 
+    .button--pink:focus {
+        background-color: $primaryPink;
+        color: white;
+    }
+
+    #button--pinkfill {
+        background-color: $primaryPink;
+        color: white;
+    }
+
+    #button--pinkfill:hover,
+    #button--pinkfill:focus {
+        background-color: rgba(255, 255, 255, .8);
+        color: $primaryPink;
+    }
+    
+}
+
+/*footer styles */
+
+.footernav{
+    background-color: $accentGreen;
+    color: rgba(255, 255, 255, 1);
+    padding: 3.5em 2em;
+    display: flex;
+    justify-content: space-between;
+
+    &__list{
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    &__item{
+        list-style: none;
+        margin-bottom: 1.5em;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: rgba(255, 255, 255, .7);
+    }
+
+    &__link:hover, &__link:focus{
+        font-family: "Now-Black", "Poppins", sans-serif;
+        color: rgba(255, 255, 255, 1);
+        font-weight: 700;
+        text-decoration: underline;
+    }
+}
+
+@media (min-width: 750px){
+    .footernav{
+        padding: 2.5em 7em;
+    }
+
+    .footernav__list {
+        @include flex(row, space-around, center);
+        width: 40%;
+    }
+}
+
+/* form */ 
+
+.newsletter{
+    flex-grow: 2;
+    @include flex(column, center, center);
+
+    .button--pink {
+        margin: 0 auto;
+        width: 70%;
+        max-width: 150px;
+        font-size: 1rem;
+        padding: 0.5em 0.5em;
+    }
+}
+
+label{
+    display: none;
+}
+
+input{
+    background-color: rgba(255, 255, 255, .8);
+    margin-bottom: 1.5em;
+    padding: 1em 1.5em;
+    border-radius: 5px;
+    border: none;
+    width: 65%;
+}
+
+input:focus {
+    outline-color: $primaryPink;
+}
+
+::placeholder {
+    color: $primaryPink;
+}
+
+@media (min-width: 750px){
+    input {
+        width: 50%;
+    }
+}
+

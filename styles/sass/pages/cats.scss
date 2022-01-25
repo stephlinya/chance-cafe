@@ -1,0 +1,312 @@
+@use "../abstracts/" as *;
+
+//* cats page scss */
+/* cats page typography */
+.adoption {
+    width: 100vw;
+    margin: 0;
+    
+    &__header {
+        text-align: center;
+        background-image: url(/images/kittenwplant.jpg);
+        background-position: center;
+        height: 550px;
+        margin-bottom: 3em;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        color: $accentGreen;
+        margin: 0.5em 0;
+        padding: .6em .6em;
+        background-color: rgba(255, 255, 255, .5);
+        border-radius: 5px;
+    }
+
+    &__subtitle {
+        color: $primaryPink;
+        font-size: 2rem;
+        margin-bottom: 1em;
+    }
+
+    &__info {
+        line-height: 2;
+        margin-bottom: 1.5em;
+    }
+}
+
+.wrapper {
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    @include flex(column, flex-end, center);
+}
+
+.card {
+    width: 275px;
+    max-height: 450px;
+    border-radius: 5px;
+    margin: 1.5em auto;
+    padding: 0 0 1em 0;
+    box-shadow: 2px 2px 6px 0px $primaryPink;
+    @include flex(column, space-around, center);
+
+    &__imgdiv {
+        @include flex(column, space-around, center);
+        overflow: hidden;
+        border-radius: 5px 5px 0 0;
+    }
+
+    &__img {
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    &__info { 
+        padding: 2em 0;
+        font-size: 1.5rem;
+        @include flex(column, space-between, flex-start);
+    }
+
+    &__info > p {
+        margin: 0 auto;
+    }
+
+    &__info > .link {
+        margin: 1em auto 0 auto;
+    }
+}
+
+#small-link {
+    font-size: 1.2rem;
+}
+
+.card:hover, 
+.card:focus {
+    box-shadow: 2px 2px 26px 0px $primaryPink;
+    cursor: pointer;
+}
+
+.card-container {
+    width: 80%;
+    margin: 0.5em auto 2em auto;
+    @include flex(column, space-between, center);
+}
+
+@media (min-width: 650px){
+    .adoption__title {
+        font-size: 3.2rem;
+        padding: .5em 1.4em;
+    }
+
+    .card-container { 
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 275px);
+        gap: 2.2em;
+        justify-content: center;
+    }
+
+    .card {
+        margin: 1em auto;
+
+        &__imgdiv {
+        height: 60%;
+        margin: 0;
+        }
+    }
+
+}
+
+/* adoption modal */
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color:rgba(0, 0, 0, .5);
+    z-index: 8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    scrollbar-color: $primaryPink;
+    animation-name: fadein;
+        animation-duration: 1s;
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.9;
+            }
+        }
+
+    &__modal {
+        background-color: white;
+        width: 80%;
+        max-height: 90%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9;
+        border-radius: 5px;
+        overflow: auto;
+        scrollbar-color: $primaryPink;
+        animation-name: fadein;
+        animation-duration: 1s;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+
+        @keyframes fadein {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (min-width: 650px) {
+    .overlay__modal {
+        margin: 0;
+        max-width: 80%;
+        height: 600px;
+        max-height: 90%;
+    }
+}
+
+.modal-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.modal-header {
+    background-color: $accentGreen;
+    padding: 1em;
+}
+
+.modal-header__title {
+    color: white;
+    text-align: center;
+
+    &--green {
+        color: $accentGreen;
+        text-align: center;
+    }
+}
+
+@media (min-width: 650px) {
+    .modal-wrapper {
+        width: 70%;
+    }
+}
+
+.modal-open {
+    position: fixed;
+}
+
+#requirement-list > li {
+    text-align: left;
+}
+
+#requirement-list, #process-list {
+    font-size: 1.2rem;
+    padding: 1em 2em;
+    font-weight: normal;
+    line-height: 1.3;
+    color: black;
+}
+
+/* button on adoption modal*/
+
+#close-modal {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    z-index: 10;
+}
+
+#close-modal:hover,
+#close-modal:focus {
+    color: rgba(255, 255, 255, 1);
+}
+
+
+body .modal-open {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* adoption interest form */
+.adoption-interest {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.adoption-interest__text {
+    text-align: center;
+    margin: 1em 0;
+}
+
+.adoption-interest > label {
+    display: block;
+    color: $primaryPink;
+    font-weight: 700;
+}
+
+.adoption-interest > input{
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    width: 100%;
+    text-align: left;
+}
+
+.adoption-interest > input:hover, input:focus, textarea:hover{
+    border: 1px solid $primaryPink;
+}
+
+textarea:focus {
+    outline: 1px solid $primaryPink;
+}
+
+.adoption-interest >input::placeholder {
+    color: #c4c4c4;
+}
+
+.adoption-interest > button {
+    border: none;
+    border-radius: 5px;
+    padding: 0.75em 1em;
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.adoption-interest > button:hover, button:focus {
+    border: 4px solid $primaryPink;
+    background-color:rgba(255, 255, 255, .5);
+    color: $primaryPink;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 1em 1.5em;
+    margin-bottom: 1.5em;
+}
+
+textarea::placeholder {
+    color: #c4c4c4;
+}
