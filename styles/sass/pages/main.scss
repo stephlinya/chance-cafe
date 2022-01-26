@@ -1,4 +1,4 @@
-@use "../abstracts/" as *;
+@use "../abstracts" as *;
 
 
 *, *::before, *::after{
@@ -7,45 +7,20 @@
     box-sizing: border-box;
 }
 
-/* typography */ 
-@font-face {
-    font-family: "Now-Regular", sans-serif;
-    src: url("../chance-cafe/fonts/Now-Regular.otf");
-}
-
-@font-face {
-    font-family: "Now-Bold", sans-serif;
-    src: url("../chance-cafe/fonts/Now-Bold.otf");
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "Now-Black", sans-serif;
-    src: url("../chance-cafe/fonts/Now-Bold.otf");
-    font-weight: 900;
-}
-
-@font-face {
-    font-family: "Astral-Sisters", cursive;
-    src: url("../chance-cafe/fonts/Astral-Sisters.ttf"),
-         url("../chance-cafe/fonts/astral-sisters-webfont.woff"),
-         url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
-}
-
 body {
-    font-family: "Now-Regular", "Poppins", sans-serif;
+    font-family: $sans-serif;
     color: #494949;
 }
 
 .cursivetext--pink,
 .cursivetext--pink{
-    font-family: "Astral-Sisters", "Dancing Script", cursive;
+    font-family: $cursive;
     color: $primaryPink;
     font-size: 3.5rem;
 }
 
 .newsletter__cursivetext--white{
-    font-family: "Astral-Sisters", "Dancing Script", cursive;
+    font-family: $cursive;
     font-size: 2.7rem;
     letter-spacing: 2px;
     text-align: center;
@@ -69,7 +44,7 @@ body {
 
 .link:hover,
 .link:focus{
-    font-family: "Now-Black", "Poppins", sans-serif;
+    font-family: $sans-serif-bold;
     font-weight: 700;
     text-decoration: underline;
 }
@@ -130,7 +105,7 @@ img {
     }
     
     .nav__link:hover, .nav__link:focus {
-        font-family: "Now-Black", "Poppins", sans-serif;
+        font-family: $sans-serif-bold;
         font-weight: 700;
         border-bottom: 1px solid white;
     }
@@ -210,14 +185,14 @@ img {
         }
 
         &__link{
-            font-family: "Now-Bold", "Poppins", sans-serif;
+            font-family: $sans-serif-med;
             font-size: 1rem;
             color: $primaryPink;
             cursor: pointer;
         }
 
         &__link:hover, &__link:focus{
-            font-family: "Now-Black", "Poppins", sans-serif;
+            font-family: $sans-serif-bold;
             font-weight: 700;
             text-decoration: underline;
         }
@@ -253,7 +228,7 @@ img {
 .mobilenav__logo--text{
     margin-top: -15px;
     font-size: 2rem;
-    font-family: "Astral-Sisters", "Dancing Script", cursive;
+    font-family: $cursive;
     color: $primaryPink;
     display: inline-block;
 }
@@ -523,7 +498,7 @@ img {
 
 .button {
     border: 4px solid $primaryPink;
-    font-family: "Now", "Poppins", sans-serif;
+    font-family: $sans-serif;
     background-color: transparent;
     color: $primaryPink;
     font-size: 1.5rem;
@@ -540,7 +515,7 @@ img {
 
 .button--pink {
     background-color: $primaryPink;
-    font-family: "Now", "Poppins", sans-serif;
+    font-family: $sans-serif;
     color: white;
     border: none;
     padding: 0.75em 1em;
@@ -614,7 +589,7 @@ img {
     }
 
     &__link:hover, &__link:focus{
-        font-family: "Now-Black", "Poppins", sans-serif;
+        font-family: $sans-serif-bold;
         color: rgba(255, 255, 255, 1);
         font-weight: 700;
         text-decoration: underline;

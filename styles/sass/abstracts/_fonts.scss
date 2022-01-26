@@ -1,0 +1,29 @@
+/* typography */ 
+@font-face {
+    font-family: "Now-Regular", sans-serif;
+    src: url("../chance-cafe/fonts/Now-Regular.otf");
+}
+
+@font-face {
+    font-family: "Now-Bold", sans-serif;
+    src: url("../chance-cafe/fonts/Now-Bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Now-Black", sans-serif;
+    src: url("../chance-cafe/fonts/Now-Bold.otf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Astral-Sisters", cursive;
+    src: url("../chance-cafe/fonts/Astral-Sisters.ttf"),
+         url("../chance-cafe/fonts/astral-sisters-webfont.woff"),
+         url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
+}
+
+$sans-serif: "Now-Regular", "Poppins", sans-serif;
+$cursive: "Astral-Sisters", "Dancing Script", cursive;
+$sans-serif-med: "Now-Bold", "Poppins", sans-serif;
+$sans-serif-bold: "Now-Black", "Poppins", sans-serif;

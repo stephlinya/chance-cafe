@@ -1,13 +1,5 @@
 /* colors */
 /* typography */
-/* buttons */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* typography */
 @font-face {
   font-family: "Now-Regular", sans-serif;
   src: url("../chance-cafe/fonts/Now-Regular.otf");
@@ -26,6 +18,12 @@
   font-family: "Astral-Sisters", cursive;
   src: url("../chance-cafe/fonts/Astral-Sisters.ttf"), url("../chance-cafe/fonts/astral-sisters-webfont.woff"), url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
 }
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Now-Regular", "Poppins", sans-serif;
   color: #494949;
@@ -470,7 +468,7 @@ img {
 /* button styles */
 .button {
   border: 4px solid #e89c89;
-  font-family: "Now", "Poppins", sans-serif;
+  font-family: "Now-Regular", "Poppins", sans-serif;
   background-color: transparent;
   color: #e89c89;
   font-size: 1.5rem;
@@ -487,7 +485,7 @@ img {
 
 .button--pink {
   background-color: #e89c89;
-  font-family: "Now", "Poppins", sans-serif;
+  font-family: "Now-Regular", "Poppins", sans-serif;
   color: white;
   border: none;
   padding: 0.75em 1em;

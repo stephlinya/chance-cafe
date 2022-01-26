@@ -1,6 +1,23 @@
 /* colors */
 /* typography */
-/* buttons */
+@font-face {
+  font-family: "Now-Regular", sans-serif;
+  src: url("../chance-cafe/fonts/Now-Regular.otf");
+}
+@font-face {
+  font-family: "Now-Bold", sans-serif;
+  src: url("../chance-cafe/fonts/Now-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Now-Black", sans-serif;
+  src: url("../chance-cafe/fonts/Now-Bold.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Astral-Sisters", cursive;
+  src: url("../chance-cafe/fonts/Astral-Sisters.ttf"), url("../chance-cafe/fonts/astral-sisters-webfont.woff"), url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
+}
 /* cats page typography */
 .adoption {
   width: 100vw;
