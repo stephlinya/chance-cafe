@@ -259,7 +259,8 @@ img {
     }
 
     &__img{
-        background-image: url(./images/womenwcat_heroimg.jpg);
+        background-image: url(/images/womenwcat_heroimg.jpg);
+        background-color: $primaryPink;
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;

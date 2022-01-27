@@ -8,7 +8,8 @@
     
     &__header {
         text-align: center;
-        background-image: url(./images/kittenwplant.jpg);
+        background-image: url(/images/kittenwplant.jpg);
+        background-color: $accentGreen;
         background-position: center;
         height: 550px;
         margin-bottom: 3em;
