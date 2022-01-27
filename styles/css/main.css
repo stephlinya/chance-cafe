@@ -263,7 +263,7 @@ img {
   overflow: hidden;
 }
 .hero__img {
-  background-image: url(/images/womenwcat_heroimg.jpg);
+  background-image: url(./images/womenwcat_heroimg.jpg);
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
