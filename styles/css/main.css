@@ -53,14 +53,19 @@ body {
 }
 
 .link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link--primary {
   font-size: 1.5rem;
   color: #e89c89;
   text-decoration: none;
   cursor: pointer;
 }
 
-.link:hover,
-.link:focus {
+.link--primary:hover,
+.link--primary:focus {
   font-family: "Now-Black", "Poppins", sans-serif;
   font-weight: 700;
   text-decoration: underline;

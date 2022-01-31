@@ -35,15 +35,20 @@ body {
     margin-bottom: 1em;
 }
 
-.link{
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link--primary{
     font-size: 1.5rem;
     color: $primaryPink;
     text-decoration: none;
     cursor: pointer;
 }
 
-.link:hover,
-.link:focus{
+.link--primary:hover,
+.link--primary:focus{
     font-family: $sans-serif-bold;
     font-weight: 700;
     text-decoration: underline;
