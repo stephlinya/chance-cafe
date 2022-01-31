@@ -263,7 +263,7 @@ img {
   overflow: hidden;
 }
 .hero__img {
-  background-image: url("/images/womenwcat_heroimg.jpg");
+  background-image: url("../../images/womenwcat_heroimg.jpg");
   background-color: #e89c89;
   background-repeat: no-repeat;
   width: 100%;
@@ -412,7 +412,7 @@ img {
 }
 .about__textblock::before {
   content: "";
-  background-image: url("../chance-cafe/images/pawprints-b.png");
+  background-image: url("../../images/pawprints-b.png");
   background-position: bottom right;
   background-size: 70%;
   background-repeat: no-repeat;
@@ -453,7 +453,7 @@ img {
   }
   .about__textblock::before {
     content: "";
-    background-image: url("../images/pawprints-b.png");
+    background-image: url("../../images/pawprints-b.png");
     background-position: top left;
     background-size: 120%;
     opacity: 0.3;
