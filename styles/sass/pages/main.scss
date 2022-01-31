@@ -437,7 +437,7 @@ img {
 
     &__textblock::before{
         content: "";
-        background-image: url("../images/pawprints-b.png");
+        background-image: url("../chance-cafe/images/pawprints-b.png");
         background-position: bottom right;
         background-size: 70%;
         background-repeat: no-repeat;
@@ -497,67 +497,34 @@ img {
 
 /* button styles */
 
-.button {
-    border: 4px solid $primaryPink;
-    font-family: $sans-serif;
-    background-color: transparent;
-    color: $primaryPink;
-    font-size: 1.5rem;
-    padding: 0.75em 2em;
-    border-radius: 5px;
-    cursor: pointer;
+.btn--primaryoutline {
+    @include btn-primaryoutline;
 }
 
-.button:hover, 
-.button:focus{
-    background-color: $primaryPink;
-    color: rgba(255, 255, 255, .7);
+.btn--primaryoutline:hover, 
+.btn--primaryoutline:focus{
+    @include btn-primaryfill;
 }
 
-.button--pink {
-    background-color: $primaryPink;
-    font-family: $sans-serif;
-    color: white;
-    border: none;
-    padding: 0.75em 1em;
-    border-radius: 5px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    white-space: nowrap;
+.btn--primaryfill {
+    @include btn-primaryfill;
 }
 
-.button--pink:hover,
-.button--pink:focus{
-    font-weight: bold;
-    border: 4px solid $primaryPink;
-    background-color: rgba(255, 255, 255, .6);
-    color: $primaryPink;
+.btn--primaryfill:hover,
+.btn--primaryfill:focus{
+    @include btn-primaryoutline;
 }
+
+/* might be able to delete? */
 
 @media (min-width: 750px){
-    .button--pink{
-        border: 4px solid $primaryPink;
-        background-color: transparent;
-        color: $primaryPink;
-        text-align: center;
-        float: right;
+    .btn--primaryfill{
+        @include btn-primaryfill;
     }
 
-    .button--pink:hover, 
-    .button--pink:focus {
-        background-color: $primaryPink;
-        color: white;
-    }
-
-    #button--pinkfill {
-        background-color: $primaryPink;
-        color: white;
-    }
-
-    #button--pinkfill:hover,
-    #button--pinkfill:focus {
-        background-color: rgba(255, 255, 255, .8);
-        color: $primaryPink;
+    .btn--primaryfill:hover, 
+    .btn--primaryfill:focus {
+        @include btn-primaryoutline;
     }
     
 }

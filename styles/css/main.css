@@ -412,7 +412,7 @@ img {
 }
 .about__textblock::before {
   content: "";
-  background-image: url("../images/pawprints-b.png");
+  background-image: url("../chance-cafe/images/pawprints-b.png");
   background-position: bottom right;
   background-size: 70%;
   background-repeat: no-repeat;
@@ -467,7 +467,7 @@ img {
   }
 }
 /* button styles */
-.button {
+.btn--primaryoutline {
   border: 4px solid #e89c89;
   font-family: "Now-Regular", "Poppins", sans-serif;
   background-color: transparent;
@@ -478,13 +478,8 @@ img {
   cursor: pointer;
 }
 
-.button:hover,
-.button:focus {
-  background-color: #e89c89;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.button--pink {
+.btn--primaryoutline:hover,
+.btn--primaryoutline:focus {
   background-color: #e89c89;
   font-family: "Now-Regular", "Poppins", sans-serif;
   color: white;
@@ -496,38 +491,54 @@ img {
   white-space: nowrap;
 }
 
-.button--pink:hover,
-.button--pink:focus {
-  font-weight: bold;
-  border: 4px solid #e89c89;
-  background-color: rgba(255, 255, 255, 0.6);
-  color: #e89c89;
+.btn--primaryfill {
+  background-color: #e89c89;
+  font-family: "Now-Regular", "Poppins", sans-serif;
+  color: white;
+  border: none;
+  padding: 0.75em 1em;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
+.btn--primaryfill:hover,
+.btn--primaryfill:focus {
+  border: 4px solid #e89c89;
+  font-family: "Now-Regular", "Poppins", sans-serif;
+  background-color: transparent;
+  color: #e89c89;
+  font-size: 1.5rem;
+  padding: 0.75em 2em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* might be able to delete? */
 @media (min-width: 750px) {
-  .button--pink {
+  .btn--primaryfill {
+    background-color: #e89c89;
+    font-family: "Now-Regular", "Poppins", sans-serif;
+    color: white;
+    border: none;
+    padding: 0.75em 1em;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn--primaryfill:hover,
+.btn--primaryfill:focus {
     border: 4px solid #e89c89;
+    font-family: "Now-Regular", "Poppins", sans-serif;
     background-color: transparent;
     color: #e89c89;
-    text-align: center;
-    float: right;
-  }
-
-  .button--pink:hover,
-.button--pink:focus {
-    background-color: #e89c89;
-    color: white;
-  }
-
-  #button--pinkfill {
-    background-color: #e89c89;
-    color: white;
-  }
-
-  #button--pinkfill:hover,
-#button--pinkfill:focus {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #e89c89;
+    font-size: 1.5rem;
+    padding: 0.75em 2em;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }
 /*footer styles */
