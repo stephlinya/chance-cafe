@@ -1,0 +1,106 @@
+@use "../abstracts" as *;
+
+
+.about {
+    &__heroimg {
+        background-image: url("../../images/catwplant.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        display: inline-block;
+        background-color: grey;
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 6.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+    }
+
+    p {
+        line-height: 1.2;
+    }
+}
+
+
+/* typography */
+
+.boldtxt {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.subheading {
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.sans-serif {
+    color: white;
+}
+
+.caps {
+    text-transform: uppercase;
+}
+
+.contact {
+    @include flex(row, space-around, center);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3em;
+    font-size: 1.3rem;
+    background-color: rgba(255, 255, 255, .30);
+}
+
+.purpose {
+    position: relative;
+    margin-bottom: 3rem;
+    @include flex(row, space-around, center);
+
+    &__title {
+        font-size: 5rem;
+        margin: 0.5em 0;
+        text-align: center;
+    }
+
+    &__img {
+        width: 60%;
+        margin-bottom: 0.5em;
+    }
+
+    &__one, &__two,
+    &__three {
+        @include flex(column, space-around, center);
+    }
+}
+
+.cta {
+    background-color: $primaryPink;
+    color: white;
+    text-align: center;
+    padding: 3em;
+    border: 20px solid $primaryPink;
+
+    &__info {
+        box-shadow: 0 0 5px 0 white;
+        padding: 3em;
+    }
+
+    &__title {
+        font-size: 5rem;
+    }
+}
+
+.btn--whiteoutline {
+    @include btn-whiteoutline;
+}

@@ -29,14 +29,14 @@ body {
   color: #494949;
 }
 
-.cursivetext--pink,
-.cursivetext--pink {
+.cursive--primary,
+.cursive--primary {
   font-family: "Astral-Sisters", "Dancing Script", cursive;
   color: #e89c89;
   font-size: 3.5rem;
 }
 
-.newsletter__cursivetext--white {
+.cursive--white {
   font-family: "Astral-Sisters", "Dancing Script", cursive;
   font-size: 2.7rem;
   letter-spacing: 2px;
@@ -478,7 +478,7 @@ img {
   background-color: transparent;
   color: #e89c89;
   font-size: 1.5rem;
-  padding: 0.75em 2em;
+  padding: 0.75rem 2rem;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -489,7 +489,7 @@ img {
   font-family: "Now-Regular", "Poppins", sans-serif;
   color: white;
   border: none;
-  padding: 0.75em 1em;
+  padding: 0.75rem 1rem;
   border-radius: 5px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -501,7 +501,7 @@ img {
   font-family: "Now-Regular", "Poppins", sans-serif;
   color: white;
   border: none;
-  padding: 0.75em 1em;
+  padding: 0.75rem 1rem;
   border-radius: 5px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -515,7 +515,7 @@ img {
   background-color: transparent;
   color: #e89c89;
   font-size: 1.5rem;
-  padding: 0.75em 2em;
+  padding: 0.75rem 2rem;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -527,7 +527,7 @@ img {
     font-family: "Now-Regular", "Poppins", sans-serif;
     color: white;
     border: none;
-    padding: 0.75em 1em;
+    padding: 0.75rem 1rem;
     border-radius: 5px;
     font-size: 1.5rem;
     cursor: pointer;
@@ -541,7 +541,7 @@ img {
     background-color: transparent;
     color: #e89c89;
     font-size: 1.5rem;
-    padding: 0.75em 2em;
+    padding: 0.75rem 2rem;
     border-radius: 5px;
     cursor: pointer;
   }

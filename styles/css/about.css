@@ -1,0 +1,128 @@
+/* colors */
+/* typography */
+@font-face {
+  font-family: "Now-Regular", sans-serif;
+  src: url("../chance-cafe/fonts/Now-Regular.otf");
+}
+@font-face {
+  font-family: "Now-Bold", sans-serif;
+  src: url("../chance-cafe/fonts/Now-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Now-Black", sans-serif;
+  src: url("../chance-cafe/fonts/Now-Bold.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Astral-Sisters", cursive;
+  src: url("../chance-cafe/fonts/Astral-Sisters.ttf"), url("../chance-cafe/fonts/astral-sisters-webfont.woff"), url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
+}
+.about__heroimg {
+  background-image: url("../../images/catwplant.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: inline-block;
+  background-color: grey;
+}
+.about__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.about p {
+  line-height: 1.2;
+}
+
+/* typography */
+.boldtxt {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.subheading {
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.sans-serif {
+  color: white;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3em;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.purpose {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.purpose__title {
+  font-size: 5rem;
+  margin: 0.5em 0;
+  text-align: center;
+}
+.purpose__img {
+  width: 60%;
+  margin-bottom: 0.5em;
+}
+.purpose__one, .purpose__two, .purpose__three {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cta {
+  background-color: #e89c89;
+  color: white;
+  text-align: center;
+  padding: 3em;
+  border: 20px solid #e89c89;
+}
+.cta__info {
+  box-shadow: 0 0 5px 0 white;
+  padding: 3em;
+}
+.cta__title {
+  font-size: 5rem;
+}
+
+.btn--whiteoutline {
+  border: 4px solid white;
+  font-family: "Now-Regular", "Poppins", sans-serif;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=about.css.map */

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/css/main.css">
-    <link rel="stylesheet" href="styles/css/cats.css">
+    <link rel="stylesheet" href="styles/css/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -41,52 +41,56 @@
     </header>
 
     <main>
-      <img src="images/catwplant.jpg" alt="cat with drinks">
-      <h1>About us</h1>
-      <div class="contact">
-          <div class="contact__address">
-              <p><span class="boldtxt">Address</span></p>
-              <p>1234 Apple Road</p>
-              <p>Hacienda Heights, CA 91745</p>
-          </div>
+        <section class="about__hero">
+            <div class="about__heroimg"></div>
+            <h1 class="about__title sans-serif">About us</h1>
+            <div class="contact">
+                <div class="contact__address sans-serif">
+                    <p class="subheading"><span class="boldtxt">Address</span></p>
+                    <p>1234 Apple Road</p>
+                    <p>Hacienda Heights, CA 91745</p>
+                </div>
 
-            <div class="contact__hours">
-                <p><span class="boldtxt">Hours of operation</span></p>
-                <p>M-F: 8am - 6pm</p>
-                <p>Saturday: 8am - 7pm</p>
-                <p>Sunday: 8am - 5pm</p>
+                <div class="contact__hours sans-serif">
+                    <p class="subheading"><span class="boldtxt">Hours of operation</span></p>
+                    <p>M-F: 8am - 6pm</p>
+                    <p>Saturday: 8am - 7pm</p>
+                    <p>Sunday: 8am - 5pm</p>
+                </div>
+
+                <div class="contact__info sans-serif">
+                    <p class="subheading"><span class="boldtxt">Contact</span></p>
+                    <p>stephlinya@gmail.com</p>
+                    <p>(626)271-6968</p>
+                </div>
             </div>
-
-            <div class="contact__info">
-                <p><span class="boldtxt">Contact</span></p>
-                <p>stephlinya@gmail.com</p>
-                <p>(626)271-6968</p>
-            </div>
-      </div>
-
+        </section>
+      
+    <h2 class="cursive--primary purpose__title">Chance Cafe</h1>
       <div class="purpose">
-          <h2class="cursive--primary">Chance Cafe</h1>
           <div class="purpose__one">
-              <img src="images/catwplant.jpg" alt="cat in hammock">
-              <p><span class="boldtxt">Increases adoptions</span></p>
+              <img src="images/catwplant.jpg" alt="cat in hammock" class="purpose__img">
+              <p><span class="boldtxt caps">Increases adoptions</span></p>
           </div>
 
           <div class="purpose__two">
-            <img src="images/catwplant.jpg" alt="cat with drinks">
-            <p><span class="boldtxt">Reduces anxiety</span></p>
+            <img src="images/catwplant.jpg" alt="cat with drinks" class="purpose__img">
+            <p><span class="boldtxt caps">Reduces anxiety</span></p>
         </div>
 
         <div class="purpose__three">
-            <img src="images/catwplant.jpg" alt="cat watching">
-            <p><span class="boldtxt">Saves lives</span></p>
+            <img src="images/catwplant.jpg" alt="cat watching" class="purpose__img">
+            <p><span class="boldtxt caps">Saves lives</span></p>
         </div>
       </div>
 
       <div class="cta">
-        <h2>cursive--white</h2>
-        <p>We provide a warm, relaxing place for our cats and humans to bond over a cup of coffee, toys, and snacks.</p>
-        <p>Make a reservation to play with our available kitties.</p>
-        <button class="btn--primaryoutline">call today</button>
+        <div class="cta__info">
+            <h2 class="cursive--white cta__title">The ultimate destination</h2>
+            <p>We provide a warm, relaxing place for our cats and humans to bond over a cup of coffee, toys, and snacks.</p>
+            <p>Make a reservation to play with our available kitties.</p>
+            <button class="btn--whiteoutline">call today</button>
+        </div>
       </div>
 
       <div class="adopt">
@@ -127,5 +131,5 @@
         </form>
     </footer>
 </body>
-<script src="main.js"></script>
+<script src="../../script/main.js"></script>
 </html>
