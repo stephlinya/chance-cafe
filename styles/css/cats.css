@@ -25,7 +25,7 @@
 }
 .adoption__header {
   text-align: center;
-  background-image: url(/images/kittenwplant.jpg);
+  background-image: url("/images/kittenwplant.jpg");
   background-color: #b0bf97;
   background-position: center;
   height: 550px;
