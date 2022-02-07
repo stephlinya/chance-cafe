@@ -50,6 +50,10 @@
     text-transform: uppercase;
 }
 
+p {
+    margin-bottom: 1.3rem;
+}
+
 .contact {
     @include flex(row, space-around, center);
     position: absolute;
@@ -91,16 +95,61 @@
     padding: 3em;
     border: 20px solid $primaryPink;
 
+    &__wrapper {
+        width: 80%;
+        margin: 0 auto;
+        font-size: 2rem;
+    }
+
     &__info {
         box-shadow: 0 0 5px 0 white;
         padding: 3em;
     }
 
     &__title {
-        font-size: 5rem;
+        font-size: 4.5rem;
+        
+    }
+}
+
+@media (min-width: 750px){
+    .cta__wrapper {
+        width: 65%;
     }
 }
 
 .btn--whiteoutline {
     @include btn-whiteoutline;
+}
+
+.adoptpg {
+    @include flex(row, flex-start, center);
+    margin: 2em 0;
+
+    &__wrapper {
+        width: 10%;
+        padding: 0 2em;
+    }
+
+    &__img {
+        width: 40%;
+        margin-right: 2em;
+    }
+
+    &__text {
+        padding: 0 2em;
+        text-align: center;
+    }
+}
+
+@media (min-width: 750px){
+    .adoptpg {
+        justify-content: space-around;
+        gap: 1em;
+        margin: 4em 0;
+
+        &__text {
+            font-size: 2rem;
+        }
+    }
 }
