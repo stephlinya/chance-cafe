@@ -33,7 +33,7 @@ body {
 .cursive--primary {
   font-family: "Astral-Sisters", "Dancing Script", cursive;
   color: #e89c89;
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .cursive--white {
@@ -489,7 +489,7 @@ img {
   font-family: "Now-Regular", "Poppins", sans-serif;
   color: white;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2rem;
   border-radius: 5px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -501,7 +501,7 @@ img {
   font-family: "Now-Regular", "Poppins", sans-serif;
   color: white;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2rem;
   border-radius: 5px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -527,7 +527,7 @@ img {
     font-family: "Now-Regular", "Poppins", sans-serif;
     color: white;
     border: none;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 2rem;
     border-radius: 5px;
     font-size: 1.5rem;
     cursor: pointer;

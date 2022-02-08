@@ -11,7 +11,7 @@
 @mixin btn-primaryoutline {
     border: 4px solid c.$primaryPink;
     font-family: f.$sans-serif;
-    background-color: transparent;
+    background-color: rgba(white, 0.5);
     color: c.$primaryPink;
     font-size: 1.5rem;
     padding: 0.75rem 2rem;
@@ -24,6 +24,17 @@
     font-family: f.$sans-serif;
     background-color: transparent;
     color: white;
+    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@mixin btn-whitefill {
+    border: 4px solid c.$primaryPink;
+    font-family: f.$sans-serif;
+    background-color: rgba(white, 0.5);
+    color: c.$primaryPink;
     font-size: 1.5rem;
     padding: 0.75rem 2rem;
     border-radius: 5px;
