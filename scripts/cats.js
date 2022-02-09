@@ -119,9 +119,9 @@ let catsWithPhotos = [];
 let animals = "";
 
 function callAPI() {
-fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
+fetch("https://api.petfinder.com/v2/animals?type=cat&page=2", {
     headers: {
-        "Authorization": `Bearer `,
+        "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqcDhPT3hFZnBRSERjaDFRZ0I0VmlvMWc3Q1VXYjBpbGVnOXJzdmdTalBjSnZnU2tDWCIsImp0aSI6ImIwZjM4ZjhiMjM1MjRjZjlmYzhkNWU5ZTI1YTE1NDYwZjI4MjA2ZjI2NjNiNThhZjZkYWNkMWM3YWNkN2JhYzM2ZTlkZGQ4NjMzZDJjYjI3IiwiaWF0IjoxNjQ0NDQ2ODM4LCJuYmYiOjE2NDQ0NDY4MzgsImV4cCI6MTY0NDQ1MDQzOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.hXbHNz4s6VhBwhNLNZMqEGAA-7ARMN8jDMsEdUKa1suB4PHC4CRy4Pu1djhPMwFdWr3_Hm67aeVDZeaxH8j2IHgOASua8lvlzx7M-nfaz6cnkT5IeCnqtOl8jm2oPuB0YpJid8Y1wPgF7hZymmtiTJDKbKj_cbF2pK2Z212NNuRwU6ScF1hUpHc2ZkS3e6TCA6900LRvERfjZrzM82OOqmPJQGk6MkI2CjUIcor7AcqMA2wDezLylBBLeWPQxGNeIvoDcW3U4EzVrJJiZTFOWTBmPqXBGqBeAl16MYn7k41J3WUD_8k1prh6OATN2BgDftFaNKeyfMr_HNgXgROdHA`,
         "Content-Type": "application/json"
     }
 })
@@ -129,20 +129,25 @@ fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
     .then(data => {
         animals = data.animals;
         for (let i = 0; i < animals.length; i++){
-            if (animals[i].photos != "" && animals[i].photos[0].large){
+            if ((animals[i].photos != "") && (animals[i].photos[0].large) && (/^[a-zA-Z]+$/.test(animals[i].name))){
                 catsWithPhotos.push(animals[i]);
+                console.log(animals[i].photos[0].large);
             }
             
         }
         createCards();
+        console.log(data.animals);
        
+    })
+
+    .catch((err) => {
+        console.log(err);
     });
 };
 
 callAPI();
 
 const cardContainer = document.querySelector(".card-container");
-console.log(typeof catsWithPhotos);
 function createCards(){
    
     for(let i = 0; i < catsWithPhotos.length; i++){
@@ -151,9 +156,7 @@ function createCards(){
         if((catsWithPhotos[i].colors.primary) && (catsWithPhotos[i].breeds.primary)){
             cardContainer.innerHTML += `
             <div class="card">
-                <div class="card__imgdiv">
-                    <img src="${catsWithPhotos[i].photos[0].large}" class="card__img">
-                </div>
+                <img src="${catsWithPhotos[i].photos[0].large}" class="card__img">
                 <div class="card__info">
                     <p id="cat-name">${catsWithPhotos[i].name}</p>
                     <p id="cat-breed">${catsWithPhotos[i].colors.primary} ${catsWithPhotos[i].breeds.primary} </p>
@@ -163,9 +166,7 @@ function createCards(){
         } else if (catsWithPhotos[i].breeds.primary)
         cardContainer.innerHTML += `
         <div class="card">
-            <div class="card__imgdiv">
-                <img src="${catsWithPhotos[i].photos[0].large}" class="card__img">
-            </div>
+            <img src="${catsWithPhotos[i].photos[0].large}" class="card__img">
             <div class="card__info">
                 <p id="cat-name">${catsWithPhotos[i].name}</p>
                 <p id="cat-breed">${catsWithPhotos[i].breeds.primary} </p>
