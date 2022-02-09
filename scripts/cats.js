@@ -4,10 +4,17 @@ const overlay = document.querySelector(".overlay");
 const closeModal = document.getElementById("close-modal");
 let scrollPosition = window.pageYOffset;
 
+const close = (e) => {
+    overlay.style.display = "none";
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open");
+    window.scroll(0, scrollPosition);
+    console.log("hello");
+}
+
 if (adoptionRequirements) {
     adoptionRequirements.addEventListener("click", (e) => {
-        console.log(closeModal);
-        modal.innerHTML = `<button id="close-modal">x</button>`;
+        modal.innerHTML = `<button id="close-modal" onclick="close">x</button>`;
         e.preventDefault();
         scrollPosition = window.pageYOffset;
         document.body.classList.add("modal-open");
@@ -38,19 +45,12 @@ if (adoptionRequirements) {
         `;
 
         closeModal.addEventListener("click", (e) => {
-            overlay.style.display = "none";
-            modal.style.display = "none";
-            document.body.classList.remove("modal-open");
-            window.scroll(0, scrollPosition);
-            console.log("hello");
+            close();
         })
 
         window.addEventListener("click", (e) => {
             if(e.target == overlay || e.target == closeModal){
-                overlay.style.display = "none";
-                modal.style.display = "none";
-                document.body.classList.remove("modal-open");
-                window.scroll(0, scrollPosition);
+               close();
             }
         })
         
@@ -98,19 +98,13 @@ if (adoptionInterest) {
         </div>
         `;
     
-        closeModal.addEventListener("click", () => {
-            overlay.style.display = "none";
-            modal.style.display = "none";
-            document.body.classList.remove("modal-open");
-            window.scroll(0, scrollPosition);
+        closeModal.addEventListener("click", (e) => {
+            close();
         })
     
         window.addEventListener("click", (e) => {
             if(e.target == overlay){
-                overlay.style.display = "none";
-                modal.style.display = "none";
-                document.body.classList.remove("modal-open");
-                window.scroll(0, scrollPosition);
+                close();
             }
         })
     
@@ -124,77 +118,63 @@ let catImg = document.querySelector(".card__img");
 let catsWithPhotos = [];
 let animals = "";
 
-// function callAPI() {
-// fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
-//     headers: {
-//         "Authorization": `Bearer `,
-//         "Content-Type": "application/json"
-//     }
-// })
-//     .then(res => res.json())
-//     .then(data => {
-//         animals = data.animals;
-//         for (let i = 0; i < animals.length; i++){
-//             if (animals[i].photos != ""){
-//                 catsWithPhotos.push(animals[i]);
-//             }
-            
-//         }
-//         createCards();
-       
-//         console.log(data.animals);
-//     });
-// };
-
-async function callAPI() {
-    const res = await fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
-        headers: {
-            "Authorization": `Bearer `,
-            "Content-Type": "application/json"
-        }
-    })
-    catsWithPhotos = await res.json();
-    animals = data.animals;
-    for (let i = 0; i < animals.length; i++){
-        if (animals[i].photos != ""){
-            catsWithPhotos.push(animals[i]);
-        }
-        
+function callAPI() {
+fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
+    headers: {
+        "Authorization": `Bearer `,
+        "Content-Type": "application/json"
     }
-    createCards();
-    catName.textContent = catsWithPhotos[i].name;
-    catBreed.textContent = catsWithPhotos[i].breeds.primary;
-    catImg.innerHTML = `<img src="${catsWithPhotos[i].photos[0]}>`;
+})
+    .then(res => res.json())
+    .then(data => {
+        animals = data.animals;
+        for (let i = 0; i < animals.length; i++){
+            if (animals[i].photos != "" && animals[i].photos[0].large){
+                catsWithPhotos.push(animals[i]);
+            }
+            
+        }
+        createCards();
+       
+    });
 };
+
+callAPI();
 
 const cardContainer = document.querySelector(".card-container");
 console.log(typeof catsWithPhotos);
 function createCards(){
+   
     for(let i = 0; i < catsWithPhotos.length; i++){
-        console.log(catsWithPhotos);
+        console.log(catsWithPhotos[i])
+
+        if((catsWithPhotos[i].colors.primary) && (catsWithPhotos[i].breeds.primary)){
+            cardContainer.innerHTML += `
+            <div class="card">
+                <div class="card__imgdiv">
+                    <img src="${catsWithPhotos[i].photos[0].large}" class="card__img">
+                </div>
+                <div class="card__info">
+                    <p id="cat-name">${catsWithPhotos[i].name}</p>
+                    <p id="cat-breed">${catsWithPhotos[i].colors.primary} ${catsWithPhotos[i].breeds.primary} </p>
+                    <a class="link--primary card__link" href="#">learn more</a>
+                </div>
+            </div>`
+        } else if (catsWithPhotos[i].breeds.primary)
         cardContainer.innerHTML += `
         <div class="card">
             <div class="card__imgdiv">
-                <div class="card__img"></div>
+                <img src="${catsWithPhotos[i].photos[0].large}" class="card__img">
             </div>
             <div class="card__info">
-                <p id="cat-name"></p>
-                <p id="cat-breed"></p>
-                <a class="link" href="#">learn more</a>
+                <p id="cat-name">${catsWithPhotos[i].name}</p>
+                <p id="cat-breed">${catsWithPhotos[i].breeds.primary} </p>
+                <a class="link--primary card__link" href="#">learn more</a>
             </div>
         </div>`;
         
     }
 }
-
-
-
-//make this function run only when it is on the cats.html page 
-// (async() => {
-
-// await API();
-
-// })();
 
 
 

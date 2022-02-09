@@ -18,6 +18,12 @@
   font-family: "Astral-Sisters", cursive;
   src: url("../chance-cafe/fonts/Astral-Sisters.ttf"), url("../chance-cafe/fonts/astral-sisters-webfont.woff"), url("../chance-cafe/fonts/astral-sisters-webfont.woff2");
 }
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* cats page typography */
 .adoption {
   width: 100vw;
@@ -49,6 +55,24 @@
   margin-bottom: 1.5em;
 }
 
+#cat-breed {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+
+#cat-name {
+  text-transform: lowercase;
+  margin-bottom: 0.5em;
+}
+
+#cat-name:first-letter {
+  text-transform: capitalize;
+}
+
+#cat-name {
+  font-weight: bold;
+}
+
 .wrapper {
   width: 65%;
   height: 100%;
@@ -77,16 +101,20 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  overflow: hidden;
   border-radius: 5px 5px 0 0;
+  width: 275px;
+  height: 300px;
+  overflow: hidden;
 }
 .card__img {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .card__info {
-  padding: 2em 0;
+  padding: 2em 1em;
   font-size: 1.5rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -95,12 +123,21 @@
 .card__info > p {
   margin: 0 auto;
 }
-.card__info > .link {
+.card__link {
   margin: 1em auto 0 auto;
 }
 
 #small-link {
   font-size: 1.2rem;
+  cursor: pointer;
+  color: #b0bf97;
+}
+
+#small-link:hover,
+#small-link:focus {
+  font-family: "Now-Black", "Poppins", sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .card:hover,
@@ -133,10 +170,6 @@
 
   .card {
     margin: 1em auto;
-  }
-  .card__imgdiv {
-    height: 60%;
-    margin: 0;
   }
 }
 /* adoption modal */
@@ -245,7 +278,7 @@
   position: absolute;
   top: 0;
   right: 1rem;
-  z-index: 10;
+  z-index: 40;
 }
 
 #close-modal:hover,
