@@ -80,10 +80,6 @@
   text-transform: uppercase;
 }
 
-p {
-  margin-bottom: 1.3rem;
-}
-
 @media (min-width: 750px) {
   .cursive--primary {
     font-size: 4.5rem;
@@ -104,7 +100,7 @@ p {
 
 .btn--whiteoutline:hover,
 .btn--whiteoutline:focus {
-  border: 4px solid white;
+  border: 4px solid #e89c89;
   font-family: "Now-Regular", "Poppins", sans-serif;
   background-color: rgba(255, 255, 255, 0.5);
   color: #e89c89;
@@ -127,6 +123,9 @@ p {
 }
 .contact__address, .contact__hours, .contact__info {
   text-align: center;
+}
+.contact__address > p, .contact__hours > p, .contact__info > p {
+  margin-bottom: 1.3rem;
 }
 
 @media (min-width: 750px) {
@@ -186,6 +185,9 @@ p {
   width: 80%;
   margin: 0 auto;
   font-size: 2rem;
+}
+.cta__wrapper > p {
+  margin-bottom: 1.3rem;
 }
 .cta__info {
   box-shadow: 0 0 5px 0 white;

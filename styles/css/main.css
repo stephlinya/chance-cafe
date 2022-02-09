@@ -137,6 +137,9 @@ img {
   width: 100%;
   padding: 1.2em 0;
 }
+.mobilenav__link {
+  text-decoration: none;
+}
 .mobilenav__toggle {
   padding: 1em;
   cursor: pointer;
