@@ -1,3 +1,60 @@
+function getToken() {
+    console.log("function start")
+    const res = fetch("https://api.petfinder.com/v2/oauth2/token", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: {
+            "grant_type":"client_credentials",
+            "client_id": "jp8OOxEfpQHDch1QgB4Vio1g7CUWb0ileg9rsvgSjPcJvgSkCX",
+            "client_secret": "gE81LqmVhGGDa36tRUc3WUS4fmW7FGzok5hFjXIg"
+        }
+    })
+
+  try {
+    let token = res.json();
+    console.log("function end")
+    return token;
+  } catch (err) {
+      return err.message;
+  }
+
+}
+
+async function callPetFinder() {
+    console.log("running the code")
+//    getToken();
+    const response = await fetch("https://api.petfinder.com/v2/animals?type=cat&page=2", {
+        headers: {
+            "Authorization": `Bearer + eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqcDhPT3hFZnBRSERjaDFRZ0I0VmlvMWc3Q1VXYjBpbGVnOXJzdmdTalBjSnZnU2tDWCIsImp0aSI6IjAwYmE4OTRkY2I5OTlkMTRmYmI4NGRmYjhlYzE0MmRkMDViOTBiOGFhMGFiOTIxNDVlZjljZmZlMThhOGMyMDIzMzUwYzVmOGU3OWZmYjEyIiwiaWF0IjoxNjQ0NTIxMDQ2LCJuYmYiOjE2NDQ1MjEwNDYsImV4cCI6MTY0NDUyNDY0Niwic3ViIjoiIiwic2NvcGVzIjpbXX0.cifGIjeSRG-JhT4WQcM70V-odjPu9h_4FZPDPpYV74k2tKVwZfzEwTukxSmIuDDv_CDksKEnwM03YJDo6Lg0M5pJFN5eUG0xlcaOxW6DMoOkjSFTT_xmME-Fy3XKOiUCS9XqkgRht1jGVPKBuIyR4gFr8_Hr_iJTb024b9L7SxvFV6eKbPQ_SZDTg8ZBEF2-MCvSA9vtjBPk0Mhi96RK2T5iHkQ9k590DTfnHgjZYDKs7nTdj1NG-BGp0WfnfvoPH-boq_ck95PrABra2T1tq5b-8l-bOv3qcI_w0MqIC6YgN_SIHZ6RdJCI0hTguXW3y0unkN38Qe51fofHPtXavw`,
+            "Content-Type": "application/json"
+        }
+    })
+    if(!response.ok){
+        console.error("bla");
+    }
+
+    try {
+        let animals = await response.json();
+        animals = animals.animals;
+        for (let i = 0; i < animals.length; i++){
+            if ((animals[i].photos != "") && (animals[i].photos[0].large) && (/^[a-zA-Z]+$/.test(animals[i].name))){
+                catsWithPhotos.push(animals[i]);
+                console.log(animals[i].photos[0].large);
+            }
+            
+        }
+        createCards();
+        console.log(data.animals);
+    } catch (err) {
+        return console.error("bla");
+    }
+    
+};
+
+
+
 const adoptionRequirements = document.querySelector(".adoption__requirements");
 const modal = document.querySelector(".overlay__modal");
 const overlay = document.querySelector(".overlay");
@@ -112,42 +169,15 @@ if (adoptionInterest) {
     });
 }
 
+
+
+
+const cardContainer = document.querySelector(".card-container");
 let catName = document.getElementById("cat-name");
 let catBreed = document.getElementById("cat-breed");
 let catImg = document.querySelector(".card__img");
 let catsWithPhotos = [];
 let animals = "";
-
-function callAPI() {
-fetch("https://api.petfinder.com/v2/animals?type=cat&page=2", {
-    headers: {
-        "Authorization": `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqcDhPT3hFZnBRSERjaDFRZ0I0VmlvMWc3Q1VXYjBpbGVnOXJzdmdTalBjSnZnU2tDWCIsImp0aSI6ImIwZjM4ZjhiMjM1MjRjZjlmYzhkNWU5ZTI1YTE1NDYwZjI4MjA2ZjI2NjNiNThhZjZkYWNkMWM3YWNkN2JhYzM2ZTlkZGQ4NjMzZDJjYjI3IiwiaWF0IjoxNjQ0NDQ2ODM4LCJuYmYiOjE2NDQ0NDY4MzgsImV4cCI6MTY0NDQ1MDQzOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.hXbHNz4s6VhBwhNLNZMqEGAA-7ARMN8jDMsEdUKa1suB4PHC4CRy4Pu1djhPMwFdWr3_Hm67aeVDZeaxH8j2IHgOASua8lvlzx7M-nfaz6cnkT5IeCnqtOl8jm2oPuB0YpJid8Y1wPgF7hZymmtiTJDKbKj_cbF2pK2Z212NNuRwU6ScF1hUpHc2ZkS3e6TCA6900LRvERfjZrzM82OOqmPJQGk6MkI2CjUIcor7AcqMA2wDezLylBBLeWPQxGNeIvoDcW3U4EzVrJJiZTFOWTBmPqXBGqBeAl16MYn7k41J3WUD_8k1prh6OATN2BgDftFaNKeyfMr_HNgXgROdHA`,
-        "Content-Type": "application/json"
-    }
-})
-    .then(res => res.json())
-    .then(data => {
-        animals = data.animals;
-        for (let i = 0; i < animals.length; i++){
-            if ((animals[i].photos != "") && (animals[i].photos[0].large) && (/^[a-zA-Z]+$/.test(animals[i].name))){
-                catsWithPhotos.push(animals[i]);
-                console.log(animals[i].photos[0].large);
-            }
-            
-        }
-        createCards();
-        console.log(data.animals);
-       
-    })
-
-    .catch((err) => {
-        console.log(err);
-    });
-};
-
-callAPI();
-
-const cardContainer = document.querySelector(".card-container");
 function createCards(){
    
     for(let i = 0; i < catsWithPhotos.length; i++){
