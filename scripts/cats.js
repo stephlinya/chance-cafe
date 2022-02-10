@@ -1,22 +1,20 @@
-function getToken() {
+async function getToken() {
     console.log("function start")
-    const res = fetch("https://api.petfinder.com/v2/oauth2/token", {
+    const res = await fetch("https://api.petfinder.com/v2/oauth2/token", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: {
-            "grant_type":"client_credentials",
-            "client_id": "jp8OOxEfpQHDch1QgB4Vio1g7CUWb0ileg9rsvgSjPcJvgSkCX",
-            "client_secret": "gE81LqmVhGGDa36tRUc3WUS4fmW7FGzok5hFjXIg"
-        }
+        body: 
     })
 
   try {
-    let token = res.json();
+    let token = await res.json();
     console.log("function end")
+    console.log(token)
     return token;
   } catch (err) {
+      console.log(err)
       return err.message;
   }
 
@@ -24,35 +22,44 @@ function getToken() {
 
 async function callPetFinder() {
     console.log("running the code")
-//    getToken();
-    const response = await fetch("https://api.petfinder.com/v2/animals?type=cat&page=2", {
+    let token = await getToken();
+    console.log(`tokenpet: ${token}`)
+
+    let accessToken = token.access_token;
+    console.log(`access: ${accessToken}`)
+
+    const response = await fetch("https://api.petfinder.com/v2/animals?type=cat&page=5", {
         headers: {
-            "Authorization": `Bearer + eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqcDhPT3hFZnBRSERjaDFRZ0I0VmlvMWc3Q1VXYjBpbGVnOXJzdmdTalBjSnZnU2tDWCIsImp0aSI6IjAwYmE4OTRkY2I5OTlkMTRmYmI4NGRmYjhlYzE0MmRkMDViOTBiOGFhMGFiOTIxNDVlZjljZmZlMThhOGMyMDIzMzUwYzVmOGU3OWZmYjEyIiwiaWF0IjoxNjQ0NTIxMDQ2LCJuYmYiOjE2NDQ1MjEwNDYsImV4cCI6MTY0NDUyNDY0Niwic3ViIjoiIiwic2NvcGVzIjpbXX0.cifGIjeSRG-JhT4WQcM70V-odjPu9h_4FZPDPpYV74k2tKVwZfzEwTukxSmIuDDv_CDksKEnwM03YJDo6Lg0M5pJFN5eUG0xlcaOxW6DMoOkjSFTT_xmME-Fy3XKOiUCS9XqkgRht1jGVPKBuIyR4gFr8_Hr_iJTb024b9L7SxvFV6eKbPQ_SZDTg8ZBEF2-MCvSA9vtjBPk0Mhi96RK2T5iHkQ9k590DTfnHgjZYDKs7nTdj1NG-BGp0WfnfvoPH-boq_ck95PrABra2T1tq5b-8l-bOv3qcI_w0MqIC6YgN_SIHZ6RdJCI0hTguXW3y0unkN38Qe51fofHPtXavw`,
-            "Content-Type": "application/json"
-        }
+            "Authorization": `Bearer ${accessToken}`
+        }        
     })
     if(!response.ok){
-        console.error("bla");
+        console.error(response);
     }
-
+    console.log("fetchinf")
     try {
         let animals = await response.json();
+        console.log(animals)
         animals = animals.animals;
+        console.log(animals)
+        console.log(animals.length)
         for (let i = 0; i < animals.length; i++){
             if ((animals[i].photos != "") && (animals[i].photos[0].large) && (/^[a-zA-Z]+$/.test(animals[i].name))){
                 catsWithPhotos.push(animals[i]);
                 console.log(animals[i].photos[0].large);
+            } else {
+                console.log("no phto")
             }
             
         }
         createCards();
-        console.log(data.animals);
+        //console.log(data.animals);
     } catch (err) {
-        return console.error("bla");
+        return console.error("bla", err);
     }
     
 };
-
+callPetFinder();
 
 
 const adoptionRequirements = document.querySelector(".adoption__requirements");
