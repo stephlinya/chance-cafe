@@ -1,3 +1,13 @@
+// require("dotenv").config();
+
+// const process.env = {
+//     REPO_OWNER: owner,
+//     REPO_NAME: repo
+// }
+
+const bodyUrl = `grant_type=client_credentials&client_id=${process.env.API_ID}&client_secret=${process.env.API_SECRET}`
+
+
 async function getToken() {
     console.log("function start")
     const res = await fetch("https://api.petfinder.com/v2/oauth2/token", {
@@ -5,7 +15,7 @@ async function getToken() {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: 
+        body: bodyURL  
     })
 
   try {
@@ -35,6 +45,7 @@ async function callPetFinder() {
     })
     if(!response.ok){
         console.error(response);
+        callPetFinder();
     }
     console.log("fetchinf")
     try {

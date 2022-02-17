@@ -1,0 +1,6 @@
+node_modules
+cat_output.json
+exampleresponse.json
+.env
+.webpack.config.js
+.babelrc
