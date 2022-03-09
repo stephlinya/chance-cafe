@@ -524,6 +524,11 @@ img {
     @include btn-primaryoutline;
 }
 
+.btn-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* might be able to delete? */
 
 @media (min-width: 750px){

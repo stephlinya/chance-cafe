@@ -523,6 +523,11 @@ img {
   cursor: pointer;
 }
 
+.btn-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* might be able to delete? */
 @media (min-width: 750px) {
   .btn--primaryfill {
