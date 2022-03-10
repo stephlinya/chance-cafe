@@ -526,7 +526,11 @@ img {
 
 .btn-link {
     text-decoration: none;
-    color: inherit;
+    color: $primaryPink;
+}
+
+.btn-link:hover, .btn-link:focus {
+    color: white;
 }
 
 /* might be able to delete? */
